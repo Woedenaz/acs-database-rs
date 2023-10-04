@@ -219,7 +219,7 @@ async fn backup_function(document: &Html, url: &str) -> Option<ACS> {
 		}
 	}
 
-	if !contain.is_empty() || !disrupt.is_empty() || !risk.is_empty() || !secondary.is_empty() {
+	if !contain.is_empty() && (!disrupt.is_empty() || !risk.is_empty() || !secondary.is_empty()) || !disrupt.is_empty() || !risk.is_empty() || !secondary.is_empty() {
 		let raw_number = get_scp_number(url).ok_or_else(|| anyhow!("Missing number: {}", url)).ok()?;
 		let number = if raw_number <= 999 {
 			format!("SCP-{:03}", raw_number)
