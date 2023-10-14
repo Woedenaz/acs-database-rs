@@ -234,7 +234,7 @@ async fn write_json<T: Serialize>(data: &[T], path: &str) -> Result<()> {
 	Ok(())
 }
 
-// Scrape SCP Series Pages -> Get SCP Names -> Write them to JSON File
+// Scrape SCP Series Pages -> Get SCP Names -> Write them to json File
 async fn init_scp_names_json() -> Result<()> {
 	let mut scp_names_vec: Vec<SCPInfo> = Vec::new();
 
@@ -291,7 +291,7 @@ async fn init_scp_names_json() -> Result<()> {
 	Ok(())
 }
 
-// Get SCP Name from SCP Names JSON based on Number
+// Get SCP Name from SCP Names json based on Number
 async fn get_scp_name(number: u16) -> Result<String> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;

@@ -25,45 +25,41 @@ static SCP_NUM_RE: Lazy<Regex> = Lazy::new(|| {
 });
 
 async fn append_json_to_file(json: &Value, file_path: &str) -> Result<()> {
-  let json = json.clone();
-  let file_path = file_path.to_owned();
+	let json = json.clone();
+	let file_path = file_path.to_owned();
 
-  task::spawn_blocking(move || {
-    let mut file = OpenOptions::new()
-      .read(true)
-      .write(true)
-      .create(true)
-      .open(&file_path)?;
+	task::spawn_blocking(move || {
+		let mut file = OpenOptions::new()
+			.read(true)
+			.write(true)
+			.create(true)
+			.open(&file_path)?;
 
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)?;
+		let mut contents = String::new();
+		file.read_to_string(&mut contents)?;
 
-    // Parse the existing file contents into a JSON value
-    let mut existing_json = match serde_json::from_str(&contents) {
-      Ok(json) => json,
-      Err(_) => serde_json::Value::Array(Vec::new()), // If parsing fails, assume an empty array
-    };
+		let mut existing_json = match serde_json::from_str(&contents) {
+			Ok(json) => json,
+			Err(_) => serde_json::Value::Array(Vec::new()),
+		};
 
-    // Append the new data to the existing JSON array
-    if let Some(array) = existing_json.as_array_mut() {
-      if let Some(new_array) = json.as_array() {
-        array.extend_from_slice(new_array);
-      } else {
-        array.push(json.clone());
-      }
-    }
+		if let Some(array) = existing_json.as_array_mut() {
+			if let Some(new_array) = json.as_array() {
+				array.extend_from_slice(new_array);
+			} else {
+				array.push(json.clone());
+			}
+		}
 
-    // Seek to the beginning of the file before writing
-    file.seek(io::SeekFrom::Start(0))?;
-    file.set_len(0)?;  // Truncate the file
+		file.seek(io::SeekFrom::Start(0))?;
+		file.set_len(0)?;
 
-    // Write the updated JSON array back to the file
-    serde_json::to_writer_pretty(io::BufWriter::new(&file), &existing_json)?;
+		serde_json::to_writer_pretty(io::BufWriter::new(&file), &existing_json)?;
 
-    Ok::<(), anyhow::Error>(())
-  }).await??;
+		Ok::<(), anyhow::Error>(())
+	}).await??;
 
-  Ok(())
+	Ok(())
 }
 
 async fn request_page(url: &str) -> Result<Html> {
@@ -158,7 +154,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 				match get_scp_name(scp_number).await {
 					Ok(Some(name_from_json)) => {
 						name = name_from_json;
-						info!("SCP Number: {} | Name from JSON: {}", number, name);
+						info!("SCP Number: {} | Name from json: {}", number, name);
 					},
 					Ok(None) => {
 						info!("No name found for SCP Number: {}, skipping.", number);
@@ -192,7 +188,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 						match get_scp_name(scp_number).await {
 							Ok(Some(name_from_json)) => {
 								name = name_from_json;
-								info!("SCP Number: {} | Name from JSON: {}", number, name);
+								info!("SCP Number: {} | Name from json: {}", number, name);
 							},
 							Ok(None) => {
 								info!("No name found for SCP Number: {}, skipping.", number);
@@ -235,70 +231,65 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 #[tokio::main]
 pub async fn fetch_backlinks() -> Result<()> {
 
-  // Initialize logger
-  if let Err(_) = pretty_env_logger::try_init() {
-    log::warn!("Logger is already initialized.");
-  }
+	if let Err(_) = pretty_env_logger::try_init() {
+		log::warn!("Logger is already initialized.");
+	}
 
-  // Generate a random token
-  let token: String = rand::thread_rng()
-    .sample_iter(&rand::distributions::Alphanumeric)
-    .take(8)
-    .map(char::from)
-    .collect();
+	let token: String = rand::thread_rng()
+		.sample_iter(&rand::distributions::Alphanumeric)
+		.take(8)
+		.map(char::from)
+		.collect();
 
-  info!("Created token: {}", token);
+	info!("Created token: {}", token);
 
-  // Set up cookies
-  let mut headers = HeaderMap::new();
-  headers.insert("Cookie", HeaderValue::from_str(&format!("wikidot_token7={}", token)).unwrap());
-  headers.insert("User-Agent", HeaderValue::from_static("reqwest/0.11.20 (rust)"));
+	let mut headers = HeaderMap::new();
+	headers.insert("Cookie", HeaderValue::from_str(&format!("wikidot_token7={}", token)).unwrap());
+	headers.insert("User-Agent", HeaderValue::from_static("reqwest/0.11.20 (rust)"));
 
-  info!("Created headers: {:?}", headers);
+	info!("Created headers: {:?}", headers);
 
-  // Set up parameters
-  let page_ids = ["858310940", "1058262511", "1307058244"];
+	let page_ids = ["858310940", "1058262511", "1307058244"];
 
-  // Make the HTTP request
-  let client = Client::new();
+	let client = Client::new();
 
-  for page_id in &page_ids {
-    let params = [
-      ("page_id", *page_id),
-      ("moduleName", "backlinks/BacklinksModule"),
-      ("callbackIndex", "1"),
-      ("wikidot_token7", &token),
-    ];
+	for page_id in &page_ids {
+		let params = [
+			("page_id", *page_id),
+			("moduleName", "backlinks/BacklinksModule"),
+			("callbackIndex", "1"),
+			("wikidot_token7", &token),
+		];
 
-    info!("Created Params for page_id {}: {:?}", page_id, params);
+		info!("Created Params for page_id {}: {:?}", page_id, params);
 
-    let response = client.post("https://scp-wiki.wikidot.com/ajax-module-connector.php")
-      .headers(headers.clone())  // Clone headers to ensure they are fresh for each request
-      .form(&params)
-      .send()
-      .await?;
+		let response = client.post("https://scp-wiki.wikidot.com/ajax-module-connector.php")
+			.headers(headers.clone())
+			.form(&params)
+			.send()
+			.await?;
 
-    if response.status().is_success() {
-      let json: serde_json::Value = response.json().await?;
-      let html: Option<Arc<Html>> = match json.get("body") {
-        Some(html_body) => {
-          let html_body_str = html_body.as_str().ok_or(anyhow::anyhow!("Failed to convert html_body to str"))?;
-          let html = Html::parse_document(html_body_str);
-          Some(Arc::new(html))
-        },
-        None => {
-          error!("No HTML body");
-          None
-        }
-      };
-      if let Some(html) = html {
-        let parsed_json = parse_html_to_json(html).await?;
-        append_json_to_file(&parsed_json, "output/acs_bar_backlinks.json").await?;
-      }
-    } else {
-      error!("Failed request or response for page_id {}: {:?}", page_id, response.status());
-    }
-  }
-  
-  Ok(())
+		if response.status().is_success() {
+			let json: serde_json::Value = response.json().await?;
+			let html: Option<Arc<Html>> = match json.get("body") {
+				Some(html_body) => {
+					let html_body_str = html_body.as_str().ok_or(anyhow::anyhow!("Failed to convert html_body to str"))?;
+					let html = Html::parse_document(html_body_str);
+					Some(Arc::new(html))
+				},
+				None => {
+					error!("No HTML body");
+					None
+				}
+			};
+			if let Some(html) = html {
+				let parsed_json = parse_html_to_json(html).await?;
+				append_json_to_file(&parsed_json, "output/acs_bar_backlinks.json").await?;
+			}
+		} else {
+			error!("Failed request or response for page_id {}: {:?}", page_id, response.status());
+		}
+	}
+	
+	Ok(())
 }
