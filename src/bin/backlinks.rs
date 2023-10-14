@@ -14,8 +14,16 @@ use log::{info, error};
 use tokio::{fs, task, sync::Semaphore};
 
 #[derive(Serialize, Deserialize)]
+struct BacklinksInfo {
+	fragment: bool,
+	name: String,
+	number: String,
+	url: String
+}
+
+#[derive(Serialize, Deserialize)]
 struct SCPInfo {
-	number: u16,
+	number: String,
 	name: String,
 }
 
@@ -23,6 +31,27 @@ static SEMAPHORE: Lazy<Semaphore> = Lazy::new(|| Semaphore::new(30));
 static SCP_NUM_RE: Lazy<Regex> = Lazy::new(|| {
 		Regex::new(r"(?i)\bscp-([0-9]{1,4})$").unwrap()
 });
+
+fn format_number(number: u16, skip_zero_one: bool) -> String {
+		if skip_zero_one && number > 1 && number <= 99 {
+      format!("SCP-{:03}", number)
+		} else if !skip_zero_one && number <= 99 {
+      format!("SCP-{:03}", number)
+    } else if number > 99 {
+      format!("SCP-{}", number)
+    } else {
+        number.to_string()
+    }
+}
+
+fn clear_file(file_path: &str) -> Result<()> {
+	OpenOptions::new()
+		.write(true)
+		.create(true)
+		.truncate(true)
+		.open(file_path)?;
+	Ok(())
+}
 
 async fn append_json_to_file(json: &Value, file_path: &str) -> Result<()> {
 	let json = json.clone();
@@ -67,7 +96,7 @@ async fn request_page(url: &str) -> Result<Html> {
 	Ok(Html::parse_document(&body)) 
 }
 
-async fn get_scp_name(number: u16) -> Result<Option<String>> {
+async fn get_scp_name(number: &str) -> Result<Option<String>> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
@@ -138,7 +167,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 
 		let name_text = element.text().collect::<Vec<_>>().join("");
 		let mut name = name_text.trim().to_string();    
-		let mut number: u16 = 0;
+		let mut number = String::new();
 
 		info!("Initial name: {}", name);
 
@@ -149,9 +178,10 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 		name = re.replace_all(&name, "").to_string();
 
 		if SCP_NUM_RE.is_match(&url) && !is_fragment {
-			if let Some(scp_number) = extract_scp_number(&url) {
-				number = scp_number;
-				match get_scp_name(scp_number).await {
+			if let Some(raw_number) = extract_scp_number(&url) {
+				number = format_number(raw_number, false);
+
+				match get_scp_name(&number).await {
 					Ok(Some(name_from_json)) => {
 						name = name_from_json;
 						info!("SCP Number: {} | Name from json: {}", number, name);
@@ -183,9 +213,9 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 				let breadcrumb_match = SCP_NUM_RE.is_match(&breadcrumb_text);
 				info!("breadcrumb text: {} | matches SCP_RUM_RE: {}", breadcrumb_text, breadcrumb_match);
 				if SCP_NUM_RE.is_match(&breadcrumb_text) {
-					if let Some(scp_number) = extract_scp_number(&breadcrumb_text) {
-						number = scp_number;
-						match get_scp_name(scp_number).await {
+					if let Some(raw_number) = extract_scp_number(&breadcrumb_text) {
+						number = format_number(raw_number, false);
+						match get_scp_name(&number).await {
 							Ok(Some(name_from_json)) => {
 								name = name_from_json;
 								info!("SCP Number: {} | Name from json: {}", number, name);
@@ -207,7 +237,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 		}
 
 		if name.as_str().to_lowercase().contains("proposal") || url.as_str().to_lowercase().contains("proposal") {
-			number = 1;
+			number = "SCP-001".to_string();
 		}		
 
 		info!("Final name: {}, Final number: {}", name, number);
@@ -252,6 +282,8 @@ pub async fn fetch_backlinks() -> Result<()> {
 	let page_ids = ["858310940", "1058262511", "1307058244"];
 
 	let client = Client::new();
+
+	clear_file("output/acs_backlinks.json")?;
 
 	for page_id in &page_ids {
 		let params = [

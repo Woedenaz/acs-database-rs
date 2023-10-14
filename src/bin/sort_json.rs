@@ -2,6 +2,7 @@ use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use std::{borrow::Cow, fs::{File, OpenOptions}, io::{BufReader, BufWriter}};
 use clap::Parser;
+use log::error;
 
 #[derive(Parser, Debug)]
 #[clap(about, version, author)]
@@ -47,12 +48,28 @@ impl SortableField for ACS {
   }
 }
 
-fn extract_number(s: &str) -> Option<i32> {
-	if s.starts_with("SCP-") {
-		s[4..].parse::<i32>().ok()
-	} else {
-		None
-	}
+fn extract_scp_number(s: &str) -> Option<u16> {
+  if s.len() < 7 {
+    return None;
+  }
+
+  let prefix_match = s.chars()
+    .take(4)
+    .zip("SCP-".chars())
+    .all(|(a, b)| a.eq_ignore_ascii_case(&b));
+
+  if prefix_match {
+    let number = match s[4..].parse::<u16>() {
+      Ok(num) => Some(num),
+      Err(e) => {
+        error!("Failed to parse SCP number {}: {}", s, e);
+        None
+      }
+    }?;
+    Some(number)
+  } else {
+    None
+  }
 }
 
 pub fn sort<T: SortableField>(mut entries: Vec<T>, sort_field: &str) -> Vec<T> {
@@ -60,7 +77,7 @@ pub fn sort<T: SortableField>(mut entries: Vec<T>, sort_field: &str) -> Vec<T> {
 		let a_field = a.get_field(sort_field);
 		let b_field = b.get_field(sort_field);
 
-		match (extract_number(&a_field), extract_number(&b_field)) {
+		match (extract_scp_number(&a_field), extract_scp_number(&b_field)) {
 			(Some(a_number), Some(b_number)) => a_number.cmp(&b_number),
 			(Some(_), None) => std::cmp::Ordering::Less,
 			(None, Some(_)) => std::cmp::Ordering::Greater,

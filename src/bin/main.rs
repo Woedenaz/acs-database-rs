@@ -8,7 +8,6 @@ use futures::stream::StreamExt;
 use indicatif::{ProgressBar, ProgressStyle};
 use log::error;
 use once_cell::sync::Lazy;
-use regex::Regex;
 use scraper::{ElementRef, Html, Selector};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
@@ -45,14 +44,14 @@ struct Args {
 
 #[derive(Serialize, Deserialize)]
 struct SCPInfo {
-	number: u16,
+	number: String,
 	name: String,
 }
 
 impl SortableField for SCPInfo {
 	fn get_field(&self, field: &str) -> Cow<str> {
 		match field {
-			"number" => Cow::Owned(self.number.to_string()),
+			"number" => Cow::Borrowed(&self.number),
 			"name" => Cow::Borrowed(&self.name),
 			_ => panic!("Invalid field: {}", field),
 		}
@@ -127,8 +126,6 @@ static AIM_CLEARANCE_SELECTOR: Lazy<Selector> = Lazy::new(|| Selector::parse("di
 static AIM_CONTAIN_SELECTOR: Lazy<Selector> = Lazy::new(|| Selector::parse("div.desktop-aim > div.w-container > div > div:nth-child(3) > p").unwrap());
 static AIM_DISRUPT_SELECTOR: Lazy<Selector> = Lazy::new(|| Selector::parse("div.desktop-aim > div.w-container > div > div:nth-child(4) > p").unwrap());
 
-static SCP_NUM_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?i)scp-([0-9]{1,4})").unwrap());
-
 const SERIES_URLS: [&str; 8] = [
 	"https://scp-wiki.wikidot.com/scp-series",
 	"https://scp-wiki.wikidot.com/scp-series-2",
@@ -143,21 +140,33 @@ const SERIES_URLS: [&str; 8] = [
 const MAX_LEVEL: u8 = 9;
 
 //Helper Functions
-fn extract_scp_number(scp_str: &str) -> Option<u16> {
+fn extract_scp_number(s: &str) -> Option<u16> {
+	let pos = if let Some(pos) = s.rfind("SCP-") {
+		Some(pos)
+	} else {
+		s.rfind("scp-")
+	};
 
-	let cap = SCP_NUM_RE.captures(scp_str)?;
-	
-	let number = match cap[1].parse::<u16>() {
-		Ok(num) => Some(num),
-		Err(e) => {
-			log::error!("Failed to parse SCP number {}: {}", scp_str, e);
-			None
-		}
-	}?;
-
-	Some(number)
-
+	if let Some(pos) = pos {		
+		let end_pos = s[pos + 4..]
+			.char_indices()
+			.find(|&(_, c)| !c.is_digit(10))
+			.map_or(s.len(), |(i, _)| i + pos + 4);
+		
+		let number = match s[pos + 4..end_pos].parse::<u16>() {
+			Ok(num) => Some(num),
+			Err(e) => {
+				error!("Failed to parse SCP number {}: {}", s, e);
+				None
+			}
+		}?;
+		Some(number)
+	} else {
+		None
+	}
 }
+
+
 
 fn extract_text(element: ElementRef, selector: &Selector) -> Option<String> {
 	element.select(&selector)
@@ -197,7 +206,7 @@ fn clean_text(text: String) -> String {
 		return String::new()
 	} if text.contains(":") {
 		return extract_word_after_colon(&text);
-	} if ( text != "N/A" || text != "n/a" ) && text.contains("/") {
+	} if !text.eq_ignore_ascii_case("N/A") && text.contains("/") {
 		text.splitn(2, "/")
 			.nth(1)
 			.unwrap_or("")
@@ -301,8 +310,14 @@ async fn init_scp_names_json() -> Result<()> {
 					};
 
 					if let Some(scp_number) = extract_scp_number(&scp_string) {
+						let number = if scp_number <= 99 {
+								format!("SCP-{:03}", scp_number)
+							} else {
+								format!("SCP-{}", scp_number)
+							};
+
 						scp_names_vec.push(SCPInfo {
-							number: scp_number,
+							number,
 							name,
 						});
 
@@ -321,7 +336,7 @@ async fn init_scp_names_json() -> Result<()> {
 }
 
 // Get SCP Name from SCP Names json based on Number
-async fn get_scp_name(number: u16) -> Result<String> {
+async fn get_scp_name(number: &str) -> Result<String> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
@@ -476,7 +491,7 @@ async fn get_aim_header(document: &Html) -> (String, String, String, String) {
 // Searches the page for the ACS Bar & ACS Hybrid Bar
 // If found, selects and scrapes specific elements
 // If not found, resorts to Text Strings scraping
-async fn fetch_acs_data(scp_number: u16, mut name: Option<&str>, scp_url: &str) -> Result<Option<ACS>> {
+async fn fetch_acs_data(scp_number: &str, mut name: Option<&str>, scp_url: &str) -> Result<Option<ACS>> {
 	log::info!("Fetching data from: {}", scp_url);
 	let document = request_page(scp_url).await?;
 
@@ -488,16 +503,10 @@ async fn fetch_acs_data(scp_number: u16, mut name: Option<&str>, scp_url: &str) 
 
 		let scp_name: String;
 
-		if scp_number != 0 && scp_number != 1 {
+		if scp_number.eq_ignore_ascii_case("scp-000") && scp_number.eq_ignore_ascii_case("scp-001") {
 			scp_name = get_scp_name(scp_number).await?;
 			name = Some(&scp_name);
 		}
-		
-		let number = if scp_number <= 99 {
-			format!("SCP-{:03}", scp_number)
-		} else {
-			format!("SCP-{}", scp_number)
-		};		
 
 		let mut clearance = String::new();
 		let mut contain = String::new();
@@ -523,13 +532,11 @@ async fn fetch_acs_data(scp_number: u16, mut name: Option<&str>, scp_url: &str) 
 			} else {
 				return Ok(None);
 			}
-		}
-
-		
+		}		
 		
 		Ok(Some(create_acs(
 			name.unwrap_or("").to_string(),
-			number.clone(),
+			scp_number.to_string(),
 			clearance,
 			contain,
 			secondary,
@@ -545,7 +552,7 @@ async fn fetch_acs_data(scp_number: u16, mut name: Option<&str>, scp_url: &str) 
 }
 
 // Compare ACS Backlinks and add to Database if not included
-async fn fetch_and_update_entry(number: u16, name: &str, url: &str, fragment: bool) -> Result<serde_json::Value> {
+async fn fetch_and_update_entry(number: &str, name: &str, url: &str, fragment: bool) -> Result<serde_json::Value> {
 	log::info!("Fetching data from: {}", url);
 	match fetch_acs_data(number, Some(name), url).await {
 		Ok(Some(acs_data)) => {
@@ -593,14 +600,8 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 	pb.set_length(total_entries);
 
 	let new_entries: Vec<(Value, u64, u64)> = acs_bar_backlinks.into_iter().filter_map(|link_item| {
-		let raw_number = link_item["number"].as_u64().unwrap_or(0) as u16;
-		log::info!("Reading data for: SCP-{}", raw_number);
-
-		let number = if raw_number <= 99 {
-			format!("SCP-{:03}", raw_number)
-		} else {
-			format!("SCP-{}", raw_number)
-		};
+		let number = link_item["number"].as_str().unwrap_or_default();
+		log::info!("Reading data for: SCP-{}", number);
 		if acs_database.iter().any(|db_item| db_item["number"].as_str().unwrap_or_default() == number) {
 			None
 		} else {
@@ -614,7 +615,7 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 			log::info!("Reading url data for: {}", link_item);
 			let _permit = semaphore.acquire().await.expect("Failed to acquire semaphore");
 			let fragment = link_item["fragment"].as_bool().unwrap_or_default();
-			match fetch_and_update_entry(link_item["number"].as_u64().unwrap_or(0) as u16, link_item["name"].as_str().unwrap_or_default(), link_item["url"].as_str().unwrap_or_default(), fragment).await {
+			match fetch_and_update_entry(link_item["number"].as_str().unwrap_or_default(), link_item["name"].as_str().unwrap_or_default(), link_item["url"].as_str().unwrap_or_default(), fragment).await {
 				Ok(data) => {
 					pb.inc(1);
 					matches_clone.fetch_add(1, Ordering::Relaxed);
@@ -688,12 +689,13 @@ async fn main() -> Result<()> {
 		let semaphore = Arc::new(Semaphore::new(limit.into()));
 
 		let acs_data: Vec<ACS> = (start..=end)
-		.map(|scp_number| {
-			let scp_url_string = if scp_number <= 99 {
-				format!("https://scp-wiki.wikidot.com/scp-{:03}", scp_number)
+		.map(|number| {
+			let scp_number = if number <= 99 {
+				format!("scp-{:03}", number)
 			} else {
-				format!("https://scp-wiki.wikidot.com/scp-{}", scp_number)
+				format!("scp-{}", number)
 			};
+			let scp_url_string = format!("https://scp-wiki.wikidot.com/{}", scp_number);
 			let pb = progress_bar.clone();
 			let semaphore = Arc::clone(&semaphore);
 			Box::pin(async move {
@@ -702,11 +704,11 @@ async fn main() -> Result<()> {
 					e
 				}).ok()?;
 				let mut retries = 0;
-				let mut result = fetch_acs_data(scp_number, None, &scp_url_string).await;
+				let mut result = fetch_acs_data(&scp_number, None, &scp_url_string).await;
 				while result.is_err() && retries < args.retries.into() {
 						retries += 1;
 						tokio::time::sleep(Duration::from_secs(2 * retries)).await;
-						result = fetch_acs_data(scp_number, None, &scp_url_string).await;
+						result = fetch_acs_data(&scp_number, None, &scp_url_string).await;
 				}
 				match result {
 					Ok(Some(data)) => {
