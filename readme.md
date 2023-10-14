@@ -31,9 +31,9 @@ In the command line, there are 4 arguments and 4 flags:
 - `--scraper` or `-s`: Enables the base function of scraping the SCP-Wiki for pages using ACS
 - `--getnames` or `-g`: Enables the scraping of the SCP Names from the series pages.
 - `--backlinks` or `-b`: Enables the scraping of SCPs using the following component pages:
-- [Anomaly Classification Bar Source](https://scp-wiki.wikidot.com/component:anomaly-class-bar-source)
-- [Flops Header Template](https://scp-wiki.wikidot.com/component:flops-header)
-- [Advanced Information Methodology (AIM) Component](https://scp-wiki.wikidot.com/component:advanced-information-methodology)
+  - [Anomaly Classification Bar Source](https://scp-wiki.wikidot.com/component:anomaly-class-bar-source)
+  - [Flops Header Template](https://scp-wiki.wikidot.com/component:flops-header)
+  - [Advanced Information Methodology (AIM) Component](https://scp-wiki.wikidot.com/component:advanced-information-methodology)
 - `--cross` or `-c`: Enables the cross-comparison of the current `acs_database.json` with the `acs_backlinks.json` created by the `--backlinks` flag. Any missing SCPs will be added to the database.
 
 ### Arguments
