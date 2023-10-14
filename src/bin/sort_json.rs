@@ -47,10 +47,27 @@ impl SortableField for ACS {
   }
 }
 
+fn extract_number(s: &str) -> Option<i32> {
+	if s.starts_with("SCP-") {
+		s[4..].parse::<i32>().ok()
+	} else {
+		None
+	}
+}
+
 pub fn sort<T: SortableField>(mut entries: Vec<T>, sort_field: &str) -> Vec<T> {
 	entries.sort_by(|a, b| {
-		a.get_field(sort_field).cmp(&b.get_field(sort_field))
+		let a_field = a.get_field(sort_field);
+		let b_field = b.get_field(sort_field);
+
+		match (extract_number(&a_field), extract_number(&b_field)) {
+			(Some(a_number), Some(b_number)) => a_number.cmp(&b_number),
+			(Some(_), None) => std::cmp::Ordering::Less,
+			(None, Some(_)) => std::cmp::Ordering::Greater,
+			(None, None) => a_field.cmp(&b_field),
+		}
 	});
+
 	entries
 }
 
