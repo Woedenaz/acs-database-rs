@@ -284,7 +284,7 @@ pub async fn fetch_backlinks() -> Result<()> {
 			};
 			if let Some(html) = html {
 				let parsed_json = parse_html_to_json(html).await?;
-				append_json_to_file(&parsed_json, "output/acs_bar_backlinks.json").await?;
+				append_json_to_file(&parsed_json, "output/acs_backlinks.json").await?;
 			}
 		} else {
 			error!("Failed request or response for page_id {}: {:?}", page_id, response.status());
@@ -292,4 +292,8 @@ pub async fn fetch_backlinks() -> Result<()> {
 	}
 	
 	Ok(())
+}
+
+fn main() {
+	let _ = fetch_backlinks();
 }

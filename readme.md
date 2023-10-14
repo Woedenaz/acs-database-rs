@@ -21,7 +21,7 @@ cargo run
 Without command-line flags, it will not do anything. Utilize the flags and arguments below to customize the tool:
 
 ```
-cargo run -- -s -g -b -c -s <number> -e <number> -l <number> -r <number>
+cargo run -- -s -g -b -c --start <number> --end <number> -l <number> -r <number>
 ```
 
 In the command line, there are 4 arguments and 4 flags:
@@ -38,7 +38,7 @@ In the command line, there are 4 arguments and 4 flags:
 
 ### Arguments
 
-- `--start #` or `-s #`: The start number used for scraping. The default is `1`.
-- `--end #` or `-e #`: The end number used for scraping. The default is `7999`.
+- `--start #`: The start number used for scraping. The default is `1`.
+- `--end #`: The end number used for scraping. The default is `7999`.
 - `--limit #` or `-l #`: The number of concurrent threads allowed when scraping the scp-wiki. The default is `10`.
 - `--retries #` or `-r #`: When calling a initially page fails, this is the number of times it will try before continuing. The default is `5`.

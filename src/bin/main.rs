@@ -1,7 +1,9 @@
 mod backlinks;
+mod sort_json;
 
 use anyhow::{anyhow, Result};
 use clap::Parser;
+use crate::sort_json::SortableField;
 use futures::stream::StreamExt;
 use indicatif::{ProgressBar, ProgressStyle};
 use log::error;
@@ -10,7 +12,7 @@ use regex::Regex;
 use scraper::{ElementRef, Html, Selector};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
-use std::{fs::File, clone::Clone, sync::{Arc, atomic::{AtomicU64, Ordering}}};
+use std::{fs::File, clone::Clone, borrow::Cow, sync::{Arc, atomic::{AtomicU64, Ordering}}};
 use tokio::{fs, time::Duration, sync::Semaphore};
 
 #[derive(Parser, Debug)]
@@ -47,6 +49,16 @@ struct SCPInfo {
 	name: String,
 }
 
+impl SortableField for SCPInfo {
+	fn get_field(&self, field: &str) -> Cow<str> {
+		match field {
+			"number" => Cow::Owned(self.number.to_string()),
+			"name" => Cow::Borrowed(&self.name),
+			_ => panic!("Invalid field: {}", field),
+		}
+	}
+}
+
 #[derive(Serialize, Deserialize)]
 struct Range {
 	start: u16,
@@ -64,6 +76,23 @@ struct ACS {
 	risk: String,
 	url: String,
 	fragment: bool,
+}
+
+impl SortableField for ACS {
+  fn get_field(&self, field: &str) -> Cow<str> {
+    match field {
+      "number" => Cow::Borrowed(&self.number),
+      "name" => Cow::Borrowed(&self.name),
+      "clearance" => Cow::Borrowed(&self.clearance),
+      "contain" => Cow::Borrowed(&self.contain),
+      "secondary" => Cow::Borrowed(&self.secondary),
+      "disrupt" => Cow::Borrowed(&self.disrupt),
+      "risk" => Cow::Borrowed(&self.risk),
+      "url" => Cow::Borrowed(&self.url),
+      "fragment" => Cow::Owned(self.fragment.to_string()),
+      _ => panic!("Invalid field: {}", field),
+    }
+  }
 }
 
 // SCP Names Selectors
@@ -116,17 +145,17 @@ const MAX_LEVEL: u8 = 9;
 //Helper Functions
 fn extract_scp_number(scp_str: &str) -> Option<u16> {
 
-  let cap = SCP_NUM_RE.captures(scp_str)?;
-  
-  let number = match cap[1].parse::<u16>() {
-    Ok(num) => Some(num),
-    Err(e) => {
-      log::error!("Failed to parse SCP number {}: {}", scp_str, e);
-      None
-    }
-  }?;
+	let cap = SCP_NUM_RE.captures(scp_str)?;
+	
+	let number = match cap[1].parse::<u16>() {
+		Ok(num) => Some(num),
+		Err(e) => {
+			log::error!("Failed to parse SCP number {}: {}", scp_str, e);
+			None
+		}
+	}?;
 
-  Some(number)
+	Some(number)
 
 }
 
@@ -229,7 +258,7 @@ async fn request_page(url: &str) -> Result<Option<Html>> {
 
 async fn write_json<T: Serialize>(data: &[T], path: &str) -> Result<()> {
 	let file = File::create(path)?;
-	serde_json::to_writer_pretty(file, data)?;
+	serde_json::to_writer_pretty(file, &data)?;
 	
 	Ok(())
 }
@@ -247,12 +276,12 @@ async fn init_scp_names_json() -> Result<()> {
 	progress_bar_scp_names.set_message("Initializing SCP Info");
 	
 	for series_url in SERIES_URLS.iter() {
-    let document_option = request_page(series_url).await?;
-    if let Some(document) = document_option {
-      let lis = document.select(&LI_SELECTOR);
-      
-      for li in lis {
-        if let Some(link) = li.select(&LINK_SELECTOR).next() {
+		let document_option = request_page(series_url).await?;
+		if let Some(document) = document_option {
+			let lis = document.select(&LI_SELECTOR);
+			
+			for li in lis {
+				if let Some(link) = li.select(&LINK_SELECTOR).next() {
 					let link_url = link.value().attr("href").unwrap_or("");
 					
 					let scp_string = if link_url.to_lowercase().contains("scp-") {
@@ -286,7 +315,7 @@ async fn init_scp_names_json() -> Result<()> {
 		}
 	}
 
-	write_json(&scp_names_vec, "output/scp_names.json").await?;
+	write_json(&sort_json::sort(scp_names_vec, "number"), "output/scp_names.json").await?;
 	progress_bar_scp_names.finish_with_message("SCP Info Initialized");
 	Ok(())
 }
@@ -540,10 +569,10 @@ async fn fetch_and_update_entry(number: u16, name: &str, url: &str, fragment: bo
 }
 
 async fn cross_compare_and_update(limit: u16) -> Result<()> {
-	let acs_bar_backlinks_data = fs::read_to_string("output/acs_bar_backlinks.json").await.expect("Unable to read acs_bar_backlinks.json");
+	let acs_bar_backlinks_data = fs::read_to_string("output/acs_backlinks.json").await.expect("Unable to read acs_backlinks.json");
 	let acs_database_data = fs::read_to_string("output/acs_database.json").await.expect("Unable to read acs_database.json");
 
-	let acs_bar_backlinks: Vec<Value> = serde_json::from_str(&acs_bar_backlinks_data).expect("Error parsing acs_bar_backlinks.json");
+	let acs_bar_backlinks: Vec<Value> = serde_json::from_str(&acs_bar_backlinks_data).expect("Error parsing acs_backlinks.json");
 	let mut acs_database: Vec<Value> = serde_json::from_str(&acs_database_data).expect("Error parsing acs_database.json");
 
 	let semaphore = Arc::new(Semaphore::new(limit.into()));
@@ -706,7 +735,7 @@ async fn main() -> Result<()> {
 			
 		progress_bar.finish_with_message("Done");
 
-		write_json(&acs_data, "output/acs_database.json").await?;		
+		write_json(&sort_json::sort(acs_data, "number"), "output/acs_database.json").await?;		
 	}
 
 	if args.cross {

@@ -3,25 +3,25 @@
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": 7376,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-4"
-  },
-  {
-    "fragment": true,
-    "name": "Qayin and Hevel",
-    "number": 7376,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-1"
   },
   {
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": 7376,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-4"
   },
   {
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": 7376,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-2"
+  },
+  {
+    "fragment": true,
+    "name": "Qayin and Hevel",
+    "number": 7376,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
   },
   {
     "fragment": true,
@@ -115,7 +115,7 @@
   },
   {
     "fragment": false,
-    "name": "CIRCLE",
+    "name": "<strong><tt><span style=\"color: red\">CIRCLE</span></tt></strong>",
     "number": 7650,
     "url": "https://scp-wiki.wikidot.com/scp-7650"
   },
@@ -337,7 +337,7 @@
   },
   {
     "fragment": true,
-    "name": "Knuckerholes",
+    "name": "<strong>Knucker</strong>holes",
     "number": 7088,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7088-1"
   },
@@ -427,19 +427,19 @@
   },
   {
     "fragment": true,
-    "name": "Sisters Forever <3",
+    "name": "<span style=\"color: #f19\">Sisters Forever &lt;3</span>",
     "number": 6535,
     "url": "https://scp-wiki.wikidot.com/fragment:sisters-3"
   },
   {
     "fragment": true,
-    "name": "Sisters Forever <3",
+    "name": "<span style=\"color: #f19\">Sisters Forever &lt;3</span>",
     "number": 6535,
     "url": "https://scp-wiki.wikidot.com/fragment:sisters-4"
   },
   {
     "fragment": true,
-    "name": "Sisters Forever <3",
+    "name": "<span style=\"color: #f19\">Sisters Forever &lt;3</span>",
     "number": 6535,
     "url": "https://scp-wiki.wikidot.com/fragment:sisters-5"
   },
@@ -709,7 +709,7 @@
   },
   {
     "fragment": false,
-    "name": "Elephas cryophilus",
+    "name": "<em>Elephas cryophilus</em>",
     "number": 2082,
     "url": "https://scp-wiki.wikidot.com/scp-2082"
   },
@@ -1105,7 +1105,7 @@
   },
   {
     "fragment": false,
-    "name": "Slot reserved, please do not fill",
+    "name": "<em>Slot reserved, please do not fill</em>",
     "number": 3644,
     "url": "https://scp-wiki.wikidot.com/scp-3644"
   },
@@ -1195,7 +1195,7 @@
   },
   {
     "fragment": false,
-    "name": "Angela Carter Presents: \"The Saltwater Heart\"",
+    "name": "Angela Carter Presents: <em>\"The Saltwater Heart\"</em>",
     "number": 3810,
     "url": "https://scp-wiki.wikidot.com/scp-3810"
   },
@@ -1417,7 +1417,7 @@
   },
   {
     "fragment": false,
-    "name": "Friends Made, and the Void",
+    "name": "Friends Made, and the <strong>Void</strong>",
     "number": 4175,
     "url": "https://scp-wiki.wikidot.com/scp-4175"
   },
@@ -1435,7 +1435,7 @@
   },
   {
     "fragment": false,
-    "name": "Contain the Bismarck!",
+    "name": "Contain the <em>Bismarck</em>!",
     "number": 4217,
     "url": "https://scp-wiki.wikidot.com/scp-4217"
   },
@@ -1837,7 +1837,7 @@
   },
   {
     "fragment": false,
-    "name": "The Changeling",
+    "name": "The Ch<tt>angel</tt>ing",
     "number": 4620,
     "url": "https://scp-wiki.wikidot.com/scp-4620"
   },
@@ -1861,7 +1861,7 @@
   },
   {
     "fragment": false,
-    "name": "Would you know if you were dreaming right now?",
+    "name": "Would you know if you were <em>dreaming</em> right now?",
     "number": 4632,
     "url": "https://scp-wiki.wikidot.com/scp-4632"
   },
@@ -1903,7 +1903,7 @@
   },
   {
     "fragment": false,
-    "name": "the call of the void",
+    "name": "<em>the call of the void</em>",
     "number": 4687,
     "url": "https://scp-wiki.wikidot.com/scp-4687"
   },
@@ -1981,7 +1981,7 @@
   },
   {
     "fragment": false,
-    "name": "Ceto-vimutti: Deliverance From Suffering",
+    "name": "<span><span style=\"font-style: italic;\">Ceto-vimutti:</span> Deliverance From Suffering</span>",
     "number": 4801,
     "url": "https://scp-wiki.wikidot.com/scp-4801"
   },
@@ -2029,7 +2029,7 @@
   },
   {
     "fragment": false,
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions1",
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" href=\"javascript:;\" class=\"footnoteref\">1</a></sup>",
     "number": 4866,
     "url": "https://scp-wiki.wikidot.com/scp-4866"
   },
@@ -2131,7 +2131,7 @@
   },
   {
     "fragment": false,
-    "name": ">So this is how the world ends. Not with a bang, but with a shitpost.",
+    "name": "<strong><tt><span style=\"color: #789922\">&gt;So this is how the world ends. Not with a bang, but with a shitpost.</span></tt></strong>",
     "number": 4991,
     "url": "https://scp-wiki.wikidot.com/scp-4991"
   },
@@ -2155,7 +2155,7 @@
   },
   {
     "fragment": false,
-    "name": "MEGALOMANIA",
+    "name": "<span style=\"color: red\"><strong>MEGALOMANIA</strong></span>",
     "number": 5004,
     "url": "https://scp-wiki.wikidot.com/scp-5004"
   },
@@ -2235,13 +2235,13 @@
     "fragment": true,
     "name": "The Constant Companions",
     "number": 5056,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-0"
   },
   {
     "fragment": true,
     "name": "The Constant Companions",
     "number": 5056,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-1"
   },
   {
     "fragment": false,
@@ -2305,7 +2305,7 @@
   },
   {
     "fragment": false,
-    "name": "Alex? I’m Lonely",
+    "name": "<span style=\"color: red\">Alex?</span> I’m Lonely",
     "number": 5117,
     "url": "https://scp-wiki.wikidot.com/scp-5117"
   },
@@ -2323,7 +2323,7 @@
   },
   {
     "fragment": false,
-    "name": "Eros Bendato",
+    "name": "<span style=\"color: grey\"><tt>Eros Bendato</tt></span>",
     "number": 5122,
     "url": "https://scp-wiki.wikidot.com/scp-5122"
   },
@@ -2401,19 +2401,19 @@
   },
   {
     "fragment": true,
-    "name": "Pattern Screamer, Esq. 💼⚖️",
-    "number": 5170,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-2"
-  },
-  {
-    "fragment": true,
-    "name": "Pattern Screamer, Esq. 💼⚖️",
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": 5170,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-4"
   },
   {
     "fragment": true,
-    "name": "Pattern Screamer, Esq. 💼⚖️",
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
+    "number": 5170,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-2"
+  },
+  {
+    "fragment": true,
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": 5170,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-3"
   },
@@ -2671,7 +2671,7 @@
   },
   {
     "fragment": false,
-    "name": "Vlorschidia",
+    "name": "<tt><strong><em>Vlorschidia</em></strong></tt>",
     "number": 5358,
     "url": "https://scp-wiki.wikidot.com/scp-5358"
   },
@@ -2773,7 +2773,7 @@
   },
   {
     "fragment": false,
-    "name": "Don't. look. up.",
+    "name": "<em>Don't. look. up.</em>",
     "number": 5421,
     "url": "https://scp-wiki.wikidot.com/scp-5421"
   },
@@ -2857,7 +2857,7 @@
   },
   {
     "fragment": false,
-    "name": "An Uncommon Clairvoyant [PENDING]",
+    "name": "<span style=\"text-decoration: line-through;\">An Uncommon Clairvoyant</span> <span style=\"color: blue\">[PENDING]</span>",
     "number": 5467,
     "url": "https://scp-wiki.wikidot.com/scp-5467"
   },
@@ -2905,13 +2905,13 @@
   },
   {
     "fragment": false,
-    "name": "[citation needed]",
+    "name": "<strong><em>[citation needed]</em></strong>",
     "number": 5485,
     "url": "https://scp-wiki.wikidot.com/scp-5485"
   },
   {
     "fragment": false,
-    "name": "Conjunction Immemorial",
+    "name": "<em>Conjunction Immemorial</em>",
     "number": 5486,
     "url": "https://scp-wiki.wikidot.com/scp-5486"
   },
@@ -2923,7 +2923,7 @@
   },
   {
     "fragment": false,
-    "name": "So this is how democracy dies… with thunderous ablobs",
+    "name": "<strong>So this is how democracy dies… with thunderous ablobs</strong>",
     "number": 5493,
     "url": "https://scp-wiki.wikidot.com/scp-5493"
   },
@@ -3135,13 +3135,13 @@
     "fragment": true,
     "name": "The Woman in the Incinerator",
     "number": 5616,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
   },
   {
     "fragment": true,
     "name": "The Woman in the Incinerator",
     "number": 5616,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
   },
   {
     "fragment": false,
@@ -3175,13 +3175,13 @@
   },
   {
     "fragment": false,
-    "name": "This Will Require A Great Amount of Blood",
+    "name": "<span style=\"text-decoration: underline;\">This Will Require A Great Amount of Blood</span>",
     "number": 5633,
     "url": "https://scp-wiki.wikidot.com/scp-5633"
   },
   {
     "fragment": false,
-    "name": "The Agrarian Union of Neche",
+    "name": "<em>The Agrarian Union of Neche</em>",
     "number": 5634,
     "url": "https://scp-wiki.wikidot.com/scp-5634"
   },
@@ -3409,7 +3409,7 @@
   },
   {
     "fragment": false,
-    "name": "Prehistoric Rift",
+    "name": "<span style=\"color: green\">Prehistoric Rift</span>",
     "number": 5745,
     "url": "https://scp-wiki.wikidot.com/scp-5745"
   },
@@ -3445,7 +3445,7 @@
   },
   {
     "fragment": false,
-    "name": "Looking For New Source…",
+    "name": "<strong><em>Looking For New Source…</em></strong>",
     "number": 5755,
     "url": "https://scp-wiki.wikidot.com/scp-5755"
   },
@@ -3487,13 +3487,13 @@
   },
   {
     "fragment": true,
-    "name": "100% MOST DEFINITELY A KETER",
+    "name": "<strong>100% MOST DEFINITELY A KETER</strong>",
     "number": 5776,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5776-1"
   },
   {
     "fragment": true,
-    "name": "100% MOST DEFINITELY A KETER",
+    "name": "<strong>100% MOST DEFINITELY A KETER</strong>",
     "number": 5776,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5776-file-access-granted"
   },
@@ -3505,7 +3505,7 @@
   },
   {
     "fragment": false,
-    "name": "We Watch On (Even When We're Gone)",
+    "name": "We Watch On (<em>Even When We're Gone</em>)",
     "number": 5786,
     "url": "https://scp-wiki.wikidot.com/scp-5786"
   },
@@ -3565,7 +3565,7 @@
   },
   {
     "fragment": false,
-    "name": "The Sweet One",
+    "name": "The <em>Sweet</em> One",
     "number": 5819,
     "url": "https://scp-wiki.wikidot.com/scp-5819"
   },
@@ -3685,7 +3685,7 @@
   },
   {
     "fragment": false,
-    "name": "Praise Unto the Glorious Influenza, the Great and Contagious Religious Influenza",
+    "name": "<span style=\"text-decoration: line-through;\">Praise Unto the Glorious Influenza, the Great and Contagious</span> Religious Influenza",
     "number": 5880,
     "url": "https://scp-wiki.wikidot.com/scp-5880"
   },
@@ -3799,13 +3799,13 @@
   },
   {
     "fragment": true,
-    "name": "THEREISNOCANNON",
+    "name": "<strong><span style=\"color: red\">THEREISNOCANNON</span></strong>",
     "number": 5956,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5956-1"
   },
   {
     "fragment": true,
-    "name": "THEREISNOCANNON",
+    "name": "<strong><span style=\"color: red\">THEREISNOCANNON</span></strong>",
     "number": 5956,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5956-2"
   },
@@ -3829,7 +3829,7 @@
   },
   {
     "fragment": false,
-    "name": "Toxicity",
+    "name": "<span style=\"color: purple\">Toxicity</span>",
     "number": 5978,
     "url": "https://scp-wiki.wikidot.com/scp-5978"
   },
@@ -3961,7 +3961,7 @@
   },
   {
     "fragment": false,
-    "name": "A ‘Helpful’ Forest, A Giant Sponge and A Lot of Axolotls",
+    "name": "<span style=\"color: #570\">A ‘Helpful’ Forest, A Giant Sponge and A Lot of Axolotls</span>",
     "number": 6044,
     "url": "https://scp-wiki.wikidot.com/scp-6044"
   },
@@ -4003,7 +4003,7 @@
   },
   {
     "fragment": false,
-    "name": "Havsvågor",
+    "name": "<span style=\"color: #01f\"><strong>Havsvågor</strong></span>",
     "number": 6055,
     "url": "https://scp-wiki.wikidot.com/scp-6055"
   },
@@ -4033,7 +4033,7 @@
   },
   {
     "fragment": false,
-    "name": "EPITHET",
+    "name": "<span style=\"color: #e12\"><strong>EPITHET</strong></span>",
     "number": 6063,
     "url": "https://scp-wiki.wikidot.com/scp-6063"
   },
@@ -4057,13 +4057,13 @@
   },
   {
     "fragment": true,
-    "name": "His Throne",
+    "name": "<em>His Throne</em>",
     "number": 6082,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-2"
   },
   {
     "fragment": true,
-    "name": "His Throne",
+    "name": "<em>His Throne</em>",
     "number": 6082,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-1"
   },
@@ -4287,13 +4287,13 @@
     "fragment": true,
     "name": "Fortune",
     "number": 6153,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-a"
   },
   {
     "fragment": true,
     "name": "Fortune",
     "number": 6153,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-a"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
   },
   {
     "fragment": false,
@@ -4459,7 +4459,7 @@
   },
   {
     "fragment": false,
-    "name": "We most certainly had to… Bug you.",
+    "name": "We most certainly had to… <em>Bug</em> you.",
     "number": 6220,
     "url": "https://scp-wiki.wikidot.com/scp-6220"
   },
@@ -4501,7 +4501,7 @@
   },
   {
     "fragment": false,
-    "name": "Ribbits & Cream",
+    "name": "Ribbits &amp; Cream",
     "number": 6231,
     "url": "https://scp-wiki.wikidot.com/scp-6231"
   },
@@ -4513,7 +4513,7 @@
   },
   {
     "fragment": false,
-    "name": "SAFETY HAZARD",
+    "name": "<strong>SAFETY HAZARD</strong>",
     "number": 6233,
     "url": "https://scp-wiki.wikidot.com/scp-6233"
   },
@@ -4597,7 +4597,7 @@
   },
   {
     "fragment": false,
-    "name": "Don't Follow the Light",
+    "name": "<span style=\"text-decoration: line-through;\">Don't</span> Follow the <em>Light</em>",
     "number": 6258,
     "url": "https://scp-wiki.wikidot.com/scp-6258"
   },
@@ -4711,7 +4711,7 @@
   },
   {
     "fragment": false,
-    "name": "An Amaranthine Clock",
+    "name": "<span style=\"color: #545\">An Amaranthine Clock</span>",
     "number": 6304,
     "url": "https://scp-wiki.wikidot.com/scp-6304"
   },
@@ -4837,13 +4837,13 @@
   },
   {
     "fragment": false,
-    "name": "Codename:Sandpaper",
+    "name": "<span style=\"background: #222; color: #eee; padding: 1px 4px;\"><strong>Codename:Sandpaper</strong></span>",
     "number": 6356,
     "url": "https://scp-wiki.wikidot.com/scp-6356"
   },
   {
     "fragment": false,
-    "name": "MESSIAH",
+    "name": "<strong><span style=\"color: #c13\">MESSIAH</span></strong>",
     "number": 6358,
     "url": "https://scp-wiki.wikidot.com/scp-6358"
   },
@@ -4861,7 +4861,7 @@
   },
   {
     "fragment": false,
-    "name": "⬢ Hexagons are the Bestagons! ⬢",
+    "name": "<span style=\"font-size: 145%;\">⬢</span> Hexagons <em>are</em> the Bestagons! <span style=\"font-size: 145%;\">⬢</span>",
     "number": 6364,
     "url": "https://scp-wiki.wikidot.com/scp-6364"
   },
@@ -4987,7 +4987,7 @@
   },
   {
     "fragment": false,
-    "name": "The Undead Robot that lives Underneath Crete in Site-237's Basement",
+    "name": "The Undead Robot that lives <span style=\"text-decoration: line-through;\">Underneath Crete</span> in Site-237's Basement",
     "number": 6403,
     "url": "https://scp-wiki.wikidot.com/scp-6403"
   },
@@ -5245,7 +5245,7 @@
   },
   {
     "fragment": false,
-    "name": "EIGHTH COMMANDMENT",
+    "name": "<strong><span style=\"color: #1dc\">EIGHTH COMMANDMENT</span></strong>",
     "number": 6488,
     "url": "https://scp-wiki.wikidot.com/scp-6488"
   },
@@ -5269,21 +5269,21 @@
   },
   {
     "fragment": true,
-    "name": "Weight of Pressure",
-    "number": 6494,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-3"
-  },
-  {
-    "fragment": true,
-    "name": "Weight of Pressure",
+    "name": "<tt>Weight of Pressure</tt>",
     "number": 6494,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-1"
   },
   {
     "fragment": true,
-    "name": "Weight of Pressure",
+    "name": "<tt>Weight of Pressure</tt>",
     "number": 6494,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-2"
+  },
+  {
+    "fragment": true,
+    "name": "<tt>Weight of Pressure</tt>",
+    "number": 6494,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-3"
   },
   {
     "fragment": false,
@@ -5311,7 +5311,7 @@
   },
   {
     "fragment": false,
-    "name": "⚠ REMAIN CALM ⚠",
+    "name": "<span style=\"color: #e12\"><strong>⚠ REMAIN CALM ⚠</strong></span>",
     "number": 6499,
     "url": "https://scp-wiki.wikidot.com/scp-6499"
   },
@@ -5413,7 +5413,7 @@
   },
   {
     "fragment": false,
-    "name": "Build-a-Boar Workshop!",
+    "name": "<span style=\"color: #800\">Build-a-Boar Workshop!</span>",
     "number": 6566,
     "url": "https://scp-wiki.wikidot.com/scp-6566"
   },
@@ -5623,13 +5623,13 @@
   },
   {
     "fragment": false,
-    "name": "The \"Curse\" of The Scottish Play",
+    "name": "The \"Curse\" of The <em>Scottish Play</em>",
     "number": 6640,
     "url": "https://scp-wiki.wikidot.com/scp-6640"
   },
   {
     "fragment": false,
-    "name": "Who Needs Wake-Up Calls When You Got ARM",
+    "name": "Who Needs Wake-Up Calls When You Got <strong><em>ARM</em></strong>",
     "number": 6641,
     "url": "https://scp-wiki.wikidot.com/scp-6641"
   },
@@ -5647,7 +5647,7 @@
   },
   {
     "fragment": false,
-    "name": "Foundationi yiputius",
+    "name": "<em>Foundationi yiputius</em>",
     "number": 6644,
     "url": "https://scp-wiki.wikidot.com/scp-6644"
   },
@@ -5707,7 +5707,7 @@
   },
   {
     "fragment": false,
-    "name": "METAGNOSTIC",
+    "name": "<strong><span style=\"color: #f71\">METAGNOSTIC</span></strong>",
     "number": 6659,
     "url": "https://scp-wiki.wikidot.com/scp-6659"
   },
@@ -5761,7 +5761,7 @@
   },
   {
     "fragment": false,
-    "name": "\"Mama?\"",
+    "name": "<em>\"Mama?\"</em>",
     "number": 6670,
     "url": "https://scp-wiki.wikidot.com/scp-6670"
   },
@@ -5923,7 +5923,7 @@
   },
   {
     "fragment": false,
-    "name": "CHAOS THEORY",
+    "name": "<strong><span style=\"color: #97b\">CHAOS THEORY</span></strong>",
     "number": 6747,
     "url": "https://scp-wiki.wikidot.com/scp-6747"
   },
@@ -6031,7 +6031,7 @@
   },
   {
     "fragment": false,
-    "name": "E",
+    "name": "<span style=\"font-size:120%;\">E</span>",
     "number": 6775,
     "url": "https://scp-wiki.wikidot.com/scp-6775"
   },
@@ -6061,7 +6061,7 @@
   },
   {
     "fragment": false,
-    "name": "Well, well, well, that advice is very handy!",
+    "name": "<strong>Well, well, well</strong>, that advice is very <strong>handy</strong>!",
     "number": 6797,
     "url": "https://scp-wiki.wikidot.com/scp-6797"
   },
@@ -6103,7 +6103,7 @@
   },
   {
     "fragment": false,
-    "name": "TERMINATION ATTEMPT",
+    "name": "<span style=\"color: #e12\"><strong>TERMINATION ATTEMPT</strong></span>",
     "number": 6820,
     "url": "https://scp-wiki.wikidot.com/scp-6820"
   },
@@ -6121,7 +6121,7 @@
   },
   {
     "fragment": false,
-    "name": "SKIRTINGBOARDWORLD.",
+    "name": "<strong>SKIRTINGBOARDWORLD.</strong>",
     "number": 6831,
     "url": "https://scp-wiki.wikidot.com/scp-6831"
   },
@@ -6193,7 +6193,7 @@
   },
   {
     "fragment": false,
-    "name": "No Need to Wine",
+    "name": "<em>No Need to Wine</em>",
     "number": 6855,
     "url": "https://scp-wiki.wikidot.com/scp-6855"
   },
@@ -6391,7 +6391,7 @@
   },
   {
     "fragment": false,
-    "name": "UNAUTHORIZED DATABASE ENTRY",
+    "name": "<strong>UNAUTHORIZED DATABASE ENTRY</strong>",
     "number": 6953,
     "url": "https://scp-wiki.wikidot.com/scp-6953"
   },
@@ -6469,19 +6469,19 @@
   },
   {
     "fragment": true,
-    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by Goldbaker-Reinz Ltd.)",
+    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by <span style=\"color: #bb6\"><strong><em>Goldbaker-Reinz Ltd.</em></strong></span>)",
     "number": 6987,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6987-0"
   },
   {
     "fragment": true,
-    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by Goldbaker-Reinz Ltd.)",
+    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by <span style=\"color: #bb6\"><strong><em>Goldbaker-Reinz Ltd.</em></strong></span>)",
     "number": 6987,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6987-1"
   },
   {
     "fragment": true,
-    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by Goldbaker-Reinz Ltd.)",
+    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by <span style=\"color: #bb6\"><strong><em>Goldbaker-Reinz Ltd.</em></strong></span>)",
     "number": 6987,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6987-2"
   },
@@ -6499,7 +6499,7 @@
   },
   {
     "fragment": false,
-    "name": "Does the Red Moon Howl?",
+    "name": "<span style=\"color: #e12\"><strong>Does the Red Moon Howl?</strong></span>",
     "number": 6996,
     "url": "https://scp-wiki.wikidot.com/scp-6996"
   },
@@ -6817,7 +6817,7 @@
   },
   {
     "fragment": false,
-    "name": "Cawsing Cawllateral Damage",
+    "name": "Adopt Me!",
     "number": 7121,
     "url": "https://scp-wiki.wikidot.com/scp-7121"
   },
@@ -6889,7 +6889,7 @@
   },
   {
     "fragment": false,
-    "name": "unremarkable.",
+    "name": "<em>unremarkable.</em>",
     "number": 7155,
     "url": "https://scp-wiki.wikidot.com/scp-7155"
   },
@@ -7027,13 +7027,13 @@
   },
   {
     "fragment": false,
-    "name": "BRAND NEW JOB.",
+    "name": "<span style=\"color: red\">BRAND NEW JOB.</span>",
     "number": 7209,
     "url": "https://scp-wiki.wikidot.com/scp-7209"
   },
   {
     "fragment": false,
-    "name": "𝓕𝓸𝓻 𝓷𝓸𝔀 𝓪𝓷𝓭 𝓷𝓮𝓿𝓮𝓻 𝓪𝓰𝓪𝓲𝓷.",
+    "name": "<span style=\"color:#a6433a;\">𝓕𝓸𝓻 𝓷𝓸𝔀 𝓪𝓷𝓭 𝓷𝓮𝓿𝓮𝓻 𝓪𝓰𝓪𝓲𝓷.</span>",
     "number": 7210,
     "url": "https://scp-wiki.wikidot.com/scp-7210"
   },
@@ -7081,31 +7081,31 @@
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-0"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-1"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-2"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-3"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-4"
   },
@@ -7285,7 +7285,7 @@
   },
   {
     "fragment": false,
-    "name": "a witness",
+    "name": "<tt>a witness</tt>",
     "number": 7305,
     "url": "https://scp-wiki.wikidot.com/scp-7305"
   },
@@ -7383,31 +7383,7 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-7"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-8"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": 7345,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-2"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-6"
   },
   {
     "fragment": true,
@@ -7419,7 +7395,31 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": 7345,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-2"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": 7345,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-7"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": 7345,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-4"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": 7345,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-8"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": 7345,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-6"
   },
   {
     "fragment": false,
@@ -7441,7 +7441,7 @@
   },
   {
     "fragment": false,
-    "name": "Screamy.aic",
+    "name": "<strong>Screamy.aic</strong>",
     "number": 7373,
     "url": "https://scp-wiki.wikidot.com/scp-7373"
   },
@@ -7465,7 +7465,7 @@
   },
   {
     "fragment": false,
-    "name": "The Poor Get Poorer",
+    "name": "<span style=\"color: green\"><strong>The Poor Get Poorer</strong></span>",
     "number": 7391,
     "url": "https://scp-wiki.wikidot.com/scp-7391"
   },
@@ -7615,7 +7615,7 @@
   },
   {
     "fragment": false,
-    "name": "Aphrodite, Goddess of Love Isaac",
+    "name": "<span style=\"text-decoration: line-through;\">Aphrodite, Goddess of Love</span> Isaac",
     "number": 7454,
     "url": "https://scp-wiki.wikidot.com/scp-7454"
   },
@@ -7633,7 +7633,7 @@
   },
   {
     "fragment": false,
-    "name": "They're chewing through my skin and they won't stop.",
+    "name": "They're chewing through my skin and they won't <em>stop.</em>",
     "number": 7464,
     "url": "https://scp-wiki.wikidot.com/scp-7464"
   },
@@ -7753,7 +7753,7 @@
   },
   {
     "fragment": false,
-    "name": "Karma's a bitch spiteful and unpleasant individual",
+    "name": "Karma's a <span style=\"text-decoration: line-through;\">bitch</span> spiteful and unpleasant individual",
     "number": 7520,
     "url": "https://scp-wiki.wikidot.com/scp-7520"
   },
@@ -7837,7 +7837,7 @@
   },
   {
     "fragment": false,
-    "name": "ATHAZAGORAPHOBIA",
+    "name": "<span style=\"color: transparent\"><strong>ATHAZAGORAPHOBIA</strong></span>",
     "number": 7555,
     "url": "https://scp-wiki.wikidot.com/scp-7555"
   },
@@ -7891,7 +7891,7 @@
   },
   {
     "fragment": false,
-    "name": "The Sun's Avatar",
+    "name": "<em><strong>The Sun's Avatar</strong></em>",
     "number": 7588,
     "url": "https://scp-wiki.wikidot.com/scp-7588"
   },
@@ -8101,7 +8101,7 @@
   },
   {
     "fragment": false,
-    "name": "Census Bureau Foam Form",
+    "name": "Census Bureau <span style=\"text-decoration: line-through;\">Foam</span> Form",
     "number": 7671,
     "url": "https://scp-wiki.wikidot.com/scp-7671"
   },
@@ -8125,7 +8125,7 @@
   },
   {
     "fragment": false,
-    "name": "Journey for Belonging: The Death of Chuck Storms",
+    "name": "<strong>Journey for Belonging:</strong> The Death of Chuck Storms",
     "number": 7679,
     "url": "https://scp-wiki.wikidot.com/scp-7679"
   },
@@ -8149,7 +8149,7 @@
   },
   {
     "fragment": false,
-    "name": "Center for Enhanced Wellbeing",
+    "name": "<span style=\"color: green\"><strong>Center for Enhanced Wellbeing</strong></span>",
     "number": 7697,
     "url": "https://scp-wiki.wikidot.com/scp-7697"
   },
@@ -8197,7 +8197,7 @@
   },
   {
     "fragment": false,
-    "name": "Green with Envy",
+    "name": "<strong><span style=\"color: green\">Green with Envy</span></strong>",
     "number": 7713,
     "url": "https://scp-wiki.wikidot.com/scp-7713"
   },
@@ -8263,7 +8263,7 @@
   },
   {
     "fragment": false,
-    "name": "Steven Y. Hayes does not exist.",
+    "name": "Steven Y. Hayes does <strong>not</strong> exist.",
     "number": 7757,
     "url": "https://scp-wiki.wikidot.com/scp-7757"
   },
@@ -8305,7 +8305,7 @@
   },
   {
     "fragment": false,
-    "name": "My Eyes Shall Watch",
+    "name": "<strong><span style=\"color: maroon\">My Eyes Shall Watch</span></strong>",
     "number": 7797,
     "url": "https://scp-wiki.wikidot.com/scp-7797"
   },
@@ -8371,7 +8371,7 @@
   },
   {
     "fragment": false,
-    "name": "Holes in My Mind",
+    "name": "<em>Holes in My Mind</em>",
     "number": 7826,
     "url": "https://scp-wiki.wikidot.com/scp-7826"
   },
@@ -8497,7 +8497,7 @@
   },
   {
     "fragment": false,
-    "name": "FRAGMENTS OF A BROKEN PLANET",
+    "name": "<span style=\"color: #01f\"><strong>FRAGMENTS OF A BROKEN PLANET</strong></span>",
     "number": 7905,
     "url": "https://scp-wiki.wikidot.com/scp-7905"
   },
@@ -8659,7 +8659,7 @@
   },
   {
     "fragment": false,
-    "name": "NO OUTLETs",
+    "name": "<strong>NO OUTLET</strong><em>s</em>",
     "number": 7979,
     "url": "https://scp-wiki.wikidot.com/scp-7979"
   },
@@ -8755,7 +8755,7 @@
   },
   {
     "fragment": false,
-    "name": "SCP-INTEGER",
+    "name": "<span style=\"color: blue\">SCP-INTEGER</span>",
     "number": 5242,
     "url": "https://scp-wiki.wikidot.com/scp-5242"
   },
@@ -8851,7 +8851,7 @@
   },
   {
     "fragment": false,
-    "name": "Mind-Milk™ by Moosphere, Inc.",
+    "name": "<span style=\"color: #407fbf\"><strong>Mind-Milk™ by Moosphere, Inc.</strong></span>",
     "number": 3739,
     "url": "https://scp-wiki.wikidot.com/scp-3739"
   },
@@ -8893,7 +8893,7 @@
   },
   {
     "fragment": false,
-    "name": "That Alien Message",
+    "name": "<span style=\"color: #0000FF;font-family: &quot;Microsoft Serif&quot;;\"><strong>That Alien Message</strong></span>",
     "number": 5241,
     "url": "https://scp-wiki.wikidot.com/scp-5241"
   },
@@ -9049,7 +9049,7 @@
   },
   {
     "fragment": true,
-    "name": "Initiative",
+    "name": "<span style=\"color: green\">Initiative</span>",
     "number": 7006,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7006-1"
   },
@@ -9067,7 +9067,7 @@
   },
   {
     "fragment": false,
-    "name": "The Changeling",
+    "name": "The Ch<tt>angel</tt>ing",
     "number": 4620,
     "url": "https://scp-wiki.wikidot.com/scp-4620"
   },
@@ -9121,7 +9121,7 @@
   },
   {
     "fragment": false,
-    "name": "An Unfinished Masterpiece",
+    "name": "<em>An Unfinished Masterpiece</em>",
     "number": 6280,
     "url": "https://scp-wiki.wikidot.com/scp-6280"
   },
@@ -9169,7 +9169,7 @@
   },
   {
     "fragment": false,
-    "name": "Foundationi yiputius",
+    "name": "<em>Foundationi yiputius</em>",
     "number": 6644,
     "url": "https://scp-wiki.wikidot.com/scp-6644"
   },
@@ -9303,25 +9303,25 @@
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": 7376,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
-  },
-  {
-    "fragment": true,
-    "name": "Qayin and Hevel",
-    "number": 7376,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-4"
   },
   {
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": 7376,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-1"
   },
   {
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": 7376,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
+  },
+  {
+    "fragment": true,
+    "name": "Qayin and Hevel",
+    "number": 7376,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-2"
   },
   {
     "fragment": true,
@@ -9415,7 +9415,7 @@
   },
   {
     "fragment": false,
-    "name": "CIRCLE",
+    "name": "<strong><tt><span style=\"color: red\">CIRCLE</span></tt></strong>",
     "number": 7650,
     "url": "https://scp-wiki.wikidot.com/scp-7650"
   },
@@ -9637,7 +9637,7 @@
   },
   {
     "fragment": true,
-    "name": "Knuckerholes",
+    "name": "<strong>Knucker</strong>holes",
     "number": 7088,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7088-1"
   },
@@ -9727,19 +9727,19 @@
   },
   {
     "fragment": true,
-    "name": "Sisters Forever <3",
+    "name": "<span style=\"color: #f19\">Sisters Forever &lt;3</span>",
     "number": 6535,
     "url": "https://scp-wiki.wikidot.com/fragment:sisters-3"
   },
   {
     "fragment": true,
-    "name": "Sisters Forever <3",
+    "name": "<span style=\"color: #f19\">Sisters Forever &lt;3</span>",
     "number": 6535,
     "url": "https://scp-wiki.wikidot.com/fragment:sisters-4"
   },
   {
     "fragment": true,
-    "name": "Sisters Forever <3",
+    "name": "<span style=\"color: #f19\">Sisters Forever &lt;3</span>",
     "number": 6535,
     "url": "https://scp-wiki.wikidot.com/fragment:sisters-5"
   },
@@ -10009,7 +10009,7 @@
   },
   {
     "fragment": false,
-    "name": "Elephas cryophilus",
+    "name": "<em>Elephas cryophilus</em>",
     "number": 2082,
     "url": "https://scp-wiki.wikidot.com/scp-2082"
   },
@@ -10405,7 +10405,7 @@
   },
   {
     "fragment": false,
-    "name": "Slot reserved, please do not fill",
+    "name": "<em>Slot reserved, please do not fill</em>",
     "number": 3644,
     "url": "https://scp-wiki.wikidot.com/scp-3644"
   },
@@ -10495,7 +10495,7 @@
   },
   {
     "fragment": false,
-    "name": "Angela Carter Presents: \"The Saltwater Heart\"",
+    "name": "Angela Carter Presents: <em>\"The Saltwater Heart\"</em>",
     "number": 3810,
     "url": "https://scp-wiki.wikidot.com/scp-3810"
   },
@@ -10717,7 +10717,7 @@
   },
   {
     "fragment": false,
-    "name": "Friends Made, and the Void",
+    "name": "Friends Made, and the <strong>Void</strong>",
     "number": 4175,
     "url": "https://scp-wiki.wikidot.com/scp-4175"
   },
@@ -10735,7 +10735,7 @@
   },
   {
     "fragment": false,
-    "name": "Contain the Bismarck!",
+    "name": "Contain the <em>Bismarck</em>!",
     "number": 4217,
     "url": "https://scp-wiki.wikidot.com/scp-4217"
   },
@@ -11137,7 +11137,7 @@
   },
   {
     "fragment": false,
-    "name": "The Changeling",
+    "name": "The Ch<tt>angel</tt>ing",
     "number": 4620,
     "url": "https://scp-wiki.wikidot.com/scp-4620"
   },
@@ -11161,7 +11161,7 @@
   },
   {
     "fragment": false,
-    "name": "Would you know if you were dreaming right now?",
+    "name": "Would you know if you were <em>dreaming</em> right now?",
     "number": 4632,
     "url": "https://scp-wiki.wikidot.com/scp-4632"
   },
@@ -11203,7 +11203,7 @@
   },
   {
     "fragment": false,
-    "name": "the call of the void",
+    "name": "<em>the call of the void</em>",
     "number": 4687,
     "url": "https://scp-wiki.wikidot.com/scp-4687"
   },
@@ -11281,7 +11281,7 @@
   },
   {
     "fragment": false,
-    "name": "Ceto-vimutti: Deliverance From Suffering",
+    "name": "<span><span style=\"font-style: italic;\">Ceto-vimutti:</span> Deliverance From Suffering</span>",
     "number": 4801,
     "url": "https://scp-wiki.wikidot.com/scp-4801"
   },
@@ -11329,7 +11329,7 @@
   },
   {
     "fragment": false,
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions1",
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" class=\"footnoteref\">1</a></sup>",
     "number": 4866,
     "url": "https://scp-wiki.wikidot.com/scp-4866"
   },
@@ -11431,7 +11431,7 @@
   },
   {
     "fragment": false,
-    "name": ">So this is how the world ends. Not with a bang, but with a shitpost.",
+    "name": "<strong><tt><span style=\"color: #789922\">&gt;So this is how the world ends. Not with a bang, but with a shitpost.</span></tt></strong>",
     "number": 4991,
     "url": "https://scp-wiki.wikidot.com/scp-4991"
   },
@@ -11455,7 +11455,7 @@
   },
   {
     "fragment": false,
-    "name": "MEGALOMANIA",
+    "name": "<span style=\"color: red\"><strong>MEGALOMANIA</strong></span>",
     "number": 5004,
     "url": "https://scp-wiki.wikidot.com/scp-5004"
   },
@@ -11535,13 +11535,13 @@
     "fragment": true,
     "name": "The Constant Companions",
     "number": 5056,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-1"
   },
   {
     "fragment": true,
     "name": "The Constant Companions",
     "number": 5056,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-0"
   },
   {
     "fragment": false,
@@ -11605,7 +11605,7 @@
   },
   {
     "fragment": false,
-    "name": "Alex? I’m Lonely",
+    "name": "<span style=\"color: red\">Alex?</span> I’m Lonely",
     "number": 5117,
     "url": "https://scp-wiki.wikidot.com/scp-5117"
   },
@@ -11623,7 +11623,7 @@
   },
   {
     "fragment": false,
-    "name": "Eros Bendato",
+    "name": "<span style=\"color: grey\"><tt>Eros Bendato</tt></span>",
     "number": 5122,
     "url": "https://scp-wiki.wikidot.com/scp-5122"
   },
@@ -11701,19 +11701,19 @@
   },
   {
     "fragment": true,
-    "name": "Pattern Screamer, Esq. 💼⚖️",
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": 5170,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-3"
   },
   {
     "fragment": true,
-    "name": "Pattern Screamer, Esq. 💼⚖️",
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": 5170,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-2"
   },
   {
     "fragment": true,
-    "name": "Pattern Screamer, Esq. 💼⚖️",
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": 5170,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-4"
   },
@@ -11971,7 +11971,7 @@
   },
   {
     "fragment": false,
-    "name": "Vlorschidia",
+    "name": "<tt><strong><em>Vlorschidia</em></strong></tt>",
     "number": 5358,
     "url": "https://scp-wiki.wikidot.com/scp-5358"
   },
@@ -12073,7 +12073,7 @@
   },
   {
     "fragment": false,
-    "name": "Don't. look. up.",
+    "name": "<em>Don't. look. up.</em>",
     "number": 5421,
     "url": "https://scp-wiki.wikidot.com/scp-5421"
   },
@@ -12157,7 +12157,7 @@
   },
   {
     "fragment": false,
-    "name": "An Uncommon Clairvoyant [PENDING]",
+    "name": "<span style=\"text-decoration: line-through;\">An Uncommon Clairvoyant</span> <span style=\"color: blue\">[PENDING]</span>",
     "number": 5467,
     "url": "https://scp-wiki.wikidot.com/scp-5467"
   },
@@ -12205,13 +12205,13 @@
   },
   {
     "fragment": false,
-    "name": "[citation needed]",
+    "name": "<strong><em>[citation needed]</em></strong>",
     "number": 5485,
     "url": "https://scp-wiki.wikidot.com/scp-5485"
   },
   {
     "fragment": false,
-    "name": "Conjunction Immemorial",
+    "name": "<em>Conjunction Immemorial</em>",
     "number": 5486,
     "url": "https://scp-wiki.wikidot.com/scp-5486"
   },
@@ -12223,7 +12223,7 @@
   },
   {
     "fragment": false,
-    "name": "So this is how democracy dies… with thunderous ablobs",
+    "name": "<strong>So this is how democracy dies… with thunderous ablobs</strong>",
     "number": 5493,
     "url": "https://scp-wiki.wikidot.com/scp-5493"
   },
@@ -12435,13 +12435,13 @@
     "fragment": true,
     "name": "The Woman in the Incinerator",
     "number": 5616,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
   },
   {
     "fragment": true,
     "name": "The Woman in the Incinerator",
     "number": 5616,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
   },
   {
     "fragment": false,
@@ -12475,13 +12475,13 @@
   },
   {
     "fragment": false,
-    "name": "This Will Require A Great Amount of Blood",
+    "name": "<span style=\"text-decoration: underline;\">This Will Require A Great Amount of Blood</span>",
     "number": 5633,
     "url": "https://scp-wiki.wikidot.com/scp-5633"
   },
   {
     "fragment": false,
-    "name": "The Agrarian Union of Neche",
+    "name": "<em>The Agrarian Union of Neche</em>",
     "number": 5634,
     "url": "https://scp-wiki.wikidot.com/scp-5634"
   },
@@ -12709,7 +12709,7 @@
   },
   {
     "fragment": false,
-    "name": "Prehistoric Rift",
+    "name": "<span style=\"color: green\">Prehistoric Rift</span>",
     "number": 5745,
     "url": "https://scp-wiki.wikidot.com/scp-5745"
   },
@@ -12745,7 +12745,7 @@
   },
   {
     "fragment": false,
-    "name": "Looking For New Source…",
+    "name": "<strong><em>Looking For New Source…</em></strong>",
     "number": 5755,
     "url": "https://scp-wiki.wikidot.com/scp-5755"
   },
@@ -12787,13 +12787,13 @@
   },
   {
     "fragment": true,
-    "name": "100% MOST DEFINITELY A KETER",
+    "name": "<strong>100% MOST DEFINITELY A KETER</strong>",
     "number": 5776,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5776-1"
   },
   {
     "fragment": true,
-    "name": "100% MOST DEFINITELY A KETER",
+    "name": "<strong>100% MOST DEFINITELY A KETER</strong>",
     "number": 5776,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5776-file-access-granted"
   },
@@ -12805,7 +12805,7 @@
   },
   {
     "fragment": false,
-    "name": "We Watch On (Even When We're Gone)",
+    "name": "We Watch On (<em>Even When We're Gone</em>)",
     "number": 5786,
     "url": "https://scp-wiki.wikidot.com/scp-5786"
   },
@@ -12865,7 +12865,7 @@
   },
   {
     "fragment": false,
-    "name": "The Sweet One",
+    "name": "The <em>Sweet</em> One",
     "number": 5819,
     "url": "https://scp-wiki.wikidot.com/scp-5819"
   },
@@ -12985,7 +12985,7 @@
   },
   {
     "fragment": false,
-    "name": "Praise Unto the Glorious Influenza, the Great and Contagious Religious Influenza",
+    "name": "<span style=\"text-decoration: line-through;\">Praise Unto the Glorious Influenza, the Great and Contagious</span> Religious Influenza",
     "number": 5880,
     "url": "https://scp-wiki.wikidot.com/scp-5880"
   },
@@ -13099,13 +13099,13 @@
   },
   {
     "fragment": true,
-    "name": "THEREISNOCANNON",
+    "name": "<strong><span style=\"color: red\">THEREISNOCANNON</span></strong>",
     "number": 5956,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5956-1"
   },
   {
     "fragment": true,
-    "name": "THEREISNOCANNON",
+    "name": "<strong><span style=\"color: red\">THEREISNOCANNON</span></strong>",
     "number": 5956,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5956-2"
   },
@@ -13129,7 +13129,7 @@
   },
   {
     "fragment": false,
-    "name": "Toxicity",
+    "name": "<span style=\"color: purple\">Toxicity</span>",
     "number": 5978,
     "url": "https://scp-wiki.wikidot.com/scp-5978"
   },
@@ -13239,13 +13239,13 @@
     "fragment": true,
     "name": "A Warfare Innovation",
     "number": 6038,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-3"
   },
   {
     "fragment": true,
     "name": "A Warfare Innovation",
     "number": 6038,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-3"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-2"
   },
   {
     "fragment": false,
@@ -13261,7 +13261,7 @@
   },
   {
     "fragment": false,
-    "name": "A ‘Helpful’ Forest, A Giant Sponge and A Lot of Axolotls",
+    "name": "<span style=\"color: #570\">A ‘Helpful’ Forest, A Giant Sponge and A Lot of Axolotls</span>",
     "number": 6044,
     "url": "https://scp-wiki.wikidot.com/scp-6044"
   },
@@ -13303,7 +13303,7 @@
   },
   {
     "fragment": false,
-    "name": "Havsvågor",
+    "name": "<span style=\"color: #01f\"><strong>Havsvågor</strong></span>",
     "number": 6055,
     "url": "https://scp-wiki.wikidot.com/scp-6055"
   },
@@ -13333,7 +13333,7 @@
   },
   {
     "fragment": false,
-    "name": "EPITHET",
+    "name": "<span style=\"color: #e12\"><strong>EPITHET</strong></span>",
     "number": 6063,
     "url": "https://scp-wiki.wikidot.com/scp-6063"
   },
@@ -13357,13 +13357,13 @@
   },
   {
     "fragment": true,
-    "name": "His Throne",
+    "name": "<em>His Throne</em>",
     "number": 6082,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-2"
   },
   {
     "fragment": true,
-    "name": "His Throne",
+    "name": "<em>His Throne</em>",
     "number": 6082,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-1"
   },
@@ -13581,13 +13581,13 @@
     "fragment": true,
     "name": "Fortune",
     "number": 6153,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-b"
   },
   {
     "fragment": true,
     "name": "Fortune",
     "number": 6153,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-b"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
   },
   {
     "fragment": true,
@@ -13759,7 +13759,7 @@
   },
   {
     "fragment": false,
-    "name": "We most certainly had to… Bug you.",
+    "name": "We most certainly had to… <em>Bug</em> you.",
     "number": 6220,
     "url": "https://scp-wiki.wikidot.com/scp-6220"
   },
@@ -13801,7 +13801,7 @@
   },
   {
     "fragment": false,
-    "name": "Ribbits & Cream",
+    "name": "Ribbits &amp; Cream",
     "number": 6231,
     "url": "https://scp-wiki.wikidot.com/scp-6231"
   },
@@ -13813,7 +13813,7 @@
   },
   {
     "fragment": false,
-    "name": "SAFETY HAZARD",
+    "name": "<strong>SAFETY HAZARD</strong>",
     "number": 6233,
     "url": "https://scp-wiki.wikidot.com/scp-6233"
   },
@@ -13897,7 +13897,7 @@
   },
   {
     "fragment": false,
-    "name": "Don't Follow the Light",
+    "name": "<span style=\"text-decoration: line-through;\">Don't</span> Follow the <em>Light</em>",
     "number": 6258,
     "url": "https://scp-wiki.wikidot.com/scp-6258"
   },
@@ -14011,7 +14011,7 @@
   },
   {
     "fragment": false,
-    "name": "An Amaranthine Clock",
+    "name": "<span style=\"color: #545\">An Amaranthine Clock</span>",
     "number": 6304,
     "url": "https://scp-wiki.wikidot.com/scp-6304"
   },
@@ -14137,13 +14137,13 @@
   },
   {
     "fragment": false,
-    "name": "Codename:Sandpaper",
+    "name": "<span style=\"background: #222; color: #eee; padding: 1px 4px;\"><strong>Codename:Sandpaper</strong></span>",
     "number": 6356,
     "url": "https://scp-wiki.wikidot.com/scp-6356"
   },
   {
     "fragment": false,
-    "name": "MESSIAH",
+    "name": "<strong><span style=\"color: #c13\">MESSIAH</span></strong>",
     "number": 6358,
     "url": "https://scp-wiki.wikidot.com/scp-6358"
   },
@@ -14161,7 +14161,7 @@
   },
   {
     "fragment": false,
-    "name": "⬢ Hexagons are the Bestagons! ⬢",
+    "name": "<span style=\"font-size: 145%;\">⬢</span> Hexagons <em>are</em> the Bestagons! <span style=\"font-size: 145%;\">⬢</span>",
     "number": 6364,
     "url": "https://scp-wiki.wikidot.com/scp-6364"
   },
@@ -14287,7 +14287,7 @@
   },
   {
     "fragment": false,
-    "name": "The Undead Robot that lives Underneath Crete in Site-237's Basement",
+    "name": "The Undead Robot that lives <span style=\"text-decoration: line-through;\">Underneath Crete</span> in Site-237's Basement",
     "number": 6403,
     "url": "https://scp-wiki.wikidot.com/scp-6403"
   },
@@ -14545,7 +14545,7 @@
   },
   {
     "fragment": false,
-    "name": "EIGHTH COMMANDMENT",
+    "name": "<strong><span style=\"color: #1dc\">EIGHTH COMMANDMENT</span></strong>",
     "number": 6488,
     "url": "https://scp-wiki.wikidot.com/scp-6488"
   },
@@ -14569,21 +14569,21 @@
   },
   {
     "fragment": true,
-    "name": "Weight of Pressure",
+    "name": "<tt>Weight of Pressure</tt>",
     "number": 6494,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-1"
   },
   {
     "fragment": true,
-    "name": "Weight of Pressure",
+    "name": "<tt>Weight of Pressure</tt>",
     "number": 6494,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-3"
   },
   {
     "fragment": true,
-    "name": "Weight of Pressure",
+    "name": "<tt>Weight of Pressure</tt>",
     "number": 6494,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-3"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-2"
   },
   {
     "fragment": false,
@@ -14611,7 +14611,7 @@
   },
   {
     "fragment": false,
-    "name": "⚠ REMAIN CALM ⚠",
+    "name": "<span style=\"color: #e12\"><strong>⚠ REMAIN CALM ⚠</strong></span>",
     "number": 6499,
     "url": "https://scp-wiki.wikidot.com/scp-6499"
   },
@@ -14713,7 +14713,7 @@
   },
   {
     "fragment": false,
-    "name": "Build-a-Boar Workshop!",
+    "name": "<span style=\"color: #800\">Build-a-Boar Workshop!</span>",
     "number": 6566,
     "url": "https://scp-wiki.wikidot.com/scp-6566"
   },
@@ -14923,13 +14923,13 @@
   },
   {
     "fragment": false,
-    "name": "The \"Curse\" of The Scottish Play",
+    "name": "The \"Curse\" of The <em>Scottish Play</em>",
     "number": 6640,
     "url": "https://scp-wiki.wikidot.com/scp-6640"
   },
   {
     "fragment": false,
-    "name": "Who Needs Wake-Up Calls When You Got ARM",
+    "name": "Who Needs Wake-Up Calls When You Got <strong><em>ARM</em></strong>",
     "number": 6641,
     "url": "https://scp-wiki.wikidot.com/scp-6641"
   },
@@ -14947,7 +14947,7 @@
   },
   {
     "fragment": false,
-    "name": "Foundationi yiputius",
+    "name": "<em>Foundationi yiputius</em>",
     "number": 6644,
     "url": "https://scp-wiki.wikidot.com/scp-6644"
   },
@@ -15007,7 +15007,7 @@
   },
   {
     "fragment": false,
-    "name": "METAGNOSTIC",
+    "name": "<strong><span style=\"color: #f71\">METAGNOSTIC</span></strong>",
     "number": 6659,
     "url": "https://scp-wiki.wikidot.com/scp-6659"
   },
@@ -15061,7 +15061,7 @@
   },
   {
     "fragment": false,
-    "name": "\"Mama?\"",
+    "name": "<em>\"Mama?\"</em>",
     "number": 6670,
     "url": "https://scp-wiki.wikidot.com/scp-6670"
   },
@@ -15223,7 +15223,7 @@
   },
   {
     "fragment": false,
-    "name": "CHAOS THEORY",
+    "name": "<strong><span style=\"color: #97b\">CHAOS THEORY</span></strong>",
     "number": 6747,
     "url": "https://scp-wiki.wikidot.com/scp-6747"
   },
@@ -15331,7 +15331,7 @@
   },
   {
     "fragment": false,
-    "name": "E",
+    "name": "<span style=\"font-size:120%;\">E</span>",
     "number": 6775,
     "url": "https://scp-wiki.wikidot.com/scp-6775"
   },
@@ -15361,7 +15361,7 @@
   },
   {
     "fragment": false,
-    "name": "Well, well, well, that advice is very handy!",
+    "name": "<strong>Well, well, well</strong>, that advice is very <strong>handy</strong>!",
     "number": 6797,
     "url": "https://scp-wiki.wikidot.com/scp-6797"
   },
@@ -15403,7 +15403,7 @@
   },
   {
     "fragment": false,
-    "name": "TERMINATION ATTEMPT",
+    "name": "<span style=\"color: #e12\"><strong>TERMINATION ATTEMPT</strong></span>",
     "number": 6820,
     "url": "https://scp-wiki.wikidot.com/scp-6820"
   },
@@ -15421,7 +15421,7 @@
   },
   {
     "fragment": false,
-    "name": "SKIRTINGBOARDWORLD.",
+    "name": "<strong>SKIRTINGBOARDWORLD.</strong>",
     "number": 6831,
     "url": "https://scp-wiki.wikidot.com/scp-6831"
   },
@@ -15493,7 +15493,7 @@
   },
   {
     "fragment": false,
-    "name": "No Need to Wine",
+    "name": "<em>No Need to Wine</em>",
     "number": 6855,
     "url": "https://scp-wiki.wikidot.com/scp-6855"
   },
@@ -15691,7 +15691,7 @@
   },
   {
     "fragment": false,
-    "name": "UNAUTHORIZED DATABASE ENTRY",
+    "name": "<strong>UNAUTHORIZED DATABASE ENTRY</strong>",
     "number": 6953,
     "url": "https://scp-wiki.wikidot.com/scp-6953"
   },
@@ -15769,19 +15769,19 @@
   },
   {
     "fragment": true,
-    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by Goldbaker-Reinz Ltd.)",
+    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by <span style=\"color: #bb6\"><strong><em>Goldbaker-Reinz Ltd.</em></strong></span>)",
     "number": 6987,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6987-0"
   },
   {
     "fragment": true,
-    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by Goldbaker-Reinz Ltd.)",
+    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by <span style=\"color: #bb6\"><strong><em>Goldbaker-Reinz Ltd.</em></strong></span>)",
     "number": 6987,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6987-1"
   },
   {
     "fragment": true,
-    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by Goldbaker-Reinz Ltd.)",
+    "name": "Your Legally Entitled Coverage As An Employee of the SCP Foundation (Provided by <span style=\"color: #bb6\"><strong><em>Goldbaker-Reinz Ltd.</em></strong></span>)",
     "number": 6987,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6987-2"
   },
@@ -15799,7 +15799,7 @@
   },
   {
     "fragment": false,
-    "name": "Does the Red Moon Howl?",
+    "name": "<span style=\"color: #e12\"><strong>Does the Red Moon Howl?</strong></span>",
     "number": 6996,
     "url": "https://scp-wiki.wikidot.com/scp-6996"
   },
@@ -16117,7 +16117,7 @@
   },
   {
     "fragment": false,
-    "name": "Cawsing Cawllateral Damage",
+    "name": "<strong>Caw</strong>sing <strong>Caw</strong>llateral Damage",
     "number": 7121,
     "url": "https://scp-wiki.wikidot.com/scp-7121"
   },
@@ -16189,7 +16189,7 @@
   },
   {
     "fragment": false,
-    "name": "unremarkable.",
+    "name": "<em>unremarkable.</em>",
     "number": 7155,
     "url": "https://scp-wiki.wikidot.com/scp-7155"
   },
@@ -16327,13 +16327,13 @@
   },
   {
     "fragment": false,
-    "name": "BRAND NEW JOB.",
+    "name": "<span style=\"color: red\">BRAND NEW JOB.</span>",
     "number": 7209,
     "url": "https://scp-wiki.wikidot.com/scp-7209"
   },
   {
     "fragment": false,
-    "name": "𝓕𝓸𝓻 𝓷𝓸𝔀 𝓪𝓷𝓭 𝓷𝓮𝓿𝓮𝓻 𝓪𝓰𝓪𝓲𝓷.",
+    "name": "<span style=\"color:#a6433a;\">𝓕𝓸𝓻 𝓷𝓸𝔀 𝓪𝓷𝓭 𝓷𝓮𝓿𝓮𝓻 𝓪𝓰𝓪𝓲𝓷.</span>",
     "number": 7210,
     "url": "https://scp-wiki.wikidot.com/scp-7210"
   },
@@ -16381,31 +16381,31 @@
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-0"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-1"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-2"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-3"
   },
   {
     "fragment": true,
-    "name": "Lost Eternally Amidst Profound Yearning",
+    "name": "<strong>L</strong>ost <strong>E</strong>ternally <strong>A</strong>midst <strong>P</strong>rofound <strong>Year</strong>ning",
     "number": 7229,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7229-4"
   },
@@ -16438,6 +16438,12 @@
     "name": "With Love, a Person Who Fucks up a Lot",
     "number": 7245,
     "url": "https://scp-wiki.wikidot.com/scp-7245"
+  },
+  {
+    "fragment": false,
+    "name": "All Around Us",
+    "number": 7249,
+    "url": "https://scp-wiki.wikidot.com/scp-7249"
   },
   {
     "fragment": false,
@@ -16585,7 +16591,7 @@
   },
   {
     "fragment": false,
-    "name": "a witness",
+    "name": "<tt>a witness</tt>",
     "number": 7305,
     "url": "https://scp-wiki.wikidot.com/scp-7305"
   },
@@ -16683,6 +16689,12 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": 7345,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-2"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": 7345,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-6"
   },
   {
@@ -16695,31 +16707,25 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-2"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": 7345,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-8"
   },
   {
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": 7345,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-7"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
   },
   {
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": 7345,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-3"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": 7345,
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-7"
   },
   {
     "fragment": false,
@@ -16741,7 +16747,7 @@
   },
   {
     "fragment": false,
-    "name": "Screamy.aic",
+    "name": "<strong>Screamy.aic</strong>",
     "number": 7373,
     "url": "https://scp-wiki.wikidot.com/scp-7373"
   },
@@ -16765,7 +16771,7 @@
   },
   {
     "fragment": false,
-    "name": "The Poor Get Poorer",
+    "name": "<span style=\"color: green\"><strong>The Poor Get Poorer</strong></span>",
     "number": 7391,
     "url": "https://scp-wiki.wikidot.com/scp-7391"
   },
@@ -16915,7 +16921,7 @@
   },
   {
     "fragment": false,
-    "name": "Aphrodite, Goddess of Love Isaac",
+    "name": "<span style=\"text-decoration: line-through;\">Aphrodite, Goddess of Love</span> Isaac",
     "number": 7454,
     "url": "https://scp-wiki.wikidot.com/scp-7454"
   },
@@ -16933,7 +16939,7 @@
   },
   {
     "fragment": false,
-    "name": "They're chewing through my skin and they won't stop.",
+    "name": "They're chewing through my skin and they won't <em>stop.</em>",
     "number": 7464,
     "url": "https://scp-wiki.wikidot.com/scp-7464"
   },
@@ -17053,7 +17059,7 @@
   },
   {
     "fragment": false,
-    "name": "Karma's a bitch spiteful and unpleasant individual",
+    "name": "Karma's a <span style=\"text-decoration: line-through;\">bitch</span> spiteful and unpleasant individual",
     "number": 7520,
     "url": "https://scp-wiki.wikidot.com/scp-7520"
   },
@@ -17085,13 +17091,13 @@
     "fragment": true,
     "name": "EPITOMEDIA: The Projection",
     "number": 7528,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-1"
   },
   {
     "fragment": true,
     "name": "EPITOMEDIA: The Projection",
     "number": 7528,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-0"
   },
   {
     "fragment": false,
@@ -17137,7 +17143,7 @@
   },
   {
     "fragment": false,
-    "name": "ATHAZAGORAPHOBIA",
+    "name": "<span style=\"color: transparent\"><strong>ATHAZAGORAPHOBIA</strong></span>",
     "number": 7555,
     "url": "https://scp-wiki.wikidot.com/scp-7555"
   },
@@ -17191,7 +17197,7 @@
   },
   {
     "fragment": false,
-    "name": "The Sun's Avatar",
+    "name": "<em><strong>The Sun's Avatar</strong></em>",
     "number": 7588,
     "url": "https://scp-wiki.wikidot.com/scp-7588"
   },
@@ -17401,7 +17407,7 @@
   },
   {
     "fragment": false,
-    "name": "Census Bureau Foam Form",
+    "name": "Census Bureau <span style=\"text-decoration: line-through;\">Foam</span> Form",
     "number": 7671,
     "url": "https://scp-wiki.wikidot.com/scp-7671"
   },
@@ -17425,7 +17431,7 @@
   },
   {
     "fragment": false,
-    "name": "Journey for Belonging: The Death of Chuck Storms",
+    "name": "<strong>Journey for Belonging:</strong> The Death of Chuck Storms",
     "number": 7679,
     "url": "https://scp-wiki.wikidot.com/scp-7679"
   },
@@ -17449,7 +17455,7 @@
   },
   {
     "fragment": false,
-    "name": "Center for Enhanced Wellbeing",
+    "name": "<span style=\"color: green\"><strong>Center for Enhanced Wellbeing</strong></span>",
     "number": 7697,
     "url": "https://scp-wiki.wikidot.com/scp-7697"
   },
@@ -17497,7 +17503,7 @@
   },
   {
     "fragment": false,
-    "name": "Green with Envy",
+    "name": "<strong><span style=\"color: green\">Green with Envy</span></strong>",
     "number": 7713,
     "url": "https://scp-wiki.wikidot.com/scp-7713"
   },
@@ -17563,7 +17569,7 @@
   },
   {
     "fragment": false,
-    "name": "Steven Y. Hayes does not exist.",
+    "name": "Steven Y. Hayes does <strong>not</strong> exist.",
     "number": 7757,
     "url": "https://scp-wiki.wikidot.com/scp-7757"
   },
@@ -17605,7 +17611,7 @@
   },
   {
     "fragment": false,
-    "name": "My Eyes Shall Watch",
+    "name": "<strong><span style=\"color: maroon\">My Eyes Shall Watch</span></strong>",
     "number": 7797,
     "url": "https://scp-wiki.wikidot.com/scp-7797"
   },
@@ -17613,13 +17619,13 @@
     "fragment": true,
     "name": "When I'm Gone and Afloat",
     "number": 7799,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7799-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7799-2"
   },
   {
     "fragment": true,
     "name": "When I'm Gone and Afloat",
     "number": 7799,
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7799-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7799-1"
   },
   {
     "fragment": false,
@@ -17671,7 +17677,7 @@
   },
   {
     "fragment": false,
-    "name": "Holes in My Mind",
+    "name": "<em>Holes in My Mind</em>",
     "number": 7826,
     "url": "https://scp-wiki.wikidot.com/scp-7826"
   },
@@ -17797,7 +17803,7 @@
   },
   {
     "fragment": false,
-    "name": "FRAGMENTS OF A BROKEN PLANET",
+    "name": "<span style=\"color: #01f\"><strong>FRAGMENTS OF A BROKEN PLANET</strong></span>",
     "number": 7905,
     "url": "https://scp-wiki.wikidot.com/scp-7905"
   },
@@ -17959,7 +17965,7 @@
   },
   {
     "fragment": false,
-    "name": "NO OUTLETs",
+    "name": "<strong>NO OUTLET</strong><em>s</em>",
     "number": 7979,
     "url": "https://scp-wiki.wikidot.com/scp-7979"
   },
@@ -18055,7 +18061,7 @@
   },
   {
     "fragment": false,
-    "name": "SCP-INTEGER",
+    "name": "<span style=\"color: blue\">SCP-INTEGER</span>",
     "number": 5242,
     "url": "https://scp-wiki.wikidot.com/scp-5242"
   },
@@ -18151,7 +18157,7 @@
   },
   {
     "fragment": false,
-    "name": "Mind-Milk™ by Moosphere, Inc.",
+    "name": "<span style=\"color: #407fbf\"><strong>Mind-Milk™ by Moosphere, Inc.</strong></span>",
     "number": 3739,
     "url": "https://scp-wiki.wikidot.com/scp-3739"
   },
@@ -18193,7 +18199,7 @@
   },
   {
     "fragment": false,
-    "name": "That Alien Message",
+    "name": "<span style=\"color: #0000FF;font-family: &quot;Microsoft Serif&quot;;\"><strong>That Alien Message</strong></span>",
     "number": 5241,
     "url": "https://scp-wiki.wikidot.com/scp-5241"
   },
@@ -18349,7 +18355,7 @@
   },
   {
     "fragment": true,
-    "name": "Initiative",
+    "name": "<span style=\"color: green\">Initiative</span>",
     "number": 7006,
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7006-1"
   },
@@ -18367,7 +18373,7 @@
   },
   {
     "fragment": false,
-    "name": "The Changeling",
+    "name": "The Ch<tt>angel</tt>ing",
     "number": 4620,
     "url": "https://scp-wiki.wikidot.com/scp-4620"
   },
@@ -18421,7 +18427,7 @@
   },
   {
     "fragment": false,
-    "name": "An Unfinished Masterpiece",
+    "name": "<em>An Unfinished Masterpiece</em>",
     "number": 6280,
     "url": "https://scp-wiki.wikidot.com/scp-6280"
   },
@@ -18469,7 +18475,7 @@
   },
   {
     "fragment": false,
-    "name": "Foundationi yiputius",
+    "name": "<em>Foundationi yiputius</em>",
     "number": 6644,
     "url": "https://scp-wiki.wikidot.com/scp-6644"
   },
