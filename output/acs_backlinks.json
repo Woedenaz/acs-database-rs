@@ -2029,7 +2029,7 @@
   },
   {
     "fragment": false,
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a id=\"footnoteref-1\" class=\"footnoteref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>",
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>",
     "number": "SCP-4866",
     "url": "https://scp-wiki.wikidot.com/scp-4866"
   },
@@ -8815,6 +8815,12 @@
   },
   {
     "fragment": true,
+    "name": "SCP-7798",
+    "number": "SCP-7798",
+    "url": "https://scp-wiki.wikidot.com/fragment:secprotcontend-1"
+  },
+  {
+    "fragment": true,
     "name": "The Entangled Webs We Cleave",
     "number": "SCP-5934",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5934"
@@ -8824,18 +8830,6 @@
     "name": "[ACCESS DENIED]",
     "number": "SCP-7858",
     "url": "https://scp-wiki.wikidot.com/scp-7858"
-  },
-  {
-    "fragment": false,
-    "name": "Flopstyle: DARK (theme:flopstyle-dark)",
-    "number": "",
-    "url": "https://scp-wiki.wikidot.com/theme:flopstyle-dark"
-  },
-  {
-    "fragment": false,
-    "name": "Flopstyle: LITE (theme:flopstyle)",
-    "number": "",
-    "url": "https://scp-wiki.wikidot.com/theme:flopstyle"
   },
   {
     "fragment": true,

@@ -4,7 +4,8 @@ mod sort_json;
 use anyhow::{anyhow, Result};
 use clap::Parser;
 use crate::sort_json::SortableField;
-use futures::stream::StreamExt;
+use regex::Regex;
+use futures::stream::{StreamExt, FuturesUnordered};
 use indicatif::{ProgressBar, ProgressStyle};
 use log::error;
 use once_cell::sync::Lazy;
@@ -78,25 +79,26 @@ struct ACS {
 }
 
 impl SortableField for ACS {
-  fn get_field(&self, field: &str) -> Cow<str> {
-    match field {
-      "number" => Cow::Borrowed(&self.number),
-      "name" => Cow::Borrowed(&self.name),
-      "clearance" => Cow::Borrowed(&self.clearance),
-      "contain" => Cow::Borrowed(&self.contain),
-      "secondary" => Cow::Borrowed(&self.secondary),
-      "disrupt" => Cow::Borrowed(&self.disrupt),
-      "risk" => Cow::Borrowed(&self.risk),
-      "url" => Cow::Borrowed(&self.url),
-      "fragment" => Cow::Owned(self.fragment.to_string()),
-      _ => panic!("Invalid field: {}", field),
-    }
-  }
+	fn get_field(&self, field: &str) -> Cow<str> {
+		match field {
+			"number" => Cow::Borrowed(&self.number),
+			"name" => Cow::Borrowed(&self.name),
+			"clearance" => Cow::Borrowed(&self.clearance),
+			"contain" => Cow::Borrowed(&self.contain),
+			"secondary" => Cow::Borrowed(&self.secondary),
+			"disrupt" => Cow::Borrowed(&self.disrupt),
+			"risk" => Cow::Borrowed(&self.risk),
+			"url" => Cow::Borrowed(&self.url),
+			"fragment" => Cow::Owned(self.fragment.to_string()),
+			_ => panic!("Invalid field: {}", field),
+		}
+	}
 }
 
 // SCP Names Selectors
 static LI_SELECTOR: Lazy<Selector> = Lazy::new(|| Selector::parse("[id*='toc'] + ul li").unwrap());
 static LINK_SELECTOR: Lazy<Selector> = Lazy::new(|| Selector::parse("a:not(.newpage)").unwrap());
+static SCP_NUM_RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"(?i)scp-([0-9]{1,4})").unwrap());
 
 // ACS Bar Selectors
 static ACS_BAR_SELECTOR: Lazy<Selector> = Lazy::new(|| Selector::parse("div.anom-bar-container").unwrap());
@@ -141,32 +143,29 @@ const MAX_LEVEL: u8 = 9;
 
 //Helper Functions
 fn extract_scp_number(s: &str) -> Option<u16> {
-	let pos = if let Some(pos) = s.rfind("SCP-") {
-		Some(pos)
-	} else {
-		s.rfind("scp-")
-	};
 
-	if let Some(pos) = pos {		
-		let end_pos = s[pos + 4..]
-			.char_indices()
-			.find(|&(_, c)| !c.is_digit(10))
-			.map_or(s.len(), |(i, _)| i + pos + 4);
-		
-		let number = match s[pos + 4..end_pos].parse::<u16>() {
-			Ok(num) => Some(num),
-			Err(e) => {
-				error!("Failed to parse SCP number {}: {}", s, e);
-				None
-			}
-		}?;
-		Some(number)
-	} else {
-		None
-	}
+	let cap = SCP_NUM_RE.captures(s)?;
+	
+	let number = match cap[1].parse::<u16>() {
+		Ok(num) => Some(num),
+		Err(e) => {
+			log::error!("Failed to parse SCP number {}: {}", s, e);
+			None
+		}
+	}?;
+
+	Some(number)
 }
 
-
+fn format_number(number: u16) -> String {
+	if number <= 99 {
+		format!("SCP-{:03}", number)
+	} else if number > 99 {
+		format!("SCP-{}", number)
+	} else {
+			number.to_string()
+	}
+}
 
 fn extract_text(element: ElementRef, selector: &Selector) -> Option<String> {
 	element.select(&selector)
@@ -310,11 +309,7 @@ async fn init_scp_names_json() -> Result<()> {
 					};
 
 					if let Some(scp_number) = extract_scp_number(&scp_string) {
-						let number = if scp_number <= 99 {
-								format!("SCP-{:03}", scp_number)
-							} else {
-								format!("SCP-{}", scp_number)
-							};
+						let number = format_number(scp_number);
 
 						scp_names_vec.push(SCPInfo {
 							number,
@@ -340,10 +335,12 @@ async fn get_scp_name(number: &str) -> Result<String> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
-	let scp_names = scp_names_vec.iter().find(|&scp| scp.number == number)
-		.ok_or_else(|| anyhow!("Name not found for number: {}", number))?;
+	let scp_name = scp_names_vec.iter()
+		.find(|&scp| scp.number == number)
+		.map(|scp| scp.name.to_owned())
+		.unwrap_or_else(|| number.to_string());
 
-	Ok(scp_names.name.to_owned())
+	Ok(scp_name)
 }
 
 // Text Strings scraping if ACS Bar is not found.
@@ -503,7 +500,7 @@ async fn fetch_acs_data(scp_number: &str, mut name: Option<&str>, scp_url: &str)
 
 		let scp_name: String;
 
-		if scp_number.eq_ignore_ascii_case("scp-000") && scp_number.eq_ignore_ascii_case("scp-001") {
+		if !scp_number.eq_ignore_ascii_case("scp-000") && !scp_number.eq_ignore_ascii_case("scp-001") {
 			scp_name = get_scp_name(scp_number).await?;
 			name = Some(&scp_name);
 		}
@@ -558,14 +555,14 @@ async fn fetch_and_update_entry(number: &str, name: &str, url: &str, fragment: b
 		Ok(Some(acs_data)) => {
 			log::info!("Successfully fetched ACS Bar Data from: {}", url);
 			let new_entry = serde_json::json!({
-				"name": acs_data.name,
-				"number": acs_data.number,
+				"name": name.to_string(),
+				"number": number.to_string(),
 				"clearance": acs_data.clearance,
 				"contain": acs_data.contain,
 				"secondary": acs_data.secondary,
 				"disrupt": acs_data.disrupt,
 				"risk": acs_data.risk,
-				"url": acs_data.url,
+				"url": url.to_string(),
 				"fragment": fragment
 			});
 			Ok(new_entry)
@@ -576,72 +573,84 @@ async fn fetch_and_update_entry(number: &str, name: &str, url: &str, fragment: b
 }
 
 async fn cross_compare_and_update(limit: u16) -> Result<()> {
-	let acs_bar_backlinks_data = fs::read_to_string("output/acs_backlinks.json").await.expect("Unable to read acs_backlinks.json");
-	let acs_database_data = fs::read_to_string("output/acs_database.json").await.expect("Unable to read acs_database.json");
+	let acs_bar_backlinks_data = fs::read_to_string("output/acs_backlinks.json").await?;
+	let acs_database_data = fs::read_to_string("output/acs_database.json").await?;
 
-	let acs_bar_backlinks: Vec<Value> = serde_json::from_str(&acs_bar_backlinks_data).expect("Error parsing acs_backlinks.json");
-	let mut acs_database: Vec<Value> = serde_json::from_str(&acs_database_data).expect("Error parsing acs_database.json");
+	let acs_bar_backlinks: Vec<Value> = serde_json::from_str(&acs_bar_backlinks_data)?;
+	let mut acs_database: Vec<Value> = serde_json::from_str(&acs_database_data)?;
 
 	let semaphore = Arc::new(Semaphore::new(limit.into()));
+	let matches = Arc::new(AtomicU64::new(0));
 
 	let total_entries = acs_bar_backlinks.len() as u64;
-	let matches = Arc::new(AtomicU64::new(0));
-	let pb = ProgressBar::new_spinner();
+	let pb = ProgressBar::new(total_entries);
 	pb.set_style(
 		ProgressStyle::default_bar()
-			.template("{msg} {spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} ({eta})")
+			.template("{msg} {spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} ({eta_precise})")
 			.expect("Failed to set progress bar style.")
 			.progress_chars("##-")
 	);
 
-	let matches_clone = Arc::clone(&matches);
-	let message = format!("Cross comparing ACS Bar Backlinks to ACS Database - Matches: {}", matches_clone.load(Ordering::Relaxed));
-	pb.set_message(message);
-	pb.set_length(total_entries);
+	let new_entries_futures: FuturesUnordered<_> = acs_bar_backlinks
+	.into_iter()
+	.filter_map(|link_item| {
+		let backlinks_number = link_item["number"].as_str().unwrap_or_default();
+		let backlinks_name = link_item["name"].as_str().unwrap_or_default();
 
-	let new_entries: Vec<(Value, u64, u64)> = acs_bar_backlinks.into_iter().filter_map(|link_item| {
-		let number = link_item["number"].as_str().unwrap_or_default();
-		log::info!("Reading data for: SCP-{}", number);
-		if acs_database.iter().any(|db_item| db_item["number"].as_str().unwrap_or_default() == number) {
+		if acs_database.iter().any(|db_item| {
+			db_item["number"].as_str().unwrap_or_default().eq_ignore_ascii_case(backlinks_number)
+				|| db_item["name"].as_str().unwrap_or_default().eq_ignore_ascii_case(backlinks_name)
+				|| db_item["fragment"].as_bool().unwrap_or(false)
+		}) {
 			None
 		} else {
-			Some((link_item, 1))
+			Some(link_item)
 		}
-	}).map(|(link_item, progress)| {
+	})
+	.map(|link_item| {
 		let semaphore = Arc::clone(&semaphore);
+		let matches = Arc::clone(&matches);
 		let pb = pb.clone();
-		let matches_clone = Arc::clone(&matches);
+
 		Box::pin(async move {
-			log::info!("Reading url data for: {}", link_item);
 			let _permit = semaphore.acquire().await.expect("Failed to acquire semaphore");
+
+			let number = link_item["number"].as_str().unwrap_or_default();
+			let name = link_item["name"].as_str().unwrap_or_default();
+			let url = link_item["url"].as_str().unwrap_or_default();
 			let fragment = link_item["fragment"].as_bool().unwrap_or_default();
-			match fetch_and_update_entry(link_item["number"].as_str().unwrap_or_default(), link_item["name"].as_str().unwrap_or_default(), link_item["url"].as_str().unwrap_or_default(), fragment).await {
+
+			match fetch_and_update_entry(number, name, url, fragment).await {
 				Ok(data) => {
-					pb.inc(1);
-					matches_clone.fetch_add(1, Ordering::Relaxed);
-					let message = format!("Cross comparing ACS Bar Backlinks to ACS Database - Matches: {}", matches_clone.load(Ordering::Relaxed));
-					pb.set_message(message);
-					tokio::time::sleep(Duration::from_millis(1000)).await;
-					Some((data, progress, matches_clone.load(Ordering::Relaxed)))
-				},
+					matches.fetch_add(1, Ordering::Relaxed);
+					pb.set_message(format!(
+						"Cross comparing ACS Bar Backlinks to ACS Database - Matches: {}",
+						matches.load(Ordering::Relaxed)
+					));
+					Some(data)
+				}
 				Err(e) => {
-					error!("f: cross_compare_and_update | Error fetching ACS data for {}: {}", link_item, e);
-					pb.inc(1);
+					error!(
+						"f: cross_compare_and_update | Error fetching ACS data for {}: {}",
+						link_item, e
+					);
 					None
 				}
 			}
 		})
-	}).collect::<futures::stream::FuturesUnordered<_>>()
-		.collect::<Vec<Option<(Value, u64, u64)>>>()
-		.await
-		.into_iter()
+	})
+	.collect();
+
+	let new_entries: Vec<Value> = new_entries_futures
+		.collect::<Vec<Option<Value>>>()
+		.await.into_iter()
 		.filter_map(|x| x)
 		.collect();
 
 	let finish_message = format!("Done! - Matches: {}", matches.load(Ordering::Relaxed));
 	pb.finish_with_message(finish_message);
 
-	acs_database.extend(new_entries.into_iter().filter_map(|x| Some(x)).map(|(val, _, _)| val));
+	acs_database.extend(new_entries);
 
 	fs::write("output/acs_database.json", serde_json::to_string_pretty(&acs_database)?).await?;
 
@@ -679,7 +688,7 @@ async fn main() -> Result<()> {
 	
 		let progress_bar = ProgressBar::new_spinner();
 		progress_bar.set_style(ProgressStyle::default_bar()
-			.template("{msg} {spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} ({eta})")
+			.template("{msg} {spinner:.green} [{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} ({eta_precise})")
 			.expect("Failed to set progress bar style.")
 			.progress_chars("##-")
 		);
@@ -690,11 +699,7 @@ async fn main() -> Result<()> {
 
 		let acs_data: Vec<ACS> = (start..=end)
 		.map(|number| {
-			let scp_number = if number <= 99 {
-				format!("scp-{:03}", number)
-			} else {
-				format!("scp-{}", number)
-			};
+			let scp_number = format_number(number);
 			let scp_url_string = format!("https://scp-wiki.wikidot.com/{}", scp_number);
 			let pb = progress_bar.clone();
 			let semaphore = Arc::clone(&semaphore);

@@ -17973,7 +17973,7 @@
   },
   {
     "number": "SCP-4494",
-    "name": "<span style=\"font-size:0%;\">The Specter Fights For Justice!</span><a href=\"https://scp-wiki.wdfiles.com/local--files/scp-series-5/specter_label\"><img src=\"https://scp-wiki.wdfiles.com/local--resized-images/scp-series-5/specter_label/medium.jpg\" alt=\"specter_label\" class=\"image\" style=\"margin-bottom: -2px;\"></a> Fights For Justice!"
+    "name": "<span style=\"font-size:0%;\">The Specter Fights For Justice!</span><a href=\"https://scp-wiki.wdfiles.com/local--files/scp-series-5/specter_label\"><img alt=\"specter_label\" style=\"margin-bottom: -2px;\" src=\"https://scp-wiki.wdfiles.com/local--resized-images/scp-series-5/specter_label/medium.jpg\" class=\"image\"></a> Fights For Justice!"
   },
   {
     "number": "SCP-4495",
@@ -19461,7 +19461,7 @@
   },
   {
     "number": "SCP-4866",
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a id=\"footnoteref-1\" class=\"footnoteref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
   },
   {
     "number": "SCP-4867",
@@ -19569,7 +19569,7 @@
   },
   {
     "number": "SCP-4893",
-    "name": "Agapanthus<sup class=\"footnoteref\"><a href=\"javascript:;\" id=\"footnoteref-2\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\" class=\"footnoteref\">2</a></sup>"
+    "name": "Agapanthus<sup class=\"footnoteref\"><a onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\" id=\"footnoteref-2\" class=\"footnoteref\" href=\"javascript:;\">2</a></sup>"
   },
   {
     "number": "SCP-4894",

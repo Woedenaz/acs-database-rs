@@ -33,15 +33,15 @@ static SCP_NUM_RE: Lazy<Regex> = Lazy::new(|| {
 });
 
 fn format_number(number: u16, skip_zero_one: bool) -> String {
-		if skip_zero_one && number > 1 && number <= 99 {
-      format!("SCP-{:03}", number)
-		} else if !skip_zero_one && number <= 99 {
-      format!("SCP-{:03}", number)
-    } else if number > 99 {
-      format!("SCP-{}", number)
-    } else {
-        number.to_string()
-    }
+	if skip_zero_one && number > 1 && number <= 99 {
+		format!("SCP-{:03}", number)
+	} else if !skip_zero_one && number <= 99 {
+		format!("SCP-{:03}", number)
+	} else if number > 99 {
+		format!("SCP-{}", number)
+	} else {
+			number.to_string()
+	}
 }
 
 fn clear_file(file_path: &str) -> Result<()> {
@@ -96,12 +96,14 @@ async fn request_page(url: &str) -> Result<Html> {
 	Ok(Html::parse_document(&body)) 
 }
 
-async fn get_scp_name(number: &str) -> Result<Option<String>> {
+async fn get_scp_name(number: &str) -> Result<String> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
-	let scp_name = scp_names_vec.iter().find(|&scp| scp.number == number)
-		.map(|scp| scp.name.to_owned());
+	let scp_name = scp_names_vec.iter()
+		.find(|&scp| scp.number == number)
+		.map(|scp| scp.name.to_owned())
+		.unwrap_or_else(|| number.to_string());
 
 	Ok(scp_name)
 }
@@ -132,6 +134,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 		r"(?i)icons",
 		r"(?i)art:",
 		r"(?i)resource",
+		r"(?i)theme",
 	]).unwrap();
 
 	let total_entries: u16 = document.select(&link_selector)
@@ -145,7 +148,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 	let backlinks_pb = ProgressBar::new_spinner();
 	backlinks_pb.set_style(
 		ProgressStyle::default_bar()
-			.template("{msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos:>7}/{len:7} ({eta})")? 
+			.template("{msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos:>7}/{len:7} ({eta_precise})")? 
 			.progress_chars("##-")
 	);
 	let message = format!("Fetching ACS Backlinks Info - Fragments: {} / Normal {}",  fragments, normal);
@@ -182,13 +185,9 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 				number = format_number(raw_number, false);
 
 				match get_scp_name(&number).await {
-					Ok(Some(name_from_json)) => {
+					Ok(name_from_json) => {
 						name = name_from_json;
 						info!("SCP Number: {} | Name from json: {}", number, name);
-					},
-					Ok(None) => {
-						info!("No name found for SCP Number: {}, skipping.", number);
-						continue;
 					},
 					Err(e) => {
 						error!("Error getting name for SCP Number: {}: {}", number, e);
@@ -216,13 +215,9 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 					if let Some(raw_number) = extract_scp_number(&breadcrumb_text) {
 						number = format_number(raw_number, false);
 						match get_scp_name(&number).await {
-							Ok(Some(name_from_json)) => {
+							Ok(name_from_json) => {
 								name = name_from_json;
 								info!("SCP Number: {} | Name from json: {}", number, name);
-							},
-							Ok(None) => {
-								info!("No name found for SCP Number: {}, skipping.", number);
-								continue;
 							},
 							Err(e) => {
 								error!("Error getting name for SCP Number: {}: {}", number, e);
