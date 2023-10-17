@@ -17973,7 +17973,7 @@
   },
   {
     "number": "SCP-4494",
-    "name": "<span style=\"font-size:0%;\">The Specter Fights For Justice!</span><a href=\"https://scp-wiki.wdfiles.com/local--files/scp-series-5/specter_label\"><img alt=\"specter_label\" style=\"margin-bottom: -2px;\" src=\"https://scp-wiki.wdfiles.com/local--resized-images/scp-series-5/specter_label/medium.jpg\" class=\"image\"></a> Fights For Justice!"
+    "name": "<span style=\"font-size:0%;\">The Specter Fights For Justice!</span><a href=\"https://scp-wiki.wdfiles.com/local--files/scp-series-5/specter_label\"><img src=\"https://scp-wiki.wdfiles.com/local--resized-images/scp-series-5/specter_label/medium.jpg\" style=\"margin-bottom: -2px;\" alt=\"specter_label\" class=\"image\"></a> Fights For Justice!"
   },
   {
     "number": "SCP-4495",
@@ -19461,7 +19461,7 @@
   },
   {
     "number": "SCP-4866",
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a id=\"footnoteref-1\" href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\">1</a></sup>"
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" class=\"footnoteref\">1</a></sup>"
   },
   {
     "number": "SCP-4867",
@@ -19569,7 +19569,7 @@
   },
   {
     "number": "SCP-4893",
-    "name": "Agapanthus<sup class=\"footnoteref\"><a onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\" id=\"footnoteref-2\" class=\"footnoteref\" href=\"javascript:;\">2</a></sup>"
+    "name": "Agapanthus<sup class=\"footnoteref\"><a id=\"footnoteref-2\" class=\"footnoteref\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup>"
   },
   {
     "number": "SCP-4894",
@@ -26080,6 +26080,10 @@
     "name": "Anthology of Horrors!"
   },
   {
+    "number": "SCP-6532",
+    "name": "Howling Wind<span style=\"text-decoration: line-through;\">s</span>"
+  },
+  {
     "number": "SCP-6533",
     "name": "Millennium Falcons"
   },
@@ -28224,10 +28228,6 @@
     "name": "I'D BE NOTHING WITHOUT YOU"
   },
   {
-    "number": "SCP-7106",
-    "name": "The Preacher"
-  },
-  {
     "number": "SCP-7107",
     "name": "Arrested Epiphany"
   },
@@ -28372,6 +28372,10 @@
     "name": "Oesophagus Lattice"
   },
   {
+    "number": "SCP-7143",
+    "name": "Placeholder name (wip)"
+  },
+  {
     "number": "SCP-7144",
     "name": "Overprotective Hot Dog Cart"
   },
@@ -28390,10 +28394,6 @@
   {
     "number": "SCP-7148",
     "name": "שאול זבת חלב ודבש"
-  },
-  {
-    "number": "SCP-7149",
-    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7150",
@@ -28528,10 +28528,6 @@
     "name": "Subterranea"
   },
   {
-    "number": "SCP-7186",
-    "name": "[ACCESS DENIED]"
-  },
-  {
     "number": "SCP-7187",
     "name": "And The Forest Fell Silent"
   },
@@ -28550,6 +28546,10 @@
   {
     "number": "SCP-7191",
     "name": "Digging for gold"
+  },
+  {
+    "number": "SCP-7192",
+    "name": "A Peanut Jar"
   },
   {
     "number": "SCP-7193",
@@ -28628,10 +28628,6 @@
     "name": "Warning: dad jokes will make you bend reality."
   },
   {
-    "number": "SCP-7212",
-    "name": "Antichrist-Cloning Virgin Mary"
-  },
-  {
     "number": "SCP-7213",
     "name": "And I Feel Fine"
   },
@@ -28650,10 +28646,6 @@
   {
     "number": "SCP-7217",
     "name": "Love On Many Levels"
-  },
-  {
-    "number": "SCP-7218",
-    "name": "A shack from Kröpelin"
   },
   {
     "number": "SCP-7219",
@@ -28780,6 +28772,10 @@
     "name": "Frostbound"
   },
   {
+    "number": "SCP-7253",
+    "name": "A special remote"
+  },
+  {
     "number": "SCP-7255",
     "name": "Sauna Bonds"
   },
@@ -28802,10 +28798,6 @@
   {
     "number": "SCP-7262",
     "name": "I'm <span style=\"color: #ff0077\">Not</span> Okay But I'm <span style=\"color: #ff6eb1\">Living</span> Anyway"
-  },
-  {
-    "number": "SCP-7263",
-    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7264",
@@ -28880,16 +28872,16 @@
     "name": "Advert-Eyes-Ments"
   },
   {
-    "number": "SCP-7283",
-    "name": "[ACCESS DENIED]"
-  },
-  {
     "number": "SCP-7284",
     "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7285",
     "name": "A simpler time"
+  },
+  {
+    "number": "SCP-7287",
+    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7288",
@@ -28918,10 +28910,6 @@
   {
     "number": "SCP-7294",
     "name": "Breakfast with the Burtons"
-  },
-  {
-    "number": "SCP-7295",
-    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7296",
@@ -28958,10 +28946,6 @@
   {
     "number": "SCP-7305",
     "name": "<tt>a witness</tt>"
-  },
-  {
-    "number": "SCP-7306",
-    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7307",
@@ -29218,6 +29202,10 @@
   {
     "number": "SCP-7382",
     "name": "The Man, The Myth, And The Legend"
+  },
+  {
+    "number": "SCP-7385",
+    "name": "The imitator"
   },
   {
     "number": "SCP-7389",
@@ -29492,6 +29480,10 @@
     "name": "the trade prince"
   },
   {
+    "number": "SCP-7481",
+    "name": "Store Bought Evil May be Substituted"
+  },
+  {
     "number": "SCP-7485",
     "name": "I wonder if they use Diesel"
   },
@@ -29586,6 +29578,10 @@
   {
     "number": "SCP-7515",
     "name": "The Parhelion Effect"
+  },
+  {
+    "number": "SCP-7516",
+    "name": "Refrigerator pt. 1"
   },
   {
     "number": "SCP-7518",
@@ -29752,10 +29748,6 @@
     "name": "Even Stars Go Out"
   },
   {
-    "number": "SCP-7575",
-    "name": "Little Demiurge"
-  },
-  {
     "number": "SCP-7576",
     "name": "Admission"
   },
@@ -29868,6 +29860,10 @@
     "name": ""
   },
   {
+    "number": "SCP-7613",
+    "name": "Snake &lt; Tail"
+  },
+  {
     "number": "SCP-7614",
     "name": "Sunset in the Third System"
   },
@@ -29952,6 +29948,10 @@
     "name": "The Empty Vale"
   },
   {
+    "number": "SCP-7647",
+    "name": "[ACCESS DENIED]"
+  },
+  {
     "number": "SCP-7650",
     "name": "<strong><tt><span style=\"color: red\">CIRCLE</span></tt></strong>"
   },
@@ -29996,6 +29996,10 @@
     "name": "Bumbles The Clown"
   },
   {
+    "number": "SCP-7664",
+    "name": "No One Has to Know"
+  },
+  {
     "number": "SCP-7665",
     "name": "See Evil, Hear Evil, Speak No Evil"
   },
@@ -30006,6 +30010,10 @@
   {
     "number": "SCP-7667",
     "name": "Glory to Mouldova!"
+  },
+  {
+    "number": "SCP-7668",
+    "name": "\"Paradoxes don't actually exist,\" said by a man who doesn't exist anymore."
   },
   {
     "number": "SCP-7669",
@@ -30146,10 +30154,6 @@
   {
     "number": "SCP-7715",
     "name": "Pipe Hypnagogia"
-  },
-  {
-    "number": "SCP-7716",
-    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7717",
@@ -30556,10 +30560,6 @@
     "name": "Bonetta"
   },
   {
-    "number": "SCP-7869",
-    "name": "[ACCESS DENIED]"
-  },
-  {
     "number": "SCP-7870",
     "name": "Goddess at the Bottom of a River"
   },
@@ -30700,6 +30700,10 @@
     "name": "Langmeyer's Laugh Emporium"
   },
   {
+    "number": "SCP-7908",
+    "name": "What flavour is it this time"
+  },
+  {
     "number": "SCP-7909",
     "name": "…And Then Nothing Happened"
   },
@@ -30720,16 +30724,8 @@
     "name": "\"That Wasn't Very Turtle Town of You.\""
   },
   {
-    "number": "SCP-7914",
-    "name": "The Roombik's Cube"
-  },
-  {
     "number": "SCP-7915",
     "name": "Selene's Serenade: An Ode to the Moon"
-  },
-  {
-    "number": "SCP-7916",
-    "name": "[ACCESS DENIED]"
   },
   {
     "number": "SCP-7917",
@@ -30804,10 +30800,6 @@
     "name": "Luminous Celestial Bodies"
   },
   {
-    "number": "SCP-7937",
-    "name": "[ACCESS DENIED]"
-  },
-  {
     "number": "SCP-7939",
     "name": "New Whirled Order."
   },
@@ -30822,6 +30814,10 @@
   {
     "number": "SCP-7942",
     "name": "A Waste of Time"
+  },
+  {
+    "number": "SCP-7944",
+    "name": "Coat of Manus"
   },
   {
     "number": "SCP-7945",
@@ -30850,6 +30846,10 @@
   {
     "number": "SCP-7958",
     "name": "I am half sick of shadows"
+  },
+  {
+    "number": "SCP-7959",
+    "name": "Reality Bender's Notebook"
   },
   {
     "number": "SCP-7960",

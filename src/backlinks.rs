@@ -1,24 +1,26 @@
 use anyhow::Result;
-use once_cell::sync::Lazy;
-use reqwest::Client;
-use reqwest::header::{HeaderMap, HeaderValue};
 use indicatif::{ProgressBar, ProgressStyle};
-use regex::{Regex, RegexSet};
+use log::{error, debug};
+use once_cell::sync::Lazy;
 use rand::Rng;
-use serde::{Serialize, Deserialize};
-use serde_json::{json, Value};
+use regex::{Regex, RegexSet};
+use reqwest::header::{HeaderMap, HeaderValue};
+use reqwest::Client;
 use scraper::{Html, Selector};
-use std::{sync::Arc, fs::OpenOptions, io::{self, Read, Seek}};
-use titlecase;
-use log::{info, error};
-use tokio::{fs, task, sync::Semaphore};
+use serde::{Deserialize, Serialize};
+use serde_json::{json, Value};
+use std::{
+	fs::OpenOptions,
+	io::{self, Read, Seek}
+};
+use tokio::{fs, sync::Semaphore, task};
 
 #[derive(Serialize, Deserialize)]
 struct BacklinksInfo {
 	fragment: bool,
 	name: String,
 	number: String,
-	url: String
+	url: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -28,19 +30,16 @@ struct SCPInfo {
 }
 
 static SEMAPHORE: Lazy<Semaphore> = Lazy::new(|| Semaphore::new(30));
-static SCP_NUM_RE: Lazy<Regex> = Lazy::new(|| {
-		Regex::new(r"(?i)\bscp-([0-9]{1,4})$").unwrap()
-});
+static SCP_NUM_RE: Lazy<Regex> =
+	Lazy::new(|| Regex::new(r"(?i)\bscp-([0-9]{1,4})$").unwrap());
 
 fn format_number(number: u16, skip_zero_one: bool) -> String {
-	if skip_zero_one && number > 1 && number <= 99 {
-		format!("SCP-{:03}", number)
-	} else if !skip_zero_one && number <= 99 {
+	if (number > 1 || !skip_zero_one) && number <= 99 {
 		format!("SCP-{:03}", number)
 	} else if number > 99 {
 		format!("SCP-{}", number)
 	} else {
-			number.to_string()
+		number.to_string()
 	}
 }
 
@@ -86,21 +85,23 @@ async fn append_json_to_file(json: &Value, file_path: &str) -> Result<()> {
 		serde_json::to_writer_pretty(io::BufWriter::new(&file), &existing_json)?;
 
 		Ok::<(), anyhow::Error>(())
-	}).await??;
+	})
+	.await??;
 
 	Ok(())
 }
 
 async fn request_page(url: &str) -> Result<Html> {
 	let body = reqwest::get(url).await?.text().await?;
-	Ok(Html::parse_document(&body)) 
+	Ok(Html::parse_document(&body))
 }
 
 async fn get_scp_name(number: &str) -> Result<String> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
-	let scp_name = scp_names_vec.iter()
+	let scp_name = scp_names_vec
+		.iter()
 		.find(|&scp| scp.number == number)
 		.map(|scp| scp.name.to_owned())
 		.unwrap_or_else(|| number.to_string());
@@ -114,16 +115,21 @@ fn extract_scp_number(scp_str: &str) -> Option<u16> {
 	Some(number)
 }
 
-async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
-	let document = Arc::clone(&html_body);
+async fn parse_html_to_json(
+	html_body: &Html,
+	page_name: &str,
+) -> Result<serde_json::Value> {
+	let document = html_body;
 	let _permit = SEMAPHORE.acquire().await;
 
-	let link_selector = Selector::parse("ul li a:first-of-type").expect("Failed to create link Selector");
-	let breadcrumb_selector = Selector::parse("#breadcrumbs > a:last-of-type").expect("Failed to create link Selector");
+	let link_selector =
+		Selector::parse("ul li a:first-of-type").expect("Failed to create link Selector");
+	let breadcrumb_selector = Selector::parse("#breadcrumbs > a:last-of-type")
+		.expect("Failed to create link Selector");
 
 	let mut links: Vec<serde_json::Value> = Vec::new();
 	let re = Regex::new(r" \(/\S+\)").unwrap();
-	let regex_set = RegexSet::new(&[
+	let regex_set = RegexSet::new([
 		r"(?i)http",
 		r"(?i)component",
 		r"(?i)guide",
@@ -135,9 +141,11 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 		r"(?i)art:",
 		r"(?i)resource",
 		r"(?i)theme",
-	]).unwrap();
+	])
+	.unwrap();
 
-	let total_entries: u16 = document.select(&link_selector)
+	let total_entries: u16 = document
+		.select(&link_selector)
 		.filter(|element| {
 			let url = element.value().attr("href").unwrap_or_default();
 			!regex_set.is_match(url)
@@ -151,28 +159,34 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 			.template("{msg} {spinner:.green} [{elapsed_precise}] [{bar:40.cyan/blue}] {pos:>7}/{len:7} ({eta_precise})")? 
 			.progress_chars("##-")
 	);
-	let message = format!("Fetching ACS Backlinks Info - Fragments: {} / Normal {}",  fragments, normal);
+	let message = format!(
+		"Fetching ACS Backlinks Info from {} - Fragments: {} / Normal {}",
+		page_name, fragments, normal
+	);
 	backlinks_pb.set_message(message);
-	backlinks_pb.set_length(total_entries.into());	
+	backlinks_pb.set_length(total_entries.into());
 
-	for element in document.select(&link_selector) {		
+	for element in document.select(&link_selector) {
 		let url: String = element.value().attr("href").unwrap_or_default().to_string();
-		let is_fragment = url.contains("fragment:");	
-		
+		let is_fragment: bool = url.contains("fragment:");
+
 		if is_fragment {
-			fragments += 1; 
+			fragments += 1;
 		} else {
 			normal += 1;
 		}
 
-		let message = format!("Fetching ACS Backlinks Info - Fragments: {} / Normal {}",  fragments, normal);
+		let message = format!(
+			"Fetching ACS Backlinks Info from {} - Fragments: {} / Normal {}",
+			page_name, fragments, normal
+		);
 		backlinks_pb.set_message(message);
 
 		let name_text = element.text().collect::<Vec<_>>().join("");
-		let mut name = name_text.trim().to_string();    
+		let mut name = name_text.trim().to_string();
 		let mut number = String::new();
 
-		info!("Initial name: {}", name);
+		debug!("Initial name: {}", name);
 
 		if regex_set.is_match(&url) || regex_set.is_match(&name) {
 			continue;
@@ -187,18 +201,22 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 				match get_scp_name(&number).await {
 					Ok(name_from_json) => {
 						name = name_from_json;
-						info!("SCP Number: {} | Name from json: {}", number, name);
-					},
+						debug!("SCP Number: {} | Name from json: {}", number, name);
+					}
 					Err(e) => {
 						error!("Error getting name for SCP Number: {}: {}", number, e);
 						continue;
-					},
+					}
 				}
 			}
 		} else if name.len() <= 1 {
-			info!("SCP URL: {} | Name <= 1: {}", url, name);
+			debug!("SCP URL: {} | Name <= 1: {}", url, name);
 			if let Some(url_name) = url.rsplit('/').next() {
-				name = url_name.replace("fragment:", "").replace("ii", "II").replace("-s", "'s").replace("-", " ");
+				name = url_name
+					.replace("fragment:", "")
+					.replace("ii", "II")
+					.replace("-s", "'s")
+					.replace('-', " ");
 				name = titlecase::titlecase(&name);
 			}
 		}
@@ -210,32 +228,43 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 			if let Some(first_breadcrumb) = breadcrumb.next() {
 				let breadcrumb_text = first_breadcrumb.text().collect::<String>();
 				let breadcrumb_match = SCP_NUM_RE.is_match(&breadcrumb_text);
-				info!("breadcrumb text: {} | matches SCP_RUM_RE: {}", breadcrumb_text, breadcrumb_match);
+				debug!(
+					"breadcrumb text: {} | matches SCP_RUM_RE: {}",
+					breadcrumb_text, breadcrumb_match
+				);
 				if SCP_NUM_RE.is_match(&breadcrumb_text) {
 					if let Some(raw_number) = extract_scp_number(&breadcrumb_text) {
 						number = format_number(raw_number, false);
 						match get_scp_name(&number).await {
 							Ok(name_from_json) => {
 								name = name_from_json;
-								info!("SCP Number: {} | Name from json: {}", number, name);
-							},
+								debug!(
+									"SCP Number: {} | Name from json: {}",
+									number, name
+								);
+							}
 							Err(e) => {
-								error!("Error getting name for SCP Number: {}: {}", number, e);
+								error!(
+									"Error getting name for SCP Number: {}: {}",
+									number, e
+								);
 								continue;
-							},
+							}
 						}
 					}
 				} else {
 					name = breadcrumb_text
-				}		
+				}
 			}
 		}
 
-		if name.as_str().to_lowercase().contains("proposal") || url.as_str().to_lowercase().contains("proposal") {
+		if name.as_str().to_lowercase().contains("proposal")
+			|| url.as_str().to_lowercase().contains("proposal")
+		{
 			number = "SCP-001".to_string();
-		}		
+		}
 
-		info!("Final name: {}, Final number: {}", name, number);
+		debug!("Final name: {}, Final number: {}", name, number);
 
 		if !links.iter().any(|link| link["url"] == url.as_str()) {
 			links.push(json!({
@@ -255,8 +284,7 @@ async fn parse_html_to_json(html_body: Arc<Html>) -> Result<serde_json::Value> {
 
 #[tokio::main]
 pub async fn fetch_backlinks() -> Result<()> {
-
-	if let Err(_) = pretty_env_logger::try_init() {
+	if pretty_env_logger::try_init().is_err() {
 		log::warn!("Logger is already initialized.");
 	}
 
@@ -266,13 +294,19 @@ pub async fn fetch_backlinks() -> Result<()> {
 		.map(char::from)
 		.collect();
 
-	info!("Created token: {}", token);
+		debug!("Created token: {}", token);
 
 	let mut headers = HeaderMap::new();
-	headers.insert("Cookie", HeaderValue::from_str(&format!("wikidot_token7={}", token)).unwrap());
-	headers.insert("User-Agent", HeaderValue::from_static("reqwest/0.11.20 (rust)"));
+	headers.insert(
+		"Cookie",
+		HeaderValue::from_str(&format!("wikidot_token7={}", token)).unwrap(),
+	);
+	headers.insert(
+		"User-Agent",
+		HeaderValue::from_static("reqwest/0.11.20 (rust)"),
+	);
 
-	info!("Created headers: {:?}", headers);
+	debug!("Created headers: {:?}", &headers);
 
 	let page_ids = ["858310940", "1058262511", "1307058244"];
 
@@ -288,39 +322,62 @@ pub async fn fetch_backlinks() -> Result<()> {
 			("wikidot_token7", &token),
 		];
 
-		info!("Created Params for page_id {}: {:?}", page_id, params);
+		let page_name: String = {
+			if page_id.eq_ignore_ascii_case("858310940") {
+				"ACS Bar".to_string()
+			} else if page_id.eq_ignore_ascii_case("1058262511") {
+				"Flops Header".to_string()
+			} else if page_id.eq_ignore_ascii_case("1307058244") {
+				"AIM Component".to_string()
+			} else {
+				String::new()
+			}
+		};
 
-		let response = client.post("https://scp-wiki.wikidot.com/ajax-module-connector.php")
+		debug!(
+			"Created Params from page {} with page_id: {} {:?}",
+			&page_name, &page_id, params
+		);
+
+		let response = client
+			.post("https://scp-wiki.wikidot.com/ajax-module-connector.php")
 			.headers(headers.clone())
 			.form(&params)
 			.send()
 			.await?;
 
 		if response.status().is_success() {
+			debug!(
+				"Response successful from page {} with page_id: {}",
+				&page_name, &page_id
+			);
 			let json: serde_json::Value = response.json().await?;
-			let html: Option<Arc<Html>> = match json.get("body") {
+			let html: Option<Html> = match json.get("body") {
 				Some(html_body) => {
-					let html_body_str = html_body.as_str().ok_or(anyhow::anyhow!("Failed to convert html_body to str"))?;
+					let html_body_str = html_body
+						.as_str()
+						.ok_or(anyhow::anyhow!("Failed to convert html_body to str"))?;
 					let html = Html::parse_document(html_body_str);
-					Some(Arc::new(html))
-				},
+					Some(html)
+				}
 				None => {
 					error!("No HTML body");
 					None
 				}
 			};
 			if let Some(html) = html {
-				let parsed_json = parse_html_to_json(html).await?;
+				debug!("Parsing page {} with page_id: {}", &page_name, &page_id);
+				let parsed_json = parse_html_to_json(&html, &page_name).await?;
 				append_json_to_file(&parsed_json, "output/acs_backlinks.json").await?;
 			}
 		} else {
-			error!("Failed request or response for page_id {}: {:?}", page_id, response.status());
+			error!(
+				"Failed request or response for page_id {}: {:?}",
+				&page_id,
+				response.status()
+			);
 		}
 	}
-	
-	Ok(())
-}
 
-fn main() {
-	let _ = fetch_backlinks();
+	Ok(())
 }
