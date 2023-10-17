@@ -203,10 +203,16 @@ async fn parse_html_to_json(
 				match get_scp_name(&actual_number).await {
 					Ok(name_from_json) => {
 						name = name_from_json;
-						debug!("SCP Number: {} | Name from json: {}", actual_number, name);
+						debug!(
+							"SCP Number: {} | Name from json: {}",
+							actual_number, name
+						);
 					}
 					Err(e) => {
-						error!("Error getting name for SCP Number: {}: {}", actual_number, e);
+						error!(
+							"Error getting name for SCP Number: {}: {}",
+							actual_number, e
+						);
 						continue;
 					}
 				}

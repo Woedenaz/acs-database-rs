@@ -67,7 +67,7 @@ fn extract_scp_number(s: &str) -> Option<u16> {
 		let number = match s[4..].parse::<u16>() {
 			Ok(num) => Some(num),
 			Err(e) => {
-				log::error!("Failed to parse SCP number {}: {}", s, e);				
+				log::error!("Failed to parse SCP number {}: {}", s, e);
 				None
 			}
 		}?;
