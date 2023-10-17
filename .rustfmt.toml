@@ -1,0 +1,7 @@
+# What rust edition to use
+edition = "2021"
+
+# Formatting options
+max_width = 90
+reorder_imports = true
+hard_tabs = true

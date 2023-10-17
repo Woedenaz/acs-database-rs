@@ -1,12 +1,11 @@
 [package]
 name = "acs_database_rs"
 description = "ACS Database Scraper - Builds a JSON Database of SCPs using the Anomaly Classification System"
-default-run = "main"
 readme = "README.md"
 license= "GPL-3.0-or-later"
 exclude = [".gitignore", ".editorconfig"]
 
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Woedenaz"]
 edition = "2021"
 
