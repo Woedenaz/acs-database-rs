@@ -1,6 +1,6 @@
 use anyhow::Result;
 use indicatif::{ProgressBar, ProgressStyle};
-use log::{error, debug};
+use log::{debug, error};
 use once_cell::sync::Lazy;
 use rand::Rng;
 use regex::{Regex, RegexSet};
@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::{json, Value};
 use std::{
 	fs::OpenOptions,
-	io::{self, Read, Seek}
+	io::{self, Read, Seek},
 };
 use tokio::{fs, sync::Semaphore, task};
 
@@ -19,14 +19,16 @@ use tokio::{fs, sync::Semaphore, task};
 struct BacklinksInfo {
 	fragment: bool,
 	name: String,
-	number: String,
+	actual_number: String,
 	url: String,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 struct SCPInfo {
-	number: String,
+	actual_number: String,
+	display_number: String,
 	name: String,
+	url: String,
 }
 
 static SEMAPHORE: Lazy<Semaphore> = Lazy::new(|| Semaphore::new(30));
@@ -96,15 +98,15 @@ async fn request_page(url: &str) -> Result<Html> {
 	Ok(Html::parse_document(&body))
 }
 
-async fn get_scp_name(number: &str) -> Result<String> {
+async fn get_scp_name(actual_number: &str) -> Result<String> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
 	let scp_name = scp_names_vec
 		.iter()
-		.find(|&scp| scp.number == number)
+		.find(|&scp| scp.actual_number == actual_number)
 		.map(|scp| scp.name.to_owned())
-		.unwrap_or_else(|| number.to_string());
+		.unwrap_or_else(|| actual_number.to_string());
 
 	Ok(scp_name)
 }
@@ -184,7 +186,7 @@ async fn parse_html_to_json(
 
 		let name_text = element.text().collect::<Vec<_>>().join("");
 		let mut name = name_text.trim().to_string();
-		let mut number = String::new();
+		let mut actual_number = String::new();
 
 		debug!("Initial name: {}", name);
 
@@ -196,15 +198,15 @@ async fn parse_html_to_json(
 
 		if SCP_NUM_RE.is_match(&url) && !is_fragment {
 			if let Some(raw_number) = extract_scp_number(&url) {
-				number = format_number(raw_number, false);
+				actual_number = format_number(raw_number, false);
 
-				match get_scp_name(&number).await {
+				match get_scp_name(&actual_number).await {
 					Ok(name_from_json) => {
 						name = name_from_json;
-						debug!("SCP Number: {} | Name from json: {}", number, name);
+						debug!("SCP Number: {} | Name from json: {}", actual_number, name);
 					}
 					Err(e) => {
-						error!("Error getting name for SCP Number: {}: {}", number, e);
+						error!("Error getting name for SCP Number: {}: {}", actual_number, e);
 						continue;
 					}
 				}
@@ -234,19 +236,19 @@ async fn parse_html_to_json(
 				);
 				if SCP_NUM_RE.is_match(&breadcrumb_text) {
 					if let Some(raw_number) = extract_scp_number(&breadcrumb_text) {
-						number = format_number(raw_number, false);
-						match get_scp_name(&number).await {
+						actual_number = format_number(raw_number, false);
+						match get_scp_name(&actual_number).await {
 							Ok(name_from_json) => {
 								name = name_from_json;
 								debug!(
 									"SCP Number: {} | Name from json: {}",
-									number, name
+									actual_number, name
 								);
 							}
 							Err(e) => {
 								error!(
 									"Error getting name for SCP Number: {}: {}",
-									number, e
+									actual_number, e
 								);
 								continue;
 							}
@@ -261,14 +263,14 @@ async fn parse_html_to_json(
 		if name.as_str().to_lowercase().contains("proposal")
 			|| url.as_str().to_lowercase().contains("proposal")
 		{
-			number = "SCP-001".to_string();
+			actual_number = "SCP-001".to_string();
 		}
 
-		debug!("Final name: {}, Final number: {}", name, number);
+		debug!("Final name: {}, Final number: {}", name, actual_number);
 
 		if !links.iter().any(|link| link["url"] == url.as_str()) {
 			links.push(json!({
-				"number": number,
+				"actual_number": actual_number,
 				"name": name,
 				"url": format!("https://scp-wiki.wikidot.com{}", url.as_str()),
 				"fragment": is_fragment
@@ -294,7 +296,7 @@ pub async fn fetch_backlinks() -> Result<()> {
 		.map(char::from)
 		.collect();
 
-		debug!("Created token: {}", token);
+	debug!("Created token: {}", token);
 
 	let mut headers = HeaderMap::new();
 	headers.insert(

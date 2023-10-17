@@ -1,5 +1,4 @@
 use clap::Parser;
-use log::error;
 use serde::{Deserialize, Serialize};
 use std::borrow::Cow;
 
@@ -20,7 +19,8 @@ pub trait SortableField {
 #[derive(Serialize, Deserialize, Debug)]
 struct Acs {
 	name: String,
-	number: String,
+	actual_number: String,
+	display_number: String,
 	clearance: String,
 	clearance_text: String,
 	contain: String,
@@ -35,7 +35,8 @@ struct Acs {
 impl SortableField for Acs {
 	fn get_field(&self, field: &str) -> Cow<str> {
 		match field {
-			"number" => Cow::Borrowed(&self.number),
+			"actual_number" => Cow::Borrowed(&self.actual_number),
+			"display_number" => Cow::Borrowed(&self.display_number),
 			"name" => Cow::Borrowed(&self.name),
 			"clearance" => Cow::Borrowed(&self.clearance),
 			"clearance_text" => Cow::Borrowed(&self.clearance_text),
@@ -66,7 +67,7 @@ fn extract_scp_number(s: &str) -> Option<u16> {
 		let number = match s[4..].parse::<u16>() {
 			Ok(num) => Some(num),
 			Err(e) => {
-				error!("Failed to parse SCP number {}: {}", s, e);
+				log::error!("Failed to parse SCP number {}: {}", s, e);				
 				None
 			}
 		}?;
@@ -76,7 +77,7 @@ fn extract_scp_number(s: &str) -> Option<u16> {
 	}
 }
 
-pub fn sort<T: SortableField>(entries: &mut Vec<T>, sort_field: &str) {
+pub fn sort<T: SortableField>(entries: &mut [T], sort_field: &str) {
 	entries.sort_by(|a, b| {
 		let a_field = a.get_field(sort_field);
 		let b_field = b.get_field(sort_field);

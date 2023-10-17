@@ -53,15 +53,19 @@ struct Args {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct SCPInfo {
-	number: String,
+	actual_number: String,
+	display_number: String,
 	name: String,
+	url: String,
 }
 
 impl SortableField for SCPInfo {
 	fn get_field(&self, field: &str) -> Cow<str> {
 		match field {
-			"number" => Cow::Borrowed(&self.number),
+			"actual_number" => Cow::Borrowed(&self.actual_number),
+			"display_number" => Cow::Borrowed(&self.display_number),
 			"name" => Cow::Borrowed(&self.name),
+			"url" => Cow::Borrowed(&self.url),
 			_ => panic!("Invalid field: {}", field),
 		}
 	}
@@ -74,7 +78,7 @@ struct Range {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct SharedAcs {	
+struct SharedAcs {
 	contain: String,
 	secondary: String,
 	disrupt: String,
@@ -89,7 +93,8 @@ enum Acs {
 		shared: SharedAcs,
 
 		name: String,
-		number: String,		
+		actual_number: String,
+		display_number: String,
 		clearance: String,
 		clearance_text: String,
 		risk: String,
@@ -120,7 +125,7 @@ enum Acs {
 	Backup {
 		#[serde(flatten)]
 		shared: SharedAcs,
-		
+
 		risk: String,
 	},
 }
@@ -140,13 +145,25 @@ impl SharedAcs {
 impl SortableField for Acs {
 	fn get_field(&self, field: &str) -> Cow<str> {
 		match self {
-			Acs::Vanilla { shared, name, number, clearance, clearance_text, risk, url, fragment, .. } => {
+			Acs::Vanilla {
+				shared,
+				name,
+				actual_number,
+				display_number,
+				clearance,
+				clearance_text,
+				risk,
+				url,
+				fragment,
+				..
+			} => {
 				if let Some(shared_field) = shared.get_shared_field(field) {
 					return shared_field;
 				}
 				match field {
 					"name" => Cow::Borrowed(name),
-					"number" => Cow::Borrowed(number),
+					"actual_number" => Cow::Borrowed(actual_number),
+					"display_number" => Cow::Borrowed(display_number),
 					"clearance" => Cow::Borrowed(clearance),
 					"clearance_text" => Cow::Borrowed(clearance_text),
 					"risk" => Cow::Borrowed(risk),
@@ -154,8 +171,14 @@ impl SortableField for Acs {
 					"fragment" => Cow::Owned(fragment.to_string()),
 					_ => panic!("Invalid field: {}", field),
 				}
-			},
-			Acs::Bar { shared, clearance, clearance_text, risk, .. } => {
+			}
+			Acs::Bar {
+				shared,
+				clearance,
+				clearance_text,
+				risk,
+				..
+			} => {
 				if let Some(shared_field) = shared.get_shared_field(field) {
 					return shared_field;
 				}
@@ -165,8 +188,13 @@ impl SortableField for Acs {
 					"risk" => Cow::Borrowed(risk),
 					_ => panic!("Invalid field: {}", field),
 				}
-			},
-			Acs::Flops { shared, clearance, clearance_text, .. } => {
+			}
+			Acs::Flops {
+				shared,
+				clearance,
+				clearance_text,
+				..
+			} => {
 				if let Some(shared_field) = shared.get_shared_field(field) {
 					return shared_field;
 				}
@@ -175,8 +203,10 @@ impl SortableField for Acs {
 					"clearance_text" => Cow::Borrowed(clearance_text),
 					_ => panic!("Invalid field: {}", field),
 				}
-			},
-			Acs::Aim { shared, clearance, .. } => {
+			}
+			Acs::Aim {
+				shared, clearance, ..
+			} => {
 				if let Some(shared_field) = shared.get_shared_field(field) {
 					return shared_field;
 				}
@@ -184,7 +214,7 @@ impl SortableField for Acs {
 					"clearance" => Cow::Borrowed(clearance),
 					_ => panic!("Invalid field: {}", field),
 				}
-			},
+			}
 			Acs::Backup { shared, risk, .. } => {
 				if let Some(shared_field) = shared.get_shared_field(field) {
 					return shared_field;
@@ -193,7 +223,7 @@ impl SortableField for Acs {
 					"risk" => Cow::Borrowed(risk),
 					_ => panic!("Invalid field: {}", field),
 				}
-			},
+			}
 		}
 	}
 }
@@ -202,17 +232,15 @@ impl SortableField for Acs {
 struct BacklinksInfo {
 	fragment: bool,
 	name: String,
-	number: String,
+	actual_number: String,
 	url: String,
 }
 
 // SCP Names Selectors
 static LI_SELECTOR: Lazy<Selector> =
-	Lazy::new(|| Selector::parse("[id*='toc'] + ul li").unwrap());
+	Lazy::new(|| Selector::parse("[id*='toc']:not([id='toc0']) + ul li").unwrap());
 static LINK_SELECTOR: Lazy<Selector> =
-	Lazy::new(|| Selector::parse("a:not(.newpage)").unwrap());
-static SCP_NUM_RE: Lazy<Regex> =
-	Lazy::new(|| Regex::new(r"(?i)scp-([0-9]{1,4})").unwrap());
+	Lazy::new(|| Selector::parse("a").unwrap());
 
 // ACS Bar Selectors
 static ACS_BAR_SELECTOR: Lazy<Selector> =
@@ -270,7 +298,7 @@ static FLOPS_DISRUPT_SELECTOR: Lazy<Selector> =
 
 // AIM Header Selectors
 static AIM_HEADER_SELECTOR: Lazy<Selector> =
-	Lazy::new(|| Selector::parse("div.desktop-aim").unwrap());
+	Lazy::new(|| Selector::parse("div.desktop-aim div.cell-container-image").unwrap());
 static AIM_CLEARANCE_SELECTOR: Lazy<Selector> = Lazy::new(|| {
 	Selector::parse(
 		"div.desktop-aim > div.w-container > div > div:nth-child(2) > p > span > span",
@@ -297,23 +325,7 @@ const SERIES_URLS: [&str; 8] = [
 	"https://scp-wiki.wikidot.com/scp-series-8",
 ];
 
-const MAX_LEVEL: u8 = 9;
-
 //Helper Functions
-fn extract_scp_number(s: &str) -> Option<u16> {
-	let cap = SCP_NUM_RE.captures(s)?;
-
-	let number = match cap[1].parse::<u16>() {
-		Ok(num) => Some(num),
-		Err(e) => {
-			log::error!("Failed to parse SCP number {}: {}", s, e);
-			None
-		}
-	}?;
-
-	Some(number)
-}
-
 fn format_number(number: u16) -> String {
 	if number <= 99 {
 		format!("SCP-{:03}", number)
@@ -359,6 +371,47 @@ fn is_valid_containment_class(class: &str) -> bool {
 	.any(|&valid_class| class.eq_ignore_ascii_case(valid_class))
 }
 
+fn clearance_level_conversion(text: &str) -> String {
+	let re = Regex::new(r"\d").unwrap();
+
+	if let Some(mat) = re.find(text) {
+		let i = mat.as_str().parse::<i32>().unwrap();
+		return format!("LEVEL {}", i);
+	}
+
+	text.to_string()
+}
+
+#[test]
+fn test_clearance_level_conversion() {
+	const TEST_STRINGS: [(&str, &str); 12] = [
+		("LEVEL 3/EE-7372", "LEVEL 3"),
+		("CLASS 5/PL-046", "LEVEL 5"),
+		("DANGER 1 - 3719", "LEVEL 1"),
+		("4/3787", "LEVEL 4"),
+		("Level 0 (For Official Use Only)", "LEVEL 0"),
+		("Level 1 (Confidential)", "LEVEL 1"),
+		("Level 2 (Restricted)", "LEVEL 2"),
+		("Level 3 (Secret)", "LEVEL 3"),
+		("Level 4 (Top Secret)", "LEVEL 4"),
+		("Level 4/2317", "LEVEL 4"),
+		("Level 5 (Thaumiel)", "LEVEL 5"),
+		("Clearance Level 6", "LEVEL 6"),
+	];
+
+	for (input, expected) in TEST_STRINGS {
+		let result = clearance_level_conversion(input);
+		assert_eq!(
+			result.as_str(),
+			expected,
+			"Expected '{}' for input '{}', but got '{}'",
+			expected,
+			input,
+			result
+		);
+	}
+}
+
 fn extract_string_after_colon(text: &str) -> String {
 	text.split_once(':')
 		.map(|(_, rest)| rest.split_once('\n').unwrap_or((rest, "")).0.trim_start())
@@ -373,10 +426,13 @@ fn test_extract_string_after_colon() {
 		("disruption class: amida\n", "amida"),
 		("risk class: critical\n", "critical"),
 		("secondary class: foo bar\n", "foo bar"),
-		("containment class: {field left blank}\\n", "{field left blank}"),
+		(
+			"containment class: {field left blank}\n",
+			"{field left blank}",
+		),
 		("no colon here\n", ""),
 		("", ""),
-		("containment class: ", "")
+		("containment class: ", ""),
 	];
 
 	for (input, expected) in TEST_STRINGS {
@@ -401,7 +457,11 @@ fn clean_text(text: &str) -> String {
 		return extract_string_after_colon(&text);
 	}
 	if !(text.contains("n/a") || text.contains("N/A")) && text.contains('/') {
-		return text.split_once('/').map(|(_, rest)| rest).unwrap_or("").to_string();
+		return text
+			.split_once('/')
+			.map(|(_, rest)| rest)
+			.unwrap_or("")
+			.to_string();
 	} else {
 		text
 	}
@@ -436,7 +496,8 @@ fn create_acs(acs: Acs) -> Result<Acs> {
 		Acs::Vanilla {
 			shared,
 			name,
-			number,
+			actual_number,
+			display_number,
 			clearance,
 			clearance_text,
 			risk,
@@ -444,9 +505,25 @@ fn create_acs(acs: Acs) -> Result<Acs> {
 			fragment,
 			..
 		} => {
-			let mut number = number.clone();
+			let mut actual_number = actual_number.clone();
 			if name.to_lowercase().contains("scp-") {
-				number = name.clone();
+				actual_number = name.clone();
+			}
+
+			let mut clearance_text =  clearance_text.clone();
+			let clearance_text_string: String;
+
+			if clearance_text.is_empty() {			 
+				clearance_text_string = match clearance.as_str() {
+					"LEVEL 1" => "Unrestricted",
+					"LEVEL 2" => "Restricted",
+					"LEVEL 3" => "Confidential",
+					"LEVEL 4" => "Secret",
+					"LEVEL 5" => "Top Secret",
+					"LEVEL 6" => "Cosmic Top Secret ",
+					_ => "",
+				}.to_string();
+				clearance_text = clearance_text_string;
 			}
 
 			Ok(Acs::Vanilla {
@@ -457,7 +534,8 @@ fn create_acs(acs: Acs) -> Result<Acs> {
 					scraper: clean_text(&shared.scraper),
 				},
 				name,
-				number,
+				actual_number,
+				display_number,
 				clearance: clean_text(&clearance),
 				clearance_text: clean_text(&clearance_text),
 				risk: clean_text(&risk),
@@ -467,9 +545,11 @@ fn create_acs(acs: Acs) -> Result<Acs> {
 		}
 		_ => {
 			log::error!("The provided Acs data is not of variant Vanilla: {:?}", acs);
-			Err(anyhow::anyhow!("The provided Acs data is not of variant Vanilla"))
+			Err(anyhow::anyhow!(
+				"The provided Acs data is not of variant Vanilla"
+			))
 		}
-	}	
+	}
 }
 
 //Helper Async Functions
@@ -504,6 +584,26 @@ async fn write_json<T: Serialize>(data: &[T], path: &str) -> Result<()> {
 	Ok(())
 }
 
+// Macros
+macro_rules! extract_scp_number {
+	($str:expr, $rgx:expr) => {{
+		let caps =
+			$rgx.captures($str)
+				.and_then(|cap| cap.get(1))
+				.and_then(|m| m.as_str().parse::<u16>().ok());
+		match caps {
+			Some(num) => format_number(num),
+			None => String::new(),
+		}
+	}};
+}
+
+macro_rules! get_clean {
+	($item:expr, $results:expr) => {
+			$results.get($item).map(|s| clean_text(s)).unwrap_or_else(String::new)
+	};
+}
+
 // Scrape SCP Series Pages -> Get SCP Names -> Write them to json File
 async fn init_scp_names_json() -> Result<()> {
 	let mut scp_names_vec: Vec<SCPInfo> = Vec::new();
@@ -517,6 +617,9 @@ async fn init_scp_names_json() -> Result<()> {
 	);
 	progress_bar_scp_names.set_message("Initializing SCP Info");
 
+	let scp_rgx: Regex = regex::Regex::new(r"(?i)SCP-(\d{3,4})").unwrap();
+	let dash_rgx: Regex = regex::Regex::new(r"-(\d{3,4})").unwrap();
+
 	for series_url in SERIES_URLS.iter() {
 		let document_option = request_page(series_url).await?;
 		if let Some(document) = document_option {
@@ -524,70 +627,92 @@ async fn init_scp_names_json() -> Result<()> {
 
 			for li in lis {
 				if let Some(link) = li.select(&LINK_SELECTOR).next() {
-					let link_url = link.value().attr("href").unwrap_or("");
+					//Getting class of SCP Link
+					let link_class = link.value().attr("class").map(|s| s.to_string());
+					log::info!("scp link class {:?}", link_class);
 
-					let scp_string = if link_url.to_lowercase().contains("scp-") {
-						link_url.to_string()
-					} else if link.inner_html().to_lowercase().contains("scp-") {
-						link.inner_html()
-					} else {
-						String::new()
-					};
+					//Checking if the Link's class is "newpage"					
+					if link_class.as_deref() != Some("newpage") {
+						let link_url = link.value().attr("href").unwrap_or("");
+						let link_url_uppercase = link_url.to_uppercase();
 
-					let name_html: String = li.inner_html();
-					let name_parts: Vec<&str> = name_html.split(" - ").collect();
-					let name: String = if name_parts.len() > 1 {
-						name_parts[1].to_string()
-					} else {
-						String::new()
-					};
+						//Finding SCP Number string either in URL href or displayed text
+						let actual_number = 
+							if link_url_uppercase.contains("SCP-") || link_url_uppercase.starts_with("SCP-") {
+								extract_scp_number!(link_url, scp_rgx)
+							} else if link.inner_html().to_uppercase().starts_with("SCP-") {
+								extract_scp_number!(link.inner_html().as_str(), scp_rgx)
+							} else if link_url.contains('-') {
+								extract_scp_number!(link_url, dash_rgx)
+							} else {
+								String::new()
+							};
 
-					if let Some(scp_number) = extract_scp_number(&scp_string) {
-						let number = format_number(scp_number);
+						//Finding displayed SCP Number which is sometimes unique
+						let display_number = link.inner_html();
 
-						scp_names_vec.push(SCPInfo { number, name });
+						//Finding SCP Name with String Manipulation
+						let name_html: String = li.inner_html();
+						let name = if let Some(index) = name_html.find(" - ") {
+							name_html[index + 3..].to_string()
+						} else {
+							String::new()
+						};
+
+						//Getting SCP link URL
+						let url = if link_url.contains("scp-wiki") {
+							link_url.to_string()
+						} else {
+							format!("https://scp-wiki.wikidot.com{}", link_url)
+						};
+
+						log::info!("url: {:?}\nname {:?}\nactual number {:?}\ndisplay number {:?}", url, name, actual_number, display_number);
+
+						//Pushing parsed vector to SCP Names					
+						scp_names_vec.push(SCPInfo { actual_number, display_number, name, url });
 
 						progress_bar_scp_names.inc(1);
 					}
 				}
 			}
 		} else {
-			log::error!("Page not found: {}", series_url);
+			log::warn!("Series url not found: {}", series_url);
 		}
 	}
 
-	sort_json::sort(&mut scp_names_vec, "number");
-	write_json(&scp_names_vec, "output/acs_database.json").await?;
+	sort_json::sort(&mut scp_names_vec, "actual_number");
+	write_json(&scp_names_vec, "output/scp_names.json").await?;
 
 	progress_bar_scp_names.finish_with_message("SCP Info Initialized");
 	Ok(())
 }
 
 // Get SCP Name from SCP Names json based on Number
-async fn get_scp_name(number: &str) -> Result<String> {
+async fn get_name_display_number(actual_number: &str) -> Result<(String, String)> {
 	let json_data = fs::read_to_string("output/scp_names.json").await?;
 	let scp_names_vec: Vec<SCPInfo> = serde_json::from_str(&json_data)?;
 
-	let scp_name = scp_names_vec
-		.iter()
-		.find(|&scp| scp.number == number)
-		.map(|scp| scp.name.to_owned())
-		.unwrap_or_else(|| number.to_string());
+	if let Some(scp_info) = scp_names_vec.iter().find(|&scp| scp.actual_number == actual_number) {
+		
+		let scp_name = scp_info.name.to_owned();
+		let scp_display_number = scp_info.display_number.to_owned();
 
-	Ok(scp_name)
+		Ok((scp_name, scp_display_number))
+	} else {
+		Err(anyhow::anyhow!("SCPInfo not found for actual_number: {}", actual_number))
+	}
 }
 
 // Text Strings scraping if ACS Bar is not found.
 // Searches the pages for specific phrases/words and adds them to the database if found
-async fn backup_acs_function(
-	document: &Html,
-) -> Option<Acs> {
+
+async fn backup_acs_function(document: &Html) -> Option<Acs> {
 	let text = document
 		.root_element()
 		.text()
 		.collect::<String>()
 		.to_lowercase();
-	
+
 	let mut results = HashMap::new();
 
 	let keywords = [
@@ -598,54 +723,56 @@ async fn backup_acs_function(
 	];
 
 	for &(search_str, result_key) in &keywords {
-		if let Some(index) = text.find(search_str) {            
-			let result_value = extract_string_after_colon(&text[index..]);            
-			results.insert(result_key.to_string(), result_value);            
+		if let Some(index) = text.find(search_str) {
+			let result_value = extract_string_after_colon(&text[index..]);
+			results.insert(result_key.to_string(), result_value);
+
+			log::info!("Backup Function found {} | {}", search_str, result_key);
 		}
 	}
 
 	for &keyword in &[" vlam ", " keneq ", " ekhi ", " amida "] {
 		if text.contains(keyword) {
 			results.insert("disrupt".to_string(), keyword.trim().to_string());
+			log::info!("Backup Function found keyword: {}", keyword);
 			break;
 		}
+	}	
+
+	let contain = get_clean!("contain", results);
+	let disrupt = get_clean!("disrupt", results);
+	let risk = get_clean!("risk", results);
+	let secondary = get_clean!("secondary", results);
+
+	if disrupt.is_empty() 
+		&& risk.is_empty() 
+		&& secondary.is_empty() {
+		return None;
 	}
 
-	match (
-		results.get("contain"),
-		results.get("disrupt"),
-		results.get("risk"),
-		results.get("secondary"),
-	) {
-		(Some(contain), Some(disrupt), Some(risk), Some(secondary)) => Some(
-			Acs::Backup {
-				shared: SharedAcs {
-					contain: clean_text(contain),
-					secondary: clean_text(secondary),
-					disrupt: clean_text(disrupt),
-					scraper: "Brute Force".to_string(),
-				},
-				risk: clean_text(risk),
-			}
-		),
-		_ => None,
-	}
+	let acs_backup = Acs::Backup {
+		shared: SharedAcs {
+			contain,
+			secondary,
+			disrupt,
+			scraper: "Backup".to_string(),
+		},
+		risk,
+	};
+
+	log::info!("Final Results for Page\n{:?}", acs_backup);
+
+	Some(acs_backup)
 }
 
 // ACS Bar Scraper
-// ACS Bar Scraper
-async fn get_acs_bar(
-	document: &Html,
-) -> Acs {
+async fn get_acs_bar(document: &Html) -> Acs {
 	let mut clearance = clean_text(
 		&extract_text(document.root_element(), &CLEARANCE_SELECTOR).unwrap_or_default(),
 	);
-	for i in 1..=MAX_LEVEL {
-		if clearance.contains(&format!("{}", i)) {
-			clearance = format!("LEVEL {}", i);
-			break;
-		}
-	}
+
+	clearance = clearance_level_conversion(&clearance);
+
 	let clearance_text = clean_text(
 		&extract_text(document.root_element(), &CLEARANCE_TEXT_SELECTOR)
 			.unwrap_or_default(),
@@ -677,17 +804,12 @@ async fn get_acs_bar(
 }
 
 // ACS Hybrid Bar Scraper
-async fn get_acs_hybrid_bar(
-	document: &Html,
-) -> Acs {
+async fn get_acs_hybrid_bar(document: &Html) -> Acs {
 	let mut clearance = extract_text(document.root_element(), &HYBRID_CLEARANCE_SELECTOR)
 		.unwrap_or_default();
-	for i in 1..=MAX_LEVEL {
-		if clearance.contains(&format!("{}", i)) {
-			clearance = format!("LEVEL {}", i);
-			break;
-		}
-	}
+
+	clearance = clearance_level_conversion(&clearance);
+
 	let clearance_text = {
 		let temp = clean_text(
 			&extract_text(document.root_element(), &HYBRID_CLEARANCE_TEXT_SELECTOR)
@@ -729,19 +851,14 @@ async fn get_acs_hybrid_bar(
 }
 
 // Flops Header Scraper
-async fn get_flops_header(
-	document: &Html,
-) -> Acs {
+async fn get_flops_header(document: &Html) -> Acs {
 	let mut clearance = clean_text(
 		&extract_text(document.root_element(), &FLOPS_CLEARANCE_SELECTOR)
 			.unwrap_or_default(),
 	);
-	for i in 1..=MAX_LEVEL {
-		if clearance.contains(&format!("{}", i)) {
-			clearance = format!("LEVEL {}", i);
-			break;
-		}
-	}
+
+	clearance = clearance_level_conversion(&clearance);
+
 	let clearance_text = clean_text(
 		&extract_text(document.root_element(), &FLOPS_CLEARANCE_TEXT_SELECTOR)
 			.unwrap_or_default(),
@@ -811,35 +928,53 @@ async fn get_aim_header(document: &Html) -> Acs {
 	}
 }
 
-// Searches the page for the ACS Bar & ACS Hybrid Bar
+// Searches the page for specific ACS Components
 // If found, selects and scrapes specific elements
 // If not found, resorts to Text Strings scraping
 async fn fetch_acs_data(
-	number: &str,
-	mut name: Option<&str>,
+	actual_number: &str,
+	mut name: Option<&str>,	
 	url: &str,
-	fragment: &bool
+	fragment: &bool,
 ) -> Result<Option<Acs>> {
 	log::debug!("Fetching data from: {}", url);
 	let document = request_page(url).await?;
 
-	fn convert_to_vanilla(acs: Acs, name: &str, number: &str, url: &str, fragment: &bool) -> Acs {
+	fn convert_to_vanilla(
+		acs: Acs,
+		name: &str,
+		actual_number: &str,
+		display_number: &str,
+		url: &str,
+		fragment: &bool,
+	) -> Acs {
 		match acs {
 			Acs::Vanilla { .. } => acs,
-			Acs::Bar { shared, clearance, clearance_text, risk } => Acs::Vanilla {
+			Acs::Bar {
+				shared,
+				clearance,
+				clearance_text,
+				risk,
+			} => Acs::Vanilla {
 				shared,
 				name: name.to_string(),
-				number: number.to_string(),
+				actual_number: actual_number.to_string(),
+				display_number: display_number.to_string(),
 				clearance,
 				clearance_text,
 				risk,
 				url: url.to_string(),
 				fragment: *fragment,
 			},
-			Acs::Flops { shared, clearance, clearance_text } => Acs::Vanilla {
+			Acs::Flops {
+				shared,
+				clearance,
+				clearance_text,
+			} => Acs::Vanilla {
 				shared,
 				name: name.to_string(),
-				number: number.to_string(),
+				actual_number: actual_number.to_string(),
+				display_number: display_number.to_string(),
 				clearance,
 				clearance_text,
 				risk: String::new(),
@@ -849,7 +984,8 @@ async fn fetch_acs_data(
 			Acs::Aim { shared, clearance } => Acs::Vanilla {
 				shared,
 				name: name.to_string(),
-				number: number.to_string(),
+				actual_number: actual_number.to_string(),
+				display_number: display_number.to_string(),
 				clearance,
 				clearance_text: String::new(),
 				risk: String::new(),
@@ -859,33 +995,38 @@ async fn fetch_acs_data(
 			Acs::Backup { shared, risk } => Acs::Vanilla {
 				shared,
 				name: name.to_string(),
-				number: number.to_string(),
+				actual_number: actual_number.to_string(),
+				display_number: display_number.to_string(),
 				clearance: String::new(),
 				clearance_text: String::new(),
 				risk,
 				url: url.to_string(),
 				fragment: *fragment,
-			},			
+			},
 		}
 	}
 
 	if let Some(document) = document {
 		let has_anom_bar = document.select(&ACS_BAR_SELECTOR).next().is_some();
 		let has_lite_anom_bar = document.select(&ACS_LITE_BAR_SELECTOR).next().is_some();
-		let has_hybrid_anom_bar = document.select(&ACS_HYBRID_BAR_SELECTOR).next().is_some();
+		let has_hybrid_anom_bar =
+			document.select(&ACS_HYBRID_BAR_SELECTOR).next().is_some();
 		let has_flops_header = document.select(&FLOPS_HEADER_SELECTOR).next().is_some();
 		let has_aim_header = document.select(&AIM_HEADER_SELECTOR).next().is_some();
 
 		let name_string: String;
+		let mut display_number: String = String::new();
 
-		if !number.eq_ignore_ascii_case("scp-000")
-			&& !number.eq_ignore_ascii_case("scp-001")
-			&& ( name.map_or(true, |n| n.is_empty()) 
-				&& ( number.contains("scp-") || number.contains("SCP-") ) 
-			)
+		if !actual_number.eq_ignore_ascii_case("scp-000")
+			&& !actual_number.eq_ignore_ascii_case("scp-001")
+			&& (name.map_or(true, |n| n.is_empty())
+				&& (actual_number.contains("scp-") || actual_number.contains("SCP-")))
 		{
-			name_string = get_scp_name(number).await?;
-    	name = Some(&name_string);	
+			let (fetched_name, fetched_display_number) = get_name_display_number(actual_number).await?;
+			name_string = fetched_name;
+			name = Some(&name_string);
+
+			display_number = fetched_display_number;
 		}
 
 		let acs_data: Acs;
@@ -904,68 +1045,72 @@ async fn fetch_acs_data(
 					acs_data = Acs::Backup { shared, risk };
 				}
 				_ => {
-					log::debug!("No data retrieved using backup_acs_function for URL: {}", url);
+					log::debug!(
+						"No data retrieved using backup_acs_function for URL: {}",
+						url
+					);
 					return Ok(None);
 				}
 			};
-		}
+		}		
 
-		let vanilla_acs = convert_to_vanilla(acs_data, name.unwrap_or(""), number, url, fragment);
+		let vanilla_acs =
+			convert_to_vanilla(acs_data, name.unwrap_or(""), actual_number, display_number.as_str(), url, fragment);
 
 		match create_acs(vanilla_acs) {
 			Ok(acs_data) => Ok(Some(acs_data)),
 			Err(e) => Err(e),
 		}
 	} else {
-		log::error!("Page not found: {}", url);
+		log::warn!("SCP Page does not exist: {} @ {}", actual_number, url);
 		Ok(None)
 	}
 }
 
 // Compare ACS Backlinks and add to Database if not included
 async fn fetch_and_update_entry(
-	number: &str,
+	actual_number: &str,
 	name: &str,
 	url: &str,
 	fragment: bool,
 ) -> Result<Acs> {
 	log::debug!("Fetching data from: {}", url);
-	match fetch_acs_data(number, Some(name), url, &fragment).await {
-		Ok(Some(acs_data)) => {
-			match acs_data {
-				Acs::Vanilla {
-					shared,
-					name,
-					number,
+	match fetch_acs_data(actual_number, Some(name), url, &fragment).await {
+		Ok(Some(acs_data)) => match acs_data {
+			Acs::Vanilla {
+				shared,
+				name,
+				actual_number,
+				display_number,
+				clearance,
+				clearance_text,
+				risk,
+				url,
+				fragment,
+			} => {
+				log::debug!("Successfully fetched ACS Bar Data from: {}", url);
+				match create_acs(Acs::Vanilla {
+					shared: SharedAcs {
+						contain: shared.contain,
+						secondary: shared.secondary,
+						disrupt: shared.disrupt,
+						scraper: shared.scraper,
+					},
+					name: name.to_string(),					
+					actual_number: actual_number.to_string(),
+					display_number,
 					clearance,
 					clearance_text,
 					risk,
-					url,
+					url: url.to_string(),
 					fragment,
-				} => {
-					log::debug!("Successfully fetched ACS Bar Data from: {}", url);
-					match create_acs(Acs::Vanilla {
-						shared: SharedAcs {
-							contain: shared.contain,
-							secondary: shared.secondary,
-							disrupt: shared.disrupt,
-							scraper: shared.scraper,
-						},
-						name: name.to_string(),
-						number: number.to_string(),
-						clearance: clearance,
-						clearance_text: clearance_text,            
-						risk: risk,
-						url: url.to_string(),
-						fragment: fragment,
-					}) {
-						Ok(new_entry) => Ok(new_entry),
-						Err(e) => Err(anyhow::anyhow!("Failed to create acs: {}", e)),
-					}
-				},
-				_ => Err(anyhow!("The provided Acs data is not of variant Vanilla.")),
+				}) {
+					Ok(new_entry) => Ok(new_entry),
+					Err(e) => Err(anyhow::anyhow!("Failed to create acs: {}", e)),
+				}
 			}
-		}
+			_ => Err(anyhow!("The provided Acs data is not of variant Vanilla.")),
+		},
 
 		Ok(None) => Err(anyhow!(
 			"f: fetch_and_update_entry | Failed to fetch ACS data for: {}",
@@ -983,7 +1128,8 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 	let acs_bar_backlinks_data = fs::read_to_string("output/acs_backlinks.json").await?;
 	let acs_database_data = fs::read_to_string("output/acs_database.json").await?;
 
-	let acs_bar_backlinks: Vec<BacklinksInfo> = serde_json::from_str(&acs_bar_backlinks_data)?;
+	let acs_bar_backlinks: Vec<BacklinksInfo> =
+		serde_json::from_str(&acs_bar_backlinks_data)?;
 	let mut acs_database: Vec<Acs> = serde_json::from_str(&acs_database_data)?;
 
 	let semaphore = Arc::new(Semaphore::new(limit.into()));
@@ -1001,18 +1147,21 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 	let new_entries_futures: FuturesUnordered<_> = acs_bar_backlinks
 		.into_iter()
 		.filter_map(|link_item| {
-			let backlinks_number = &link_item.number;
+			let backlinks_number = &link_item.actual_number;
 			let backlinks_name = &link_item.name;
 
-			if acs_database.iter().any(|db_item| {
-				match db_item {
-					Acs::Vanilla{number, name, fragment, ..} => {
-						number.eq_ignore_ascii_case(&backlinks_number) 
-							|| name.eq_ignore_ascii_case(&backlinks_name)
-							|| *fragment
-					}
-					_ => false,
+			if acs_database.iter().any(|db_item| match db_item {
+				Acs::Vanilla {
+					actual_number,
+					name,
+					fragment,
+					..
+				} => {
+					actual_number.eq_ignore_ascii_case(backlinks_number)
+						|| name.eq_ignore_ascii_case(backlinks_name)
+						|| *fragment
 				}
+				_ => false,
 			}) {
 				None
 			} else {
@@ -1030,12 +1179,12 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 					.await
 					.expect("Failed to acquire semaphore");
 
-				let number = &link_item.number;
+				let actual_number = &link_item.actual_number;
 				let name = &link_item.name;
 				let url = &link_item.url;
 				let fragment = link_item.fragment;
 
-				match fetch_and_update_entry(number, name, url, fragment).await {
+				match fetch_and_update_entry(actual_number, name, url, fragment).await {
 					Ok(data) => {
 						matches.fetch_add(1, Ordering::Relaxed);
 						pb.set_message(format!(
@@ -1048,7 +1197,7 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 						error!(
 							"f: cross_compare_and_update | Error fetching ACS data for {}",
 							format!("{:?}: {:?}", link_item, e)
-					);
+						);
 						None
 					}
 				}
@@ -1060,7 +1209,7 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 		.collect::<Vec<Option<Acs>>>()
 		.await
 		.into_iter()
-		.flatten() 
+		.flatten()
 		.collect::<Vec<Acs>>();
 
 	let finish_message = format!("Done! - Matches: {}", matches.load(Ordering::Relaxed));
@@ -1068,7 +1217,7 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 
 	acs_database.extend(new_entries);
 
-	sort_json::sort(&mut acs_database, "number");
+	sort_json::sort(&mut acs_database, "actual_number");
 	write_json(&acs_database, "output/acs_database.json").await?;
 
 	Ok(())
@@ -1100,7 +1249,19 @@ async fn main() -> Result<()> {
 	}
 
 	if args.scraper {
-		let total = range.end - range.start + 1;
+		let scp_info_file = fs::read_to_string("output/scp_names.json").await?;
+    let scp_info_vec: Vec<SCPInfo> = serde_json::from_str(&scp_info_file)?;
+
+    let total = scp_info_vec.iter()
+			.filter(|info| {
+				if let Some(scp_number_str) = info.actual_number.strip_prefix("SCP-") {
+					if let Ok(scp_number) = scp_number_str.parse::<u16>() {
+							return scp_number >= range.start && scp_number <= range.end;
+					}
+				}
+				false
+			})
+			.count();
 
 		let progress_bar = ProgressBar::new_spinner();
 		progress_bar.set_style(ProgressStyle::default_bar()
@@ -1109,57 +1270,63 @@ async fn main() -> Result<()> {
 			.progress_chars("##-")
 		);
 		progress_bar.set_message("Fetching ACS data");
-		progress_bar.set_length(total.into());
+		progress_bar.set_length(total as u64);
 
-		let semaphore = Arc::new(Semaphore::new(limit.into()));
+		let semaphore = Arc::new(Semaphore::new(limit.into()));		
 
 		let mut acs_data: Vec<Acs> = (start..=end)
-			.map(|number| {
-				let scp_number = format_number(number);
-				let scp_url_string =
-					format!("https://scp-wiki.wikidot.com/{}", scp_number);
+			.filter_map(|actual_number| {
+				let scp_info = scp_info_vec.iter().find(|info| info.actual_number == format_number(actual_number));
 				let pb = progress_bar.clone();
 				let semaphore = Arc::clone(&semaphore);
-				Box::pin(async move {
-					let _permit = semaphore
-						.acquire()
-						.await
-						.map_err(|e| {
-							error!(
-								"Failed to acquire semaphore permit for {}: {}",
-								scp_number, e
-							);
-							e
-						})
-						.ok()?;
-					let mut retries = 0;
-					let mut result =
-						fetch_acs_data(&scp_number, None, &scp_url_string, &false).await;
-					while result.is_err() && retries < args.retries.into() {
-						retries += 1;
-						tokio::time::sleep(Duration::from_secs(2 * retries)).await;
-						result = fetch_acs_data(&scp_number, None, &scp_url_string, &false).await;
-					}
-					match result {
-						Ok(Some(data)) => {
-							pb.inc(1);
-							tokio::time::sleep(Duration::from_millis(1000)).await;
-							Some(data)
-						}
-						Ok(None) => {
-							pb.inc(1);
+
+				Some(Box::pin(async move {
+					match scp_info {
+						Some(info) => {
+							let _permit = semaphore
+								.acquire()
+								.await
+								.map_err(|e| {
+									error!(
+										"Failed to acquire semaphore permit for {}: {}",
+										format_number(actual_number), e
+									);
+									e
+								})
+								.ok()?;
+							let mut retries = 0;
+							let mut result = fetch_acs_data(&format_number(actual_number), None, &info.url, &false).await;
+							while result.is_err() && retries < args.retries.into() {
+								retries += 1;
+								tokio::time::sleep(Duration::from_secs(2 * retries)).await;
+								result = fetch_acs_data(&format_number(actual_number), None, &info.url, &false).await;
+							}
+							match result {
+								Ok(Some(data)) => {
+									pb.inc(1);
+									tokio::time::sleep(Duration::from_millis(1000)).await;
+									Some(data)
+								}
+								Ok(None) => {
+									pb.inc(1);
+									None
+								}
+								Err(e) => {
+									error!(
+										"f: main > scraper | Error fetching ACS data for {}: {}",
+										format_number(actual_number), e
+									);
+									pb.inc(1);
+									None
+								}
+							}
+						},
+						None => {
+							log::warn!("No SCPInfo found for number: {}", actual_number);
 							None
 						}
-						Err(e) => {
-							error!(
-								"f: main > scraper | Error fetching ACS data for {}: {}",
-								scp_number, e
-							);
-							pb.inc(1);
-							None
-						}
 					}
-				})
+				}))				
 			})
 			.collect::<futures::stream::FuturesUnordered<_>>()
 			.collect::<Vec<Option<Acs>>>()
@@ -1170,7 +1337,7 @@ async fn main() -> Result<()> {
 
 		progress_bar.finish_with_message("Done");
 
-		sort_json::sort(&mut acs_data, "number");
+		sort_json::sort(&mut acs_data, "actual_number");
 		write_json(&acs_data, "output/acs_database.json").await?;
 	}
 
