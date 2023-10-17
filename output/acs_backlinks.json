@@ -3,12 +3,6 @@
     "fragment": true,
     "name": "Qayin and Hevel",
     "number": "SCP-7376",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
-  },
-  {
-    "fragment": true,
-    "name": "Qayin and Hevel",
-    "number": "SCP-7376",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-1"
   },
   {
@@ -22,6 +16,12 @@
     "name": "Qayin and Hevel",
     "number": "SCP-7376",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-2"
+  },
+  {
+    "fragment": true,
+    "name": "Qayin and Hevel",
+    "number": "SCP-7376",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
   },
   {
     "fragment": true,
@@ -2235,13 +2235,13 @@
     "fragment": true,
     "name": "The Constant Companions",
     "number": "SCP-5056",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-0"
   },
   {
     "fragment": true,
     "name": "The Constant Companions",
     "number": "SCP-5056",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5056-offset-1"
   },
   {
     "fragment": false,
@@ -2403,7 +2403,7 @@
     "fragment": true,
     "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": "SCP-5170",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-4"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-2"
   },
   {
     "fragment": true,
@@ -2415,7 +2415,7 @@
     "fragment": true,
     "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "number": "SCP-5170",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-4"
   },
   {
     "fragment": false,
@@ -3135,13 +3135,13 @@
     "fragment": true,
     "name": "The Woman in the Incinerator",
     "number": "SCP-5616",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
   },
   {
     "fragment": true,
     "name": "The Woman in the Incinerator",
     "number": "SCP-5616",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
   },
   {
     "fragment": false,
@@ -3153,13 +3153,13 @@
     "fragment": true,
     "name": "The Dead End",
     "number": "SCP-5618",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5618-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5618-offset-1"
   },
   {
     "fragment": true,
     "name": "The Dead End",
     "number": "SCP-5618",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5618-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5618-offset-0"
   },
   {
     "fragment": false,
@@ -3939,13 +3939,13 @@
     "fragment": true,
     "name": "A Warfare Innovation",
     "number": "SCP-6038",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-3"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-2"
   },
   {
     "fragment": true,
     "name": "A Warfare Innovation",
     "number": "SCP-6038",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-3"
   },
   {
     "fragment": false,
@@ -4059,13 +4059,13 @@
     "fragment": true,
     "name": "<em>His Throne</em>",
     "number": "SCP-6082",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-2"
   },
   {
     "fragment": true,
     "name": "<em>His Throne</em>",
     "number": "SCP-6082",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6082-1"
   },
   {
     "fragment": false,
@@ -4287,13 +4287,13 @@
     "fragment": true,
     "name": "Fortune",
     "number": "SCP-6153",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-a"
   },
   {
     "fragment": true,
     "name": "Fortune",
     "number": "SCP-6153",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-a"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
   },
   {
     "fragment": false,
@@ -5271,13 +5271,13 @@
     "fragment": true,
     "name": "<tt>Weight of Pressure</tt>",
     "number": "SCP-6494",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-3"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-2"
   },
   {
     "fragment": true,
     "name": "<tt>Weight of Pressure</tt>",
     "number": "SCP-6494",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6494-3"
   },
   {
     "fragment": false,
@@ -7365,13 +7365,7 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": "SCP-7345",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-3"
-  },
-  {
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "number": "SCP-7345",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
   },
   {
     "fragment": true,
@@ -7389,7 +7383,7 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": "SCP-7345",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-4"
   },
   {
     "fragment": true,
@@ -7401,7 +7395,13 @@
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
     "number": "SCP-7345",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-4"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-3"
+  },
+  {
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "number": "SCP-7345",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-2"
   },
   {
     "fragment": false,

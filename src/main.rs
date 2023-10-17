@@ -83,7 +83,7 @@ struct SharedAcs {
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(untagged)]
-pub enum Acs {
+enum Acs {
 	Vanilla {
 		#[serde(flatten)]
 		shared: SharedAcs,
@@ -431,25 +431,45 @@ fn test_clean_text() {
 	}
 }
 
-fn create_acs(acs: Acs) -> Acs {
-	let mut number = acs.number;
-	if acs.name.to_lowercase().contains("scp-") {
-		number = acs.name.clone();
-	}
+fn create_acs(acs: Acs) -> Result<Acs> {
+	match acs {
+		Acs::Vanilla {
+			shared,
+			name,
+			number,
+			clearance,
+			clearance_text,
+			risk,
+			url,
+			fragment,
+			..
+		} => {
+			let mut number = number.clone();
+			if name.to_lowercase().contains("scp-") {
+				number = name.clone();
+			}
 
-	Acs::Vanilla {
-		name: acs.name,
-		number,
-		clearance: clean_text(&acs.clearance),
-		clearance_text: acs.clearance_text,
-		contain: clean_text(&acs.contain),
-		secondary: clean_text(&acs.secondary),
-		disrupt: clean_text(&acs.disrupt),
-		risk: clean_text(&acs.risk),
-		url: acs.url,
-		fragment: acs.fragment,
-		scraper: acs.scraper,
-	}
+			Ok(Acs::Vanilla {
+				shared: SharedAcs {
+					contain: clean_text(&shared.contain),
+					secondary: clean_text(&shared.secondary),
+					disrupt: clean_text(&shared.disrupt),
+					scraper: clean_text(&shared.scraper),
+				},
+				name,
+				number,
+				clearance: clean_text(&clearance),
+				clearance_text: clean_text(&clearance_text),
+				risk: clean_text(&risk),
+				url,
+				fragment,
+			})
+		}
+		_ => {
+			log::error!("The provided Acs data is not of variant Vanilla: {:?}", acs);
+			Err(anyhow::anyhow!("The provided Acs data is not of variant Vanilla"))
+		}
+	}	
 }
 
 //Helper Async Functions
@@ -561,7 +581,7 @@ async fn get_scp_name(number: &str) -> Result<String> {
 // Searches the pages for specific phrases/words and adds them to the database if found
 async fn backup_acs_function(
 	document: &Html,
-) -> Option<(String, String, String, String, String)> {
+) -> Option<Acs> {
 	let text = document
 		.root_element()
 		.text()
@@ -578,9 +598,9 @@ async fn backup_acs_function(
 	];
 
 	for &(search_str, result_key) in &keywords {
-		if let Some(index) = text.find(search_str) {			
-			let result_value = extract_string_after_colon(&text[index..]);			
-			results.insert(result_key.to_string(), result_value);			
+		if let Some(index) = text.find(search_str) {            
+			let result_value = extract_string_after_colon(&text[index..]);            
+			results.insert(result_key.to_string(), result_value);            
 		}
 	}
 
@@ -597,21 +617,26 @@ async fn backup_acs_function(
 		results.get("risk"),
 		results.get("secondary"),
 	) {
-		(Some(contain), Some(disrupt), Some(risk), Some(secondary)) => Some((
-			clean_text(contain),
-			clean_text(secondary),
-			clean_text(disrupt),
-			clean_text(risk),
-			"Brute Force".to_string(),
-		)),
+		(Some(contain), Some(disrupt), Some(risk), Some(secondary)) => Some(
+			Acs::Backup {
+				shared: SharedAcs {
+					contain: clean_text(contain),
+					secondary: clean_text(secondary),
+					disrupt: clean_text(disrupt),
+					scraper: "Brute Force".to_string(),
+				},
+				risk: clean_text(risk),
+			}
+		),
 		_ => None,
 	}
 }
 
 // ACS Bar Scraper
+// ACS Bar Scraper
 async fn get_acs_bar(
 	document: &Html,
-) -> (String, String, String, String, String, String, String) {
+) -> Acs {
 	let mut clearance = clean_text(
 		&extract_text(document.root_element(), &CLEARANCE_SELECTOR).unwrap_or_default(),
 	);
@@ -638,21 +663,23 @@ async fn get_acs_bar(
 		&extract_text(document.root_element(), &RISK_SELECTOR).unwrap_or_default(),
 	);
 
-	(
+	Acs::Bar {
+		shared: SharedAcs {
+			contain,
+			secondary,
+			disrupt,
+			scraper: "ACS Bar".to_string(),
+		},
 		clearance,
 		clearance_text,
-		contain,
-		secondary,
-		disrupt,
 		risk,
-		"ACS Bar".to_string(),
-	)
+	}
 }
 
 // ACS Hybrid Bar Scraper
 async fn get_acs_hybrid_bar(
 	document: &Html,
-) -> (String, String, String, String, String, String, String) {
+) -> Acs {
 	let mut clearance = extract_text(document.root_element(), &HYBRID_CLEARANCE_SELECTOR)
 		.unwrap_or_default();
 	for i in 1..=MAX_LEVEL {
@@ -688,21 +715,23 @@ async fn get_acs_hybrid_bar(
 		&extract_text(document.root_element(), &HYBRID_RISK_SELECTOR).unwrap_or_default(),
 	);
 
-	(
+	Acs::Bar {
+		shared: SharedAcs {
+			contain,
+			secondary,
+			disrupt,
+			scraper: "ACS Hybrid Bar".to_string(),
+		},
 		clearance,
 		clearance_text,
-		contain,
-		secondary,
-		disrupt,
 		risk,
-		"ACS Hybrid Bar".to_string(),
-	)
+	}
 }
 
 // Flops Header Scraper
 async fn get_flops_header(
 	document: &Html,
-) -> (String, String, String, String, String, String) {
+) -> Acs {
 	let mut clearance = clean_text(
 		&extract_text(document.root_element(), &FLOPS_CLEARANCE_SELECTOR)
 			.unwrap_or_default(),
@@ -732,18 +761,20 @@ async fn get_flops_header(
 			.unwrap_or_default(),
 	);
 
-	(
+	Acs::Flops {
+		shared: SharedAcs {
+			contain,
+			secondary,
+			disrupt,
+			scraper: "Flops Header".to_string(),
+		},
 		clearance,
 		clearance_text,
-		contain,
-		secondary,
-		disrupt,
-		"Flops Header".to_string(),
-	)
+	}
 }
 
 // AIM Header Scraper
-async fn get_aim_header(document: &Html) -> (String, String, String, String, String) {
+async fn get_aim_header(document: &Html) -> Acs {
 	let clearance_item = extract_class(document.root_element(), &AIM_CLEARANCE_SELECTOR)
 		.unwrap_or_default();
 	let clearance = match clearance_item.as_str() {
@@ -769,128 +800,124 @@ async fn get_aim_header(document: &Html) -> (String, String, String, String, Str
 		&extract_text(document.root_element(), &AIM_DISRUPT_SELECTOR).unwrap_or_default(),
 	);
 
-	(
+	Acs::Aim {
+		shared: SharedAcs {
+			contain,
+			secondary,
+			disrupt,
+			scraper: "AIM Header".to_string(),
+		},
 		clearance,
-		contain,
-		secondary,
-		disrupt,
-		"AIM Header".to_string(),
-	)
+	}
 }
 
 // Searches the page for the ACS Bar & ACS Hybrid Bar
 // If found, selects and scrapes specific elements
 // If not found, resorts to Text Strings scraping
 async fn fetch_acs_data(
-	scp_number: &str,
+	number: &str,
 	mut name: Option<&str>,
-	scp_url: &str,
+	url: &str,
+	fragment: &bool
 ) -> Result<Option<Acs>> {
-	log::debug!("Fetching data from: {}", scp_url);
-	let document = request_page(scp_url).await?;
+	log::debug!("Fetching data from: {}", url);
+	let document = request_page(url).await?;
+
+	fn convert_to_vanilla(acs: Acs, name: &str, number: &str, url: &str, fragment: &bool) -> Acs {
+		match acs {
+			Acs::Vanilla { .. } => acs,
+			Acs::Bar { shared, clearance, clearance_text, risk } => Acs::Vanilla {
+				shared,
+				name: name.to_string(),
+				number: number.to_string(),
+				clearance,
+				clearance_text,
+				risk,
+				url: url.to_string(),
+				fragment: *fragment,
+			},
+			Acs::Flops { shared, clearance, clearance_text } => Acs::Vanilla {
+				shared,
+				name: name.to_string(),
+				number: number.to_string(),
+				clearance,
+				clearance_text,
+				risk: String::new(),
+				url: url.to_string(),
+				fragment: *fragment,
+			},
+			Acs::Aim { shared, clearance } => Acs::Vanilla {
+				shared,
+				name: name.to_string(),
+				number: number.to_string(),
+				clearance,
+				clearance_text: String::new(),
+				risk: String::new(),
+				url: url.to_string(),
+				fragment: *fragment,
+			},
+			Acs::Backup { shared, risk } => Acs::Vanilla {
+				shared,
+				name: name.to_string(),
+				number: number.to_string(),
+				clearance: String::new(),
+				clearance_text: String::new(),
+				risk,
+				url: url.to_string(),
+				fragment: *fragment,
+			},			
+		}
+	}
 
 	if let Some(document) = document {
 		let has_anom_bar = document.select(&ACS_BAR_SELECTOR).next().is_some();
 		let has_lite_anom_bar = document.select(&ACS_LITE_BAR_SELECTOR).next().is_some();
-		let has_hybrid_anom_bar =
-			document.select(&ACS_HYBRID_BAR_SELECTOR).next().is_some();
+		let has_hybrid_anom_bar = document.select(&ACS_HYBRID_BAR_SELECTOR).next().is_some();
 		let has_flops_header = document.select(&FLOPS_HEADER_SELECTOR).next().is_some();
 		let has_aim_header = document.select(&AIM_HEADER_SELECTOR).next().is_some();
 
-		let scp_name: String;
+		let name_string: String;
 
-		if !scp_number.eq_ignore_ascii_case("scp-000")
-			&& !scp_number.eq_ignore_ascii_case("scp-001")
+		if !number.eq_ignore_ascii_case("scp-000")
+			&& !number.eq_ignore_ascii_case("scp-001")
+			&& ( name.map_or(true, |n| n.is_empty()) 
+				&& ( number.contains("scp-") || number.contains("SCP-") ) 
+			)
 		{
-			scp_name = get_scp_name(scp_number).await?;
-			name = Some(&scp_name);
+			name_string = get_scp_name(number).await?;
+    	name = Some(&name_string);	
 		}
 
-		let mut clearance = String::new();
-		let mut clearance_text = String::new();
-		let mut contain = String::new();
-		let mut secondary = String::new();
-		let mut disrupt = String::new();
-		let mut risk = String::new();
-		let mut scraper = String::new();
+		let acs_data: Acs;
 
 		if has_anom_bar || has_lite_anom_bar {
-			(
-				clearance,
-				clearance_text,
-				contain,
-				secondary,
-				disrupt,
-				risk,
-				scraper,
-			) = get_acs_bar(&document).await;
+			acs_data = get_acs_bar(&document).await;
 		} else if has_hybrid_anom_bar {
-			(
-				clearance,
-				clearance_text,
-				contain,
-				secondary,
-				disrupt,
-				risk,
-				scraper,
-			) = get_acs_hybrid_bar(&document).await;
+			acs_data = get_acs_hybrid_bar(&document).await;
 		} else if has_flops_header {
-			(
-				clearance,
-				clearance_text,
-				contain,
-				secondary,
-				disrupt,
-				scraper,
-			) = get_flops_header(&document).await;
+			acs_data = get_flops_header(&document).await;
 		} else if has_aim_header {
-			(clearance, contain, secondary, disrupt, scraper) =
-				get_aim_header(&document).await;
-		} else if !has_hybrid_anom_bar
-			&& !has_anom_bar
-			&& !has_flops_header
-			&& !has_aim_header
-		{
-			if let Some((c, s, d, r, sc)) = backup_acs_function(&document).await {
-				contain = c;
-				secondary = s;
-				disrupt = d;
-				risk = r;
-				scraper = sc;
-				log::info!("Brute Force Scraping Successful on: {}", scp_url);
-			} else {
-				return Ok(None);
-			}
+			acs_data = get_aim_header(&document).await;
+		} else {
+			match backup_acs_function(&document).await {
+				Some(Acs::Backup { shared, risk }) => {
+					acs_data = Acs::Backup { shared, risk };
+				}
+				_ => {
+					log::debug!("No data retrieved using backup_acs_function for URL: {}", url);
+					return Ok(None);
+				}
+			};
 		}
 
-		if clearance_text.is_empty() {
-			clearance_text = match clearance.as_str() {
-				"LEVEL 1" => "Unrestricted",
-				"LEVEL 2" => "Restricted",
-				"LEVEL 3" => "Confidential",
-				"LEVEL 4" => "Secret",
-				"LEVEL 5" => "Top Secret",
-				"LEVEL 6" => "Cosmic Top Secret",
-				_ => &clearance,
-			}
-			.to_string();
-		}
+		let vanilla_acs = convert_to_vanilla(acs_data, name.unwrap_or(""), number, url, fragment);
 
-		Ok(Some(create_acs(Acs::Vanilla {
-			name: name.unwrap_or("").to_string(),
-			number: scp_number.to_string(),
-			clearance,
-			clearance_text,
-			contain,
-			secondary,
-			disrupt,
-			risk,
-			url: scp_url.to_string(),
-			fragment: false,
-			scraper,
-		})))
+		match create_acs(vanilla_acs) {
+			Ok(acs_data) => Ok(Some(acs_data)),
+			Err(e) => Err(e),
+		}
 	} else {
-		log::error!("Page not found: {}", scp_url);
+		log::error!("Page not found: {}", url);
 		Ok(None)
 	}
 }
@@ -901,26 +928,45 @@ async fn fetch_and_update_entry(
 	name: &str,
 	url: &str,
 	fragment: bool,
-) -> Result<serde_json::Value> {
+) -> Result<Acs> {
 	log::debug!("Fetching data from: {}", url);
-	match fetch_acs_data(number, Some(name), url).await {
+	match fetch_acs_data(number, Some(name), url, &fragment).await {
 		Ok(Some(acs_data)) => {
-			log::debug!("Successfully fetched ACS Bar Data from: {}", url);
-			let new_entry = serde_json::json!({
-				"name": name.to_string(),
-				"number": number.to_string(),
-				"clearance": acs_data.clearance,
-				"clearance_text": acs_data.clearance_text,
-				"contain": acs_data.contain,
-				"secondary": acs_data.secondary,
-				"disrupt": acs_data.disrupt,
-				"risk": acs_data.risk,
-				"url": url.to_string(),
-				"fragment": fragment,
-				"scraper": acs_data.scraper,
-			});
-			Ok(new_entry)
+			match acs_data {
+				Acs::Vanilla {
+					shared,
+					name,
+					number,
+					clearance,
+					clearance_text,
+					risk,
+					url,
+					fragment,
+				} => {
+					log::debug!("Successfully fetched ACS Bar Data from: {}", url);
+					match create_acs(Acs::Vanilla {
+						shared: SharedAcs {
+							contain: shared.contain,
+							secondary: shared.secondary,
+							disrupt: shared.disrupt,
+							scraper: shared.scraper,
+						},
+						name: name.to_string(),
+						number: number.to_string(),
+						clearance: clearance,
+						clearance_text: clearance_text,            
+						risk: risk,
+						url: url.to_string(),
+						fragment: fragment,
+					}) {
+						Ok(new_entry) => Ok(new_entry),
+						Err(e) => Err(anyhow::anyhow!("Failed to create acs: {}", e)),
+					}
+				},
+				_ => Err(anyhow!("The provided Acs data is not of variant Vanilla.")),
+			}
 		}
+
 		Ok(None) => Err(anyhow!(
 			"f: fetch_and_update_entry | Failed to fetch ACS data for: {}",
 			url
@@ -959,9 +1005,14 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 			let backlinks_name = &link_item.name;
 
 			if acs_database.iter().any(|db_item| {
-				db_item.number.eq_ignore_ascii_case(&backlinks_number)
-					|| db_item.name.eq_ignore_ascii_case(&backlinks_name)
-					|| db_item.fragment
+				match db_item {
+					Acs::Vanilla{number, name, fragment, ..} => {
+						number.eq_ignore_ascii_case(&backlinks_number) 
+							|| name.eq_ignore_ascii_case(&backlinks_name)
+							|| *fragment
+					}
+					_ => false,
+				}
 			}) {
 				None
 			} else {
@@ -1006,11 +1057,11 @@ async fn cross_compare_and_update(limit: u16) -> Result<()> {
 		.collect();
 
 	let new_entries: Vec<Acs> = new_entries_futures
-		.collect::<Vec<Option<serde_json::Value>>>()
+		.collect::<Vec<Option<Acs>>>()
 		.await
 		.into_iter()
-		.filter_map(|opt| opt.map(|val| serde_json::from_value(val).expect("Failed to convert Value to Acs")))
-		.collect();
+		.flatten() 
+		.collect::<Vec<Acs>>();
 
 	let finish_message = format!("Done! - Matches: {}", matches.load(Ordering::Relaxed));
 	pb.finish_with_message(finish_message);
@@ -1083,11 +1134,11 @@ async fn main() -> Result<()> {
 						.ok()?;
 					let mut retries = 0;
 					let mut result =
-						fetch_acs_data(&scp_number, None, &scp_url_string).await;
+						fetch_acs_data(&scp_number, None, &scp_url_string, &false).await;
 					while result.is_err() && retries < args.retries.into() {
 						retries += 1;
 						tokio::time::sleep(Duration::from_secs(2 * retries)).await;
-						result = fetch_acs_data(&scp_number, None, &scp_url_string).await;
+						result = fetch_acs_data(&scp_number, None, &scp_url_string, &false).await;
 					}
 					match result {
 						Ok(Some(data)) => {
