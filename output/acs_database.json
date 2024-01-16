@@ -2982,20 +2982,6 @@
     "fragment": false
   },
   {
-    "contain": "",
-    "secondary": "",
-    "disrupt": "",
-    "scraper": "Backup",
-    "name": "The Child, The Monster, and the Angel",
-    "actual_number": "SCP-4238",
-    "display_number": "SCP-4238",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "warning and below were disconnected.",
-    "url": "https://scp-wiki.wikidot.com/scp-4238",
-    "fragment": false
-  },
-  {
     "contain": "esoteric",
     "secondary": "archon",
     "disrupt": "amida",
@@ -8106,7 +8092,7 @@
     "fragment": false
   },
   {
-    "contain": "uncontained euclid",
+    "contain": "<span style='text-decoration: line-through;'>Uncontained</span> euclid",
     "secondary": "",
     "disrupt": "ekhi",
     "scraper": "Backup",
@@ -8509,20 +8495,6 @@
     "clearance_text": "Restricted",
     "risk": "caution",
     "url": "https://scp-wiki.wikidot.com/scp-5872",
-    "fragment": false
-  },
-  {
-    "contain": "",
-    "secondary": "",
-    "disrupt": "dark",
-    "scraper": "Backup",
-    "name": "Britches of Betrayal",
-    "actual_number": "SCP-5873",
-    "display_number": "SCP-5873",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-5873",
     "fragment": false
   },
   {
@@ -9013,20 +8985,6 @@
     "clearance_text": "Restricted",
     "risk": "warning",
     "url": "https://scp-wiki.wikidot.com/scp-5992",
-    "fragment": false
-  },
-  {
-    "contain": "euclid thaumiel",
-    "secondary": "",
-    "disrupt": "keneq",
-    "scraper": "Backup",
-    "name": "We want you to come visit Heaven, just don't fuck with those bees",
-    "actual_number": "SCP-5993",
-    "display_number": "SCP-5993",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-5993",
     "fragment": false
   },
   {
@@ -10161,20 +10119,6 @@
     "clearance_text": "Confidential",
     "risk": "warning",
     "url": "https://scp-wiki.wikidot.com/scp-6164",
-    "fragment": false
-  },
-  {
-    "contain": "",
-    "secondary": "zurvan4",
-    "disrupt": "",
-    "scraper": "Backup",
-    "name": "The Shape of It",
-    "actual_number": "SCP-6166",
-    "display_number": "SCP-6166",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-6166",
     "fragment": false
   },
   {
@@ -12124,16 +12068,16 @@
     "fragment": false
   },
   {
-    "contain": "",
-    "secondary": "",
-    "disrupt": "vlam",
+    "contain": "symbolic",
+    "secondary": "thaumiel",
+    "disrupt": "infrared",
     "scraper": "Backup",
     "name": "Beneath the Shivering Kingdom",
     "actual_number": "SCP-6445",
     "display_number": "SCP-⌘",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
+    "clearance": "LEVEL▼",
+    "clearance_text": "unsecret",
+    "risk": "Mercurial",
     "url": "https://scp-wiki.wikidot.com/scp-6445",
     "fragment": false
   },
@@ -13846,20 +13790,6 @@
     "fragment": false
   },
   {
-    "contain": "",
-    "secondary": "contained (rev. 14b)",
-    "disrupt": "",
-    "scraper": "Backup",
-    "name": "The Inevitable and Obvious Consequence of One SCP Foundation and its Efforts to Maintain Normalcy in the Wake of Undeniable Evil, AKA Capitalism",
-    "actual_number": "SCP-6693",
-    "display_number": "SCP-6693",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-6693",
-    "fragment": false
-  },
-  {
     "contain": "esoteric",
     "secondary": "uncontained",
     "disrupt": "dark",
@@ -14742,20 +14672,6 @@
     "fragment": false
   },
   {
-    "contain": "",
-    "secondary": "thaumiel",
-    "disrupt": "",
-    "scraper": "Backup",
-    "name": "It’s a Beautiful Day, Today",
-    "actual_number": "SCP-6822",
-    "display_number": "SCP-6822",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-6822",
-    "fragment": false
-  },
-  {
     "contain": "euclid",
     "secondary": "thaumiel",
     "disrupt": "ekhi",
@@ -15470,20 +15386,6 @@
     "fragment": false
   },
   {
-    "contain": "",
-    "secondary": "",
-    "disrupt": "vlam",
-    "scraper": "Backup",
-    "name": "<strong>The Terminal Loom</strong>",
-    "actual_number": "SCP-6937",
-    "display_number": "SCP-6937",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-6937",
-    "fragment": false
-  },
-  {
     "contain": "euclid",
     "secondary": "",
     "disrupt": "vlam",
@@ -15859,20 +15761,6 @@
     "clearance_text": "Top Secret",
     "risk": "critical",
     "url": "https://scp-wiki.wikidot.com/scp-6996",
-    "fragment": false
-  },
-  {
-    "contain": "",
-    "secondary": "thaumiel",
-    "disrupt": "",
-    "scraper": "Backup",
-    "name": "Nearer, My God, To Thee",
-    "actual_number": "SCP-6999",
-    "display_number": "SCP-6999",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-6999",
     "fragment": false
   },
   {
@@ -18874,14 +18762,14 @@
   {
     "contain": "",
     "secondary": "",
-    "disrupt": "amida.",
+    "disrupt": "amida",
     "scraper": "Backup",
     "name": "A Third Scion To Chase The Sky",
     "actual_number": "SCP-7459",
     "display_number": "SCP-7459",
     "clearance": "",
     "clearance_text": "",
-    "risk": "",
+    "risk": "CRITICAL",
     "url": "https://scp-wiki.wikidot.com/scp-7459",
     "fragment": false
   },
@@ -21557,20 +21445,6 @@
     "clearance_text": "Confidential",
     "risk": "danger",
     "url": "https://scp-wiki.wikidot.com/scp-7936",
-    "fragment": false
-  },
-  {
-    "contain": "",
-    "secondary": "mutually dependent1",
-    "disrupt": "",
-    "scraper": "Backup",
-    "name": "To what extent did Karpov's hypnotic rays play a role in his 1978 World Chess Championship victory?",
-    "actual_number": "SCP-7938",
-    "display_number": "SCP-7938",
-    "clearance": "",
-    "clearance_text": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-7938",
     "fragment": false
   },
   {
