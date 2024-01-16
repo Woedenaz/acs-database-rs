@@ -3,12 +3,6 @@
     "actual_number": "SCP-7376",
     "fragment": true,
     "name": "Qayin and Hevel",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
-  },
-  {
-    "actual_number": "SCP-7376",
-    "fragment": true,
-    "name": "Qayin and Hevel",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-1"
   },
   {
@@ -22,6 +16,12 @@
     "fragment": true,
     "name": "Qayin and Hevel",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-4"
+  },
+  {
+    "actual_number": "SCP-7376",
+    "fragment": true,
+    "name": "Qayin and Hevel",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7376-3"
   },
   {
     "actual_number": "SCP-001",
@@ -548,6 +548,12 @@
   {
     "actual_number": "",
     "fragment": false,
+    "name": "SCP-005-VN",
+    "url": "https://scp-wiki.wikidot.com/scp-005-vn"
+  },
+  {
+    "actual_number": "",
+    "fragment": false,
     "name": "SCP-0110-J",
     "url": "https://scp-wiki.wikidot.com/scp-0110-j"
   },
@@ -628,6 +634,12 @@
     "fragment": false,
     "name": "Jackie's Secret",
     "url": "https://scp-wiki.wikidot.com/scp-1903"
+  },
+  {
+    "actual_number": "SCP-1908",
+    "fragment": false,
+    "name": "Mr. Soap",
+    "url": "https://scp-wiki.wikidot.com/scp-1908"
   },
   {
     "actual_number": "",
@@ -2030,7 +2042,7 @@
   {
     "actual_number": "SCP-4866",
     "fragment": false,
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" id=\"footnoteref-1\" class=\"footnoteref\">1</a></sup>",
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a href=\"javascript:;\" id=\"footnoteref-1\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" class=\"footnoteref\">1</a></sup>",
     "url": "https://scp-wiki.wikidot.com/scp-4866"
   },
   {
@@ -2403,12 +2415,6 @@
     "actual_number": "SCP-5170",
     "fragment": true,
     "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-3"
-  },
-  {
-    "actual_number": "SCP-5170",
-    "fragment": true,
-    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-2"
   },
   {
@@ -2416,6 +2422,12 @@
     "fragment": true,
     "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-4"
+  },
+  {
+    "actual_number": "SCP-5170",
+    "fragment": true,
+    "name": "<span style=\"color: #191970;font-family: &quot;Times New Roman&quot;;\"><strong>Pattern Screamer, Esq.</strong></span> 💼⚖️",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5170-3"
   },
   {
     "actual_number": "SCP-5172",
@@ -2452,6 +2464,12 @@
     "fragment": false,
     "name": "Resurfaced Memortics",
     "url": "https://scp-wiki.wikidot.com/scp-5194"
+  },
+  {
+    "actual_number": "SCP-5213",
+    "fragment": false,
+    "name": "The Oracle of the Fae",
+    "url": "https://scp-wiki.wikidot.com/scp-5213"
   },
   {
     "actual_number": "SCP-5224",
@@ -3135,13 +3153,13 @@
     "actual_number": "SCP-5616",
     "fragment": true,
     "name": "The Woman in the Incinerator",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
   },
   {
     "actual_number": "SCP-5616",
     "fragment": true,
     "name": "The Woman in the Incinerator",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-5616-offset-0"
   },
   {
     "actual_number": "SCP-5617",
@@ -3600,6 +3618,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-5830"
   },
   {
+    "actual_number": "SCP-5831",
+    "fragment": false,
+    "name": "The Smeerenburg Daemon",
+    "url": "https://scp-wiki.wikidot.com/scp-5831"
+  },
+  {
     "actual_number": "SCP-5834",
     "fragment": false,
     "name": "Tender Sausage of The Ocean",
@@ -3939,13 +3963,13 @@
     "actual_number": "SCP-6038",
     "fragment": true,
     "name": "A Warfare Innovation",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-2"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-3"
   },
   {
     "actual_number": "SCP-6038",
     "fragment": true,
     "name": "A Warfare Innovation",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-3"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6038-2"
   },
   {
     "actual_number": "SCP-6040",
@@ -4281,12 +4305,6 @@
     "actual_number": "SCP-6153",
     "fragment": true,
     "name": "Fortune",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-b"
-  },
-  {
-    "actual_number": "SCP-6153",
-    "fragment": true,
-    "name": "Fortune",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-c"
   },
   {
@@ -4294,6 +4312,12 @@
     "fragment": true,
     "name": "Fortune",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-a"
+  },
+  {
+    "actual_number": "SCP-6153",
+    "fragment": true,
+    "name": "Fortune",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-6153-b"
   },
   {
     "actual_number": "SCP-6155",
@@ -5126,7 +5150,7 @@
   {
     "actual_number": "SCP-6450",
     "fragment": false,
-    "name": "But Once You Turn, They Hate Us",
+    "name": "The Nam'Evanholly Hidebehind",
     "url": "https://scp-wiki.wikidot.com/scp-6450"
   },
   {
@@ -5152,6 +5176,12 @@
     "fragment": false,
     "name": "penguin waiters (AE 2022)",
     "url": "https://scp-wiki.wikidot.com/scp-6458"
+  },
+  {
+    "actual_number": "SCP-6459",
+    "fragment": false,
+    "name": "Any Way the Wind Blows",
+    "url": "https://scp-wiki.wikidot.com/scp-6459"
   },
   {
     "actual_number": "",
@@ -5356,6 +5386,12 @@
     "fragment": false,
     "name": "Fuck Your Family",
     "url": "https://scp-wiki.wikidot.com/scp-6525"
+  },
+  {
+    "actual_number": "SCP-6527",
+    "fragment": false,
+    "name": "A Door To Nostalgia",
+    "url": "https://scp-wiki.wikidot.com/scp-6527"
   },
   {
     "actual_number": "SCP-6546",
@@ -5658,6 +5694,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-6648"
   },
   {
+    "actual_number": "SCP-6649",
+    "fragment": false,
+    "name": "Supervoid",
+    "url": "https://scp-wiki.wikidot.com/scp-6649"
+  },
+  {
     "actual_number": "SCP-6650",
     "fragment": false,
     "name": "The Starling Soars Once More",
@@ -5704,6 +5746,12 @@
     "fragment": false,
     "name": "<strong><span style=\"color: #f71\">METAGNOSTIC</span></strong>",
     "url": "https://scp-wiki.wikidot.com/scp-6659"
+  },
+  {
+    "actual_number": "SCP-6662",
+    "fragment": false,
+    "name": "Keepers and Seekers",
+    "url": "https://scp-wiki.wikidot.com/scp-6662"
   },
   {
     "actual_number": "SCP-6664",
@@ -5844,6 +5892,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-6717"
   },
   {
+    "actual_number": "SCP-6718",
+    "fragment": false,
+    "name": "But if there's Nothing on the Other Side?",
+    "url": "https://scp-wiki.wikidot.com/scp-6718"
+  },
+  {
     "actual_number": "SCP-6720",
     "fragment": false,
     "name": "To touch with bare skin.",
@@ -5866,6 +5920,12 @@
     "fragment": false,
     "name": "The Dust Bowel",
     "url": "https://scp-wiki.wikidot.com/scp-6728"
+  },
+  {
+    "actual_number": "SCP-6730",
+    "fragment": false,
+    "name": "The Untouchable",
+    "url": "https://scp-wiki.wikidot.com/scp-6730"
   },
   {
     "actual_number": "SCP-6731",
@@ -5900,7 +5960,7 @@
   {
     "actual_number": "SCP-6744",
     "fragment": false,
-    "name": "the disappearing man",
+    "name": "And the world moved on",
     "url": "https://scp-wiki.wikidot.com/scp-6744"
   },
   {
@@ -6102,10 +6162,22 @@
     "url": "https://scp-wiki.wikidot.com/scp-6820"
   },
   {
+    "actual_number": "SCP-6825",
+    "fragment": false,
+    "name": "<tt>the heavens above pierce us from below</tt>",
+    "url": "https://scp-wiki.wikidot.com/scp-6825"
+  },
+  {
     "actual_number": "SCP-6827",
     "fragment": false,
     "name": "THE HAPPY HUG MONKEY",
     "url": "https://scp-wiki.wikidot.com/scp-6827"
+  },
+  {
+    "actual_number": "SCP-6828",
+    "fragment": false,
+    "name": "Red and black I dress, eagle on my chest",
+    "url": "https://scp-wiki.wikidot.com/scp-6828"
   },
   {
     "actual_number": "SCP-6830",
@@ -6202,6 +6274,12 @@
     "fragment": false,
     "name": "\"dust bunny\"",
     "url": "https://scp-wiki.wikidot.com/scp-6859"
+  },
+  {
+    "actual_number": "SCP-6862",
+    "fragment": false,
+    "name": "Beatlemania 2: Keep on Beatlin'",
+    "url": "https://scp-wiki.wikidot.com/scp-6862"
   },
   {
     "actual_number": "SCP-6865",
@@ -6326,7 +6404,7 @@
   {
     "actual_number": "SCP-6923",
     "fragment": false,
-    "name": "Mother Weans With Gasoline",
+    "name": "Jizzyfish",
     "url": "https://scp-wiki.wikidot.com/scp-6923"
   },
   {
@@ -6660,6 +6738,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7062"
   },
   {
+    "actual_number": "SCP-7063",
+    "fragment": false,
+    "name": "Not My Own, Not My Own",
+    "url": "https://scp-wiki.wikidot.com/scp-7063"
+  },
+  {
     "actual_number": "SCP-7068",
     "fragment": false,
     "name": "The Endless Art Gallery",
@@ -6682,12 +6766,6 @@
     "fragment": true,
     "name": "Amaranthine",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7070-3"
-  },
-  {
-    "actual_number": "SCP-7072",
-    "fragment": false,
-    "name": "SANDWICHES",
-    "url": "https://scp-wiki.wikidot.com/scp-7072"
   },
   {
     "actual_number": "SCP-7073",
@@ -6716,7 +6794,7 @@
   {
     "actual_number": "SCP-7083",
     "fragment": false,
-    "name": "",
+    "name": "VVondertainment's Wild Hunt",
     "url": "https://scp-wiki.wikidot.com/scp-7083"
   },
   {
@@ -6846,6 +6924,12 @@
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7134-2"
   },
   {
+    "actual_number": "SCP-7135",
+    "fragment": false,
+    "name": "The Soul of Cold",
+    "url": "https://scp-wiki.wikidot.com/scp-7135"
+  },
+  {
     "actual_number": "SCP-7139",
     "fragment": false,
     "name": "Printed Problems",
@@ -6894,12 +6978,6 @@
     "url": "https://scp-wiki.wikidot.com/scp-7158"
   },
   {
-    "actual_number": "SCP-7159",
-    "fragment": false,
-    "name": "The Gray Goo",
-    "url": "https://scp-wiki.wikidot.com/scp-7159"
-  },
-  {
     "actual_number": "",
     "fragment": false,
     "name": "SCP-7159-J",
@@ -6910,6 +6988,12 @@
     "fragment": false,
     "name": "D is for Dermatology",
     "url": "https://scp-wiki.wikidot.com/scp-7160"
+  },
+  {
+    "actual_number": "SCP-7163",
+    "fragment": false,
+    "name": "I Will Be Here Whenever You Need Me The Most",
+    "url": "https://scp-wiki.wikidot.com/scp-7163"
   },
   {
     "actual_number": "SCP-7165",
@@ -6926,7 +7010,7 @@
   {
     "actual_number": "SCP-7172",
     "fragment": false,
-    "name": "Technical Difficulties",
+    "name": "😂",
     "url": "https://scp-wiki.wikidot.com/scp-7172"
   },
   {
@@ -6960,21 +7044,15 @@
     "url": "https://scp-wiki.wikidot.com/scp-7181"
   },
   {
-    "actual_number": "",
+    "actual_number": "SCP-7192",
     "fragment": false,
-    "name": "SCP-7186",
-    "url": "https://scp-wiki.wikidot.com/the-holographic-archivist"
-  },
-  {
-    "actual_number": "SCP-7193",
-    "fragment": false,
-    "name": "Thomas Theorem",
-    "url": "https://scp-wiki.wikidot.com/scp-7193"
+    "name": "The Cameraman's Plight",
+    "url": "https://scp-wiki.wikidot.com/scp-7192"
   },
   {
     "actual_number": "SCP-7194",
     "fragment": false,
-    "name": "Gaia's Womb",
+    "name": "Un<strong><em>ant</em></strong>icipated devotion of those <em>in sects</em>.",
     "url": "https://scp-wiki.wikidot.com/scp-7194"
   },
   {
@@ -7026,6 +7104,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7203"
   },
   {
+    "actual_number": "SCP-7207",
+    "fragment": false,
+    "name": "The Whale Behind the Slaughter",
+    "url": "https://scp-wiki.wikidot.com/scp-7207"
+  },
+  {
     "actual_number": "SCP-7209",
     "fragment": false,
     "name": "<span style=\"color: red\">BRAND NEW JOB.</span>",
@@ -7042,6 +7126,12 @@
     "fragment": false,
     "name": "Warning: dad jokes will make you bend reality.",
     "url": "https://scp-wiki.wikidot.com/scp-7211"
+  },
+  {
+    "actual_number": "SCP-7212",
+    "fragment": false,
+    "name": "Name in the sky, does it ever get lonely?",
+    "url": "https://scp-wiki.wikidot.com/scp-7212"
   },
   {
     "actual_number": "SCP-7214",
@@ -7122,10 +7212,22 @@
     "url": "https://scp-wiki.wikidot.com/scp-7233"
   },
   {
+    "actual_number": "SCP-7243",
+    "fragment": false,
+    "name": "<strong><span style=\"color: gray\">EXISTENTIAL ABATEMENT</span></strong>",
+    "url": "https://scp-wiki.wikidot.com/scp-7243"
+  },
+  {
     "actual_number": "SCP-7245",
     "fragment": false,
     "name": "With Love, a Person Who Fucks up a Lot",
     "url": "https://scp-wiki.wikidot.com/scp-7245"
+  },
+  {
+    "actual_number": "SCP-7246",
+    "fragment": false,
+    "name": "<em>Alagadda has stopped dancing.</em>",
+    "url": "https://scp-wiki.wikidot.com/scp-7246"
   },
   {
     "actual_number": "SCP-7249",
@@ -7240,6 +7342,12 @@
     "fragment": false,
     "name": "Breakfast with the Burtons",
     "url": "https://scp-wiki.wikidot.com/scp-7294"
+  },
+  {
+    "actual_number": "SCP-7295",
+    "fragment": false,
+    "name": "The 4th Floor",
+    "url": "https://scp-wiki.wikidot.com/scp-7295"
   },
   {
     "actual_number": "SCP-7296",
@@ -7365,7 +7473,13 @@
     "actual_number": "SCP-7345",
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-6"
+  },
+  {
+    "actual_number": "SCP-7345",
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-8"
   },
   {
     "actual_number": "SCP-7345",
@@ -7377,7 +7491,13 @@
     "actual_number": "SCP-7345",
     "fragment": true,
     "name": "Important, Attention Stealing Title!",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-6"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-5"
+  },
+  {
+    "actual_number": "SCP-7345",
+    "fragment": true,
+    "name": "Important, Attention Stealing Title!",
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-3"
   },
   {
     "actual_number": "SCP-7345",
@@ -7392,22 +7512,16 @@
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-4"
   },
   {
-    "actual_number": "SCP-7345",
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-3"
-  },
-  {
-    "actual_number": "SCP-7345",
-    "fragment": true,
-    "name": "Important, Attention Stealing Title!",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7345-8"
-  },
-  {
     "actual_number": "SCP-7357",
     "fragment": false,
     "name": "Please Feed Herman",
     "url": "https://scp-wiki.wikidot.com/scp-7357"
+  },
+  {
+    "actual_number": "SCP-7358",
+    "fragment": false,
+    "name": "Equus Fatum",
+    "url": "https://scp-wiki.wikidot.com/scp-7358"
   },
   {
     "actual_number": "SCP-7362",
@@ -7446,6 +7560,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7381"
   },
   {
+    "actual_number": "SCP-7386",
+    "fragment": false,
+    "name": "Blug the Bug Killer",
+    "url": "https://scp-wiki.wikidot.com/scp-7386"
+  },
+  {
     "actual_number": "SCP-7391",
     "fragment": false,
     "name": "<span style=\"color: green\"><strong>The Poor Get Poorer</strong></span>",
@@ -7456,12 +7576,6 @@
     "fragment": false,
     "name": "The Definition of a Human Being",
     "url": "https://scp-wiki.wikidot.com/scp-7393"
-  },
-  {
-    "actual_number": "SCP-7395",
-    "fragment": false,
-    "name": "The Mimic",
-    "url": "https://scp-wiki.wikidot.com/scp-7395"
   },
   {
     "actual_number": "SCP-7399",
@@ -7488,6 +7602,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7406"
   },
   {
+    "actual_number": "SCP-7407",
+    "fragment": false,
+    "name": "<span style=\"color: pink\"><em><strong>Love Locks</strong></em></span>",
+    "url": "https://scp-wiki.wikidot.com/scp-7407"
+  },
+  {
     "actual_number": "SCP-7408",
     "fragment": false,
     "name": "Metamorphosis",
@@ -7498,6 +7618,12 @@
     "fragment": false,
     "name": "Do you like CD's?",
     "url": "https://scp-wiki.wikidot.com/scp-7410"
+  },
+  {
+    "actual_number": "SCP-7412",
+    "fragment": false,
+    "name": "This Isn't A Jesus Allegory or Anything, House's Birth Was Just Kinda Like That",
+    "url": "https://scp-wiki.wikidot.com/scp-7412"
   },
   {
     "actual_number": "SCP-7415",
@@ -7530,10 +7656,28 @@
     "url": "https://scp-wiki.wikidot.com/scp-7422"
   },
   {
+    "actual_number": "SCP-7424",
+    "fragment": false,
+    "name": "The ANTI-WEEDINATOR",
+    "url": "https://scp-wiki.wikidot.com/scp-7424"
+  },
+  {
     "actual_number": "SCP-7434",
     "fragment": false,
-    "name": "[ACCESS DENIED]",
+    "name": "Connoisseur of Comfort",
     "url": "https://scp-wiki.wikidot.com/scp-7434"
+  },
+  {
+    "actual_number": "SCP-7435",
+    "fragment": false,
+    "name": "Blooming with another life",
+    "url": "https://scp-wiki.wikidot.com/scp-7435"
+  },
+  {
+    "actual_number": "SCP-7437",
+    "fragment": false,
+    "name": "Phlegethon",
+    "url": "https://scp-wiki.wikidot.com/scp-7437"
   },
   {
     "actual_number": "SCP-744",
@@ -7674,6 +7818,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7490"
   },
   {
+    "actual_number": "SCP-7494",
+    "fragment": false,
+    "name": "Dale",
+    "url": "https://scp-wiki.wikidot.com/scp-7494"
+  },
+  {
     "actual_number": "SCP-7495",
     "fragment": false,
     "name": "Your Fate is Sealed",
@@ -7767,13 +7917,13 @@
     "actual_number": "SCP-7528",
     "fragment": true,
     "name": "EPITOMEDIA: The Projection",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-0"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-1"
   },
   {
     "actual_number": "SCP-7528",
     "fragment": true,
     "name": "EPITOMEDIA: The Projection",
-    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-1"
+    "url": "https://scp-wiki.wikidot.com/fragment:scp-7528-offset-0"
   },
   {
     "actual_number": "SCP-7529",
@@ -7834,6 +7984,18 @@
     "fragment": false,
     "name": "Ace of Swords",
     "url": "https://scp-wiki.wikidot.com/scp-7562"
+  },
+  {
+    "actual_number": "SCP-7563",
+    "fragment": false,
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-7563"
+  },
+  {
+    "actual_number": "SCP-7566",
+    "fragment": false,
+    "name": "Door Squid",
+    "url": "https://scp-wiki.wikidot.com/scp-7566"
   },
   {
     "actual_number": "SCP-7570",
@@ -7956,6 +8118,12 @@
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7603-5"
   },
   {
+    "actual_number": "SCP-7604",
+    "fragment": false,
+    "name": "<span style=\"color: #800080\"><strong>Dancing At Lughnasa</strong></span>",
+    "url": "https://scp-wiki.wikidot.com/scp-7604"
+  },
+  {
     "actual_number": "SCP-7606",
     "fragment": false,
     "name": "The Invincible, Undefeated One",
@@ -8052,10 +8220,28 @@
     "url": "https://scp-wiki.wikidot.com/scp-7644"
   },
   {
+    "actual_number": "SCP-7648",
+    "fragment": false,
+    "name": "Serendipity in Plush",
+    "url": "https://scp-wiki.wikidot.com/scp-7648"
+  },
+  {
+    "actual_number": "SCP-7649",
+    "fragment": false,
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-7649"
+  },
+  {
     "actual_number": "SCP-7654",
     "fragment": false,
     "name": "SCiPCoin",
     "url": "https://scp-wiki.wikidot.com/scp-7654"
+  },
+  {
+    "actual_number": "SCP-7655",
+    "fragment": false,
+    "name": "Lacuna",
+    "url": "https://scp-wiki.wikidot.com/scp-7655"
   },
   {
     "actual_number": "SCP-7657",
@@ -8094,12 +8280,6 @@
     "url": "https://scp-wiki.wikidot.com/scp-7672"
   },
   {
-    "actual_number": "SCP-7675",
-    "fragment": false,
-    "name": "I'm a Failure",
-    "url": "https://scp-wiki.wikidot.com/scp-7675"
-  },
-  {
     "actual_number": "SCP-7678",
     "fragment": false,
     "name": "@therealsavior",
@@ -8128,6 +8308,12 @@
     "fragment": false,
     "name": "R is for \"Reshape\"",
     "url": "https://scp-wiki.wikidot.com/scp-7686"
+  },
+  {
+    "actual_number": "SCP-7693",
+    "fragment": false,
+    "name": "These Cows DEFINITELY Can't Go Moo",
+    "url": "https://scp-wiki.wikidot.com/scp-7693"
   },
   {
     "actual_number": "SCP-7697",
@@ -8202,15 +8388,27 @@
     "url": "https://scp-wiki.wikidot.com/scp-7728"
   },
   {
+    "actual_number": "SCP-7731",
+    "fragment": false,
+    "name": "Hallowon't",
+    "url": "https://scp-wiki.wikidot.com/scp-7731"
+  },
+  {
     "actual_number": "SCP-7733",
     "fragment": false,
     "name": "The Limits of Plausibility",
     "url": "https://scp-wiki.wikidot.com/scp-7733"
   },
   {
+    "actual_number": "SCP-7736",
+    "fragment": false,
+    "name": "We Are Powerless",
+    "url": "https://scp-wiki.wikidot.com/scp-7736"
+  },
+  {
     "actual_number": "SCP-7740",
     "fragment": false,
-    "name": "[ACCESS DENIED]",
+    "name": "Royal Radio",
     "url": "https://scp-wiki.wikidot.com/scp-7740"
   },
   {
@@ -8230,6 +8428,12 @@
     "fragment": false,
     "name": "The End of Comedy",
     "url": "https://scp-wiki.wikidot.com/scp-7744"
+  },
+  {
+    "actual_number": "SCP-7745",
+    "fragment": false,
+    "name": "When You Wish Upon A Binary Star",
+    "url": "https://scp-wiki.wikidot.com/scp-7745"
   },
   {
     "actual_number": "SCP-7752",
@@ -8316,16 +8520,22 @@
     "url": "https://scp-wiki.wikidot.com/scp-7801"
   },
   {
-    "actual_number": "SCP-7804",
+    "actual_number": "SCP-7803",
     "fragment": false,
-    "name": "The Wonderlinks",
-    "url": "https://scp-wiki.wikidot.com/scp-7804"
+    "name": "To The Tune of The Shroom",
+    "url": "https://scp-wiki.wikidot.com/scp-7803"
   },
   {
     "actual_number": "SCP-7805",
     "fragment": true,
     "name": "The Amazing Cross-Dimensional Bus Service™",
     "url": "https://scp-wiki.wikidot.com/fragment:scp-7805-0"
+  },
+  {
+    "actual_number": "SCP-7807",
+    "fragment": false,
+    "name": "Operation Noble Arms",
+    "url": "https://scp-wiki.wikidot.com/scp-7807"
   },
   {
     "actual_number": "SCP-7813",
@@ -8340,6 +8550,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7814"
   },
   {
+    "actual_number": "SCP-7816",
+    "fragment": false,
+    "name": "Why the Foundation Spent Their Entire Budget on Shark Plushies (or How I Got Assigned to Write About Blåhaj for a Second Time)",
+    "url": "https://scp-wiki.wikidot.com/scp-7816"
+  },
+  {
     "actual_number": "SCP-7817",
     "fragment": false,
     "name": "It's Not About the Weasels",
@@ -8350,6 +8566,18 @@
     "fragment": false,
     "name": "The Polar People",
     "url": "https://scp-wiki.wikidot.com/scp-7820"
+  },
+  {
+    "actual_number": "SCP-7821",
+    "fragment": false,
+    "name": "Luck of the House (or Lack Thereof)",
+    "url": "https://scp-wiki.wikidot.com/scp-7821"
+  },
+  {
+    "actual_number": "SCP-7824",
+    "fragment": false,
+    "name": "Infinity's Edge",
+    "url": "https://scp-wiki.wikidot.com/scp-7824"
   },
   {
     "actual_number": "SCP-7826",
@@ -8388,6 +8616,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7853"
   },
   {
+    "actual_number": "SCP-7855",
+    "fragment": false,
+    "name": "Bohart Cooks the ⠀⠀⠀⠀⠀⠀",
+    "url": "https://scp-wiki.wikidot.com/scp-7855"
+  },
+  {
     "actual_number": "SCP-7865",
     "fragment": true,
     "name": "Causal Noose",
@@ -8416,6 +8650,12 @@
     "fragment": false,
     "name": "Cultural Exchange Program",
     "url": "https://scp-wiki.wikidot.com/scp-7873"
+  },
+  {
+    "actual_number": "SCP-7875",
+    "fragment": false,
+    "name": "Catching a Case of the Normals",
+    "url": "https://scp-wiki.wikidot.com/scp-7875"
   },
   {
     "actual_number": "SCP-7876",
@@ -8544,16 +8784,16 @@
     "url": "https://scp-wiki.wikidot.com/scp-7924"
   },
   {
+    "actual_number": "SCP-7925",
+    "fragment": false,
+    "name": "Buzzing Through the Prophets",
+    "url": "https://scp-wiki.wikidot.com/scp-7925"
+  },
+  {
     "actual_number": "SCP-7929",
     "fragment": false,
     "name": "Nine Bars of Pressure",
     "url": "https://scp-wiki.wikidot.com/scp-7929"
-  },
-  {
-    "actual_number": "SCP-7935",
-    "fragment": false,
-    "name": "Can't Stop Scrolling",
-    "url": "https://scp-wiki.wikidot.com/scp-7935"
   },
   {
     "actual_number": "SCP-7936",
@@ -8580,6 +8820,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7942"
   },
   {
+    "actual_number": "SCP-7944",
+    "fragment": false,
+    "name": "The shadows we cast",
+    "url": "https://scp-wiki.wikidot.com/scp-7944"
+  },
+  {
     "actual_number": "SCP-7945",
     "fragment": false,
     "name": "Let there be me",
@@ -8598,10 +8844,16 @@
     "url": "https://scp-wiki.wikidot.com/scp-7950"
   },
   {
-    "actual_number": "SCP-7959",
+    "actual_number": "SCP-7953",
     "fragment": false,
-    "name": "Reality Bender's Notebook",
-    "url": "https://scp-wiki.wikidot.com/scp-7959"
+    "name": "Content, by VKTM",
+    "url": "https://scp-wiki.wikidot.com/scp-7953"
+  },
+  {
+    "actual_number": "SCP-7956",
+    "fragment": false,
+    "name": "One-Way Trip to the Bathroom",
+    "url": "https://scp-wiki.wikidot.com/scp-7956"
   },
   {
     "actual_number": "SCP-7960",
@@ -8796,9 +9048,27 @@
     "url": "https://scp-wiki.wikidot.com/fragment:scp-5934"
   },
   {
+    "actual_number": "SCP-7306",
+    "fragment": true,
+    "name": "No More <strong><em>Regrets</em></strong>?",
+    "url": "https://scp-wiki.wikidot.com/fragment:noregretsec08-0"
+  },
+  {
+    "actual_number": "SCP-001",
+    "fragment": false,
+    "name": "ting129's Proposal I",
+    "url": "https://scp-wiki.wikidot.com/ting129-s-proposal-1"
+  },
+  {
+    "actual_number": "",
+    "fragment": false,
+    "name": "Waiting to Happen",
+    "url": "https://scp-wiki.wikidot.com/40-waiting-to-happen"
+  },
+  {
     "actual_number": "SCP-7858",
     "fragment": false,
-    "name": "[ACCESS DENIED]",
+    "name": "Where's Matthew",
     "url": "https://scp-wiki.wikidot.com/scp-7858"
   },
   {
@@ -8872,12 +9142,6 @@
     "fragment": false,
     "name": "Griefing",
     "url": "https://scp-wiki.wikidot.com/scp-5584"
-  },
-  {
-    "actual_number": "SCP-5831",
-    "fragment": false,
-    "name": "The Smeerenburg Daemon",
-    "url": "https://scp-wiki.wikidot.com/scp-5831"
   },
   {
     "actual_number": "SCP-5841",
@@ -8956,6 +9220,12 @@
     "fragment": false,
     "name": "Nuclearity",
     "url": "https://scp-wiki.wikidot.com/scp-6971"
+  },
+  {
+    "actual_number": "SCP-7072",
+    "fragment": false,
+    "name": "The Stalker",
+    "url": "https://scp-wiki.wikidot.com/scp-7072"
   },
   {
     "actual_number": "SCP-7120",
@@ -9102,6 +9372,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-6317"
   },
   {
+    "actual_number": "SCP-6459",
+    "fragment": false,
+    "name": "Any Way the Wind Blows",
+    "url": "https://scp-wiki.wikidot.com/scp-6459"
+  },
+  {
     "actual_number": "SCP-6500",
     "fragment": true,
     "name": "Inevitable",
@@ -9216,6 +9492,12 @@
     "url": "https://scp-wiki.wikidot.com/scp-7081"
   },
   {
+    "actual_number": "SCP-7135",
+    "fragment": false,
+    "name": "The Soul of Cold",
+    "url": "https://scp-wiki.wikidot.com/scp-7135"
+  },
+  {
     "actual_number": "SCP-7162",
     "fragment": false,
     "name": "Lo Barato Sale Caro (Pinche Rana Envidiosa)",
@@ -9258,15 +9540,21 @@
     "url": "https://scp-wiki.wikidot.com/scp-7446"
   },
   {
-    "actual_number": "SCP-7804",
+    "actual_number": "SCP-7783",
     "fragment": false,
-    "name": "The Wonderlinks",
-    "url": "https://scp-wiki.wikidot.com/scp-7804"
+    "name": "Dissolve Your Body Today!",
+    "url": "https://scp-wiki.wikidot.com/scp-7783"
   },
   {
     "actual_number": "SCP-7915",
     "fragment": false,
     "name": "Selene's Serenade: An Ode to the Moon",
     "url": "https://scp-wiki.wikidot.com/scp-7915"
+  },
+  {
+    "actual_number": "SCP-7306",
+    "fragment": true,
+    "name": "No More <strong><em>Regrets</em></strong>?",
+    "url": "https://scp-wiki.wikidot.com/fragment:noregretsec08-0"
   }
 ]

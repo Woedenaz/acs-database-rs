@@ -64,14 +64,15 @@ fn extract_scp_number(s: &str) -> Option<u16> {
 		.all(|(a, b)| a.eq_ignore_ascii_case(&b));
 
 	if prefix_match {
-		let number = match s[4..].parse::<u16>() {
+		let number_part: String = s[4..].chars().take_while(|c| c.is_digit(10)).collect();
+		let number = match number_part.parse::<u16>() {
 			Ok(num) => Some(num),
 			Err(e) => {
 				log::error!("Failed to parse SCP number {}: {}", s, e);
 				None
 			}
-		}?;
-		Some(number)
+		};
+		number
 	} else {
 		None
 	}

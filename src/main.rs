@@ -53,22 +53,22 @@ struct Args {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct SCPInfo {
-	actual_number: String,
-	display_number: String,
-	name: String,
-	url: String,
+    actual_number: String,
+    display_number: String,
+    name: String,
+    url: String,
 }
 
 impl SortableField for SCPInfo {
-	fn get_field(&self, field: &str) -> Cow<str> {
-		match field {
-			"actual_number" => Cow::Borrowed(&self.actual_number),
-			"display_number" => Cow::Borrowed(&self.display_number),
-			"name" => Cow::Borrowed(&self.name),
-			"url" => Cow::Borrowed(&self.url),
-			_ => panic!("Invalid field: {}", field),
-		}
-	}
+    fn get_field(&self, field: &str) -> Cow<str> {
+        match field {
+            "actual_number" => Cow::Borrowed(&self.actual_number),
+            "display_number" => Cow::Borrowed(&self.display_number),
+            "name" => Cow::Borrowed(&self.name),
+            "url" => Cow::Borrowed(&self.url),
+            _ => panic!("Invalid field: {}", field),
+        }
+    }
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -558,6 +558,7 @@ async fn request_page(url: &str) -> Result<Option<Html>> {
 	let response = client
 		.get(url)
 		.header(reqwest::header::USER_AGENT, "reqwest/0.11.20 (rust)")
+		.header(reqwest::header::REFERER, "https://scp-wiki.wikidot.com/")
 		.send()
 		.await?;
 
