@@ -68,10 +68,8 @@ async fn append_json_to_file(json: &Value, file_path: &str) -> Result<()> {
 		let mut contents = String::new();
 		file.read_to_string(&mut contents)?;
 
-		let mut existing_json = match serde_json::from_str(&contents) {
-			Ok(json) => json,
-			Err(_) => serde_json::Value::Array(Vec::new()),
-		};
+		let mut existing_json =
+			serde_json::from_str(&contents).unwrap_or_else(|_| Value::Array(Vec::new()));
 
 		if let Some(array) = existing_json.as_array_mut() {
 			if let Some(new_array) = json.as_array() {
@@ -117,10 +115,7 @@ fn extract_scp_number(scp_str: &str) -> Option<u16> {
 	Some(number)
 }
 
-async fn parse_html_to_json(
-	html_body: &Html,
-	page_name: &str,
-) -> Result<serde_json::Value> {
+async fn parse_html_to_json(html_body: &Html, page_name: &str) -> Result<Value> {
 	let document = html_body;
 	let _permit = SEMAPHORE.acquire().await;
 
@@ -129,7 +124,7 @@ async fn parse_html_to_json(
 	let breadcrumb_selector = Selector::parse("#breadcrumbs > a:last-of-type")
 		.expect("Failed to create link Selector");
 
-	let mut links: Vec<serde_json::Value> = Vec::new();
+	let mut links: Vec<Value> = Vec::new();
 	let re = Regex::new(r" \(/\S+\)").unwrap();
 	let regex_set = RegexSet::new([
 		r"(?i)http",
@@ -287,7 +282,7 @@ async fn parse_html_to_json(
 	}
 
 	backlinks_pb.finish();
-	Ok(serde_json::Value::Array(links))
+	Ok(Value::Array(links))
 }
 
 #[tokio::main]
@@ -359,7 +354,7 @@ pub async fn fetch_backlinks() -> Result<()> {
 				"Response successful from page {} with page_id: {}",
 				&page_name, &page_id
 			);
-			let json: serde_json::Value = response.json().await?;
+			let json: Value = response.json().await?;
 			let html: Option<Html> = match json.get("body") {
 				Some(html_body) => {
 					let html_body_str = html_body

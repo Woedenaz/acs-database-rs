@@ -2,7 +2,7 @@
 name = "acs_database_rs"
 description = "ACS Database Scraper - Builds a JSON Database of SCPs using the Anomaly Classification System"
 readme = "README.md"
-license= "GPL-3.0-or-later"
+license = "GPL-3.0-or-later"
 exclude = [".gitignore", ".editorconfig"]
 
 version = "0.1.1"
@@ -27,3 +27,7 @@ serde_json = "1.0.107"
 titlecase = "2.2.1"
 tokio = { version = "1.32.0", features = ["full"] }
 tokio-util = "0.7.9"
+
+[[bin]]
+name = "sort_json"
+path = "src/sort_json.rs"

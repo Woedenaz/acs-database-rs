@@ -53,22 +53,22 @@ struct Args {
 
 #[derive(Serialize, Deserialize, Debug)]
 struct SCPInfo {
-    actual_number: String,
-    display_number: String,
-    name: String,
-    url: String,
+	actual_number: String,
+	display_number: String,
+	name: String,
+	url: String,
 }
 
 impl SortableField for SCPInfo {
-    fn get_field(&self, field: &str) -> Cow<str> {
-        match field {
-            "actual_number" => Cow::Borrowed(&self.actual_number),
-            "display_number" => Cow::Borrowed(&self.display_number),
-            "name" => Cow::Borrowed(&self.name),
-            "url" => Cow::Borrowed(&self.url),
-            _ => panic!("Invalid field: {}", field),
-        }
-    }
+	fn get_field(&self, field: &str) -> Cow<str> {
+		match field {
+			"actual_number" => Cow::Borrowed(&self.actual_number),
+			"display_number" => Cow::Borrowed(&self.display_number),
+			"name" => Cow::Borrowed(&self.name),
+			"url" => Cow::Borrowed(&self.url),
+			_ => panic!("Invalid field: {}", field),
+		}
+	}
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -621,8 +621,8 @@ async fn init_scp_names_json() -> Result<()> {
 	);
 	progress_bar_scp_names.set_message("Initializing SCP Info");
 
-	let scp_rgx: Regex = regex::Regex::new(r"(?i)SCP-(\d{3,4})").unwrap();
-	let dash_rgx: Regex = regex::Regex::new(r"-(\d{3,4})").unwrap();
+	let scp_rgx: Regex = Regex::new(r"(?i)SCP-(\d{3,4})").unwrap();
+	let dash_rgx: Regex = Regex::new(r"-(\d{3,4})").unwrap();
 
 	for series_url in SERIES_URLS.iter() {
 		let document_option = request_page(series_url).await?;
@@ -1295,15 +1295,15 @@ async fn main() -> Result<()> {
 
 		let semaphore = Arc::new(Semaphore::new(limit.into()));
 
-		let mut acs_data: Vec<Acs> = (start..=end)
-			.filter_map(|actual_number| {
+		let futures = (start..=end)
+			.map(|actual_number| {
 				let scp_info = scp_info_vec
 					.iter()
 					.find(|info| info.actual_number == format_number(actual_number));
 				let pb = progress_bar.clone();
 				let semaphore = Arc::clone(&semaphore);
 
-				Some(Box::pin(async move {
+				Box::pin(async move {
 					match scp_info {
 						Some(info) => {
 							let _permit = semaphore
@@ -1363,14 +1363,12 @@ async fn main() -> Result<()> {
 							None
 						}
 					}
-				}))
+				})
 			})
-			.collect::<futures::stream::FuturesUnordered<_>>()
-			.collect::<Vec<Option<Acs>>>()
-			.await
-			.into_iter()
-			.flatten()
-			.collect();
+			.collect::<FuturesUnordered<_>>();
+
+		let results = futures.collect::<Vec<_>>().await;
+		let mut acs_data: Vec<Acs> = results.into_iter().flatten().collect();
 
 		progress_bar.finish_with_message("Done");
 

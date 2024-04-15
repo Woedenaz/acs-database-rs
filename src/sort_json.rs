@@ -1,14 +1,17 @@
 use clap::Parser;
 use serde::{Deserialize, Serialize};
+use serde_json::{from_reader, to_writer_pretty};
 use std::borrow::Cow;
+use std::fs::{File, OpenOptions};
+use std::io::{BufReader, BufWriter};
 
 #[derive(Parser, Debug)]
-#[clap(about, version, author)]
+#[clap(about = "Sort JSON entries", version = "1.0", author = "Your Name")]
 struct Args {
 	#[arg(long, required = true)]
 	file: String,
 
-	#[arg(long, default_value = "number")]
+	#[arg(long, default_value = "actual_number")]
 	field: String,
 }
 
@@ -17,7 +20,7 @@ pub trait SortableField {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct Acs {
+pub struct Acs {
 	name: String,
 	actual_number: String,
 	display_number: String,
@@ -64,15 +67,12 @@ fn extract_scp_number(s: &str) -> Option<u16> {
 		.all(|(a, b)| a.eq_ignore_ascii_case(&b));
 
 	if prefix_match {
-		let number_part: String = s[4..].chars().take_while(|c| c.is_digit(10)).collect();
-		let number = match number_part.parse::<u16>() {
-			Ok(num) => Some(num),
-			Err(e) => {
-				log::error!("Failed to parse SCP number {}: {}", s, e);
-				None
-			}
-		};
-		number
+		s[4..]
+			.chars()
+			.take_while(|c| c.is_ascii_digit())
+			.collect::<String>()
+			.parse::<u16>()
+			.ok()
 	} else {
 		None
 	}
@@ -90,4 +90,27 @@ pub fn sort<T: SortableField>(entries: &mut [T], sort_field: &str) {
 			(None, None) => a_field.cmp(&b_field),
 		}
 	});
+}
+
+#[cfg(not(test))]
+fn main() {
+	let args = Args::parse();
+
+	let file = File::open(&args.file).expect("File not found");
+	let reader = BufReader::new(file);
+	let mut entries: Vec<Acs> = from_reader(reader).expect("Error reading json");
+
+	sort(&mut entries, &args.field);
+
+	let file = OpenOptions::new()
+		.write(true)
+		.truncate(true)
+		.open(&args.file)
+		.expect("Failed to open file for writing");
+
+	let writer = BufWriter::new(file);
+
+	to_writer_pretty(writer, &entries).expect("Error writing json");
+
+	println!("File sorted and overwritten successfully.");
 }
