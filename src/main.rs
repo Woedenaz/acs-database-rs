@@ -313,7 +313,7 @@ static AIM_DISRUPT_SELECTOR: Lazy<Selector> = Lazy::new(|| {
 		.unwrap()
 });
 
-const SERIES_URLS: [&str; 8] = [
+const SERIES_URLS: [&str; 9] = [
 	"https://scp-wiki.wikidot.com/scp-series",
 	"https://scp-wiki.wikidot.com/scp-series-2",
 	"https://scp-wiki.wikidot.com/scp-series-3",
@@ -322,6 +322,7 @@ const SERIES_URLS: [&str; 8] = [
 	"https://scp-wiki.wikidot.com/scp-series-6",
 	"https://scp-wiki.wikidot.com/scp-series-7",
 	"https://scp-wiki.wikidot.com/scp-series-8",
+	"https://scp-wiki.wikidot.com/scp-series-9",
 ];
 
 //Helper Functions
@@ -1096,51 +1097,69 @@ async fn fetch_and_update_entry(
 ) -> Result<Acs> {
 	log::debug!("Fetching data from: {}", url);
 	match fetch_acs_data(actual_number, Some(name), url, &fragment).await {
-		Ok(Some(acs_data)) => match acs_data {
-			Acs::Vanilla {
-				shared,
-				name,
-				actual_number,
-				display_number,
-				clearance,
-				clearance_text,
-				risk,
-				url,
-				fragment,
-			} => {
-				log::debug!("Successfully fetched ACS Bar Data from: {}", url);
-				match create_acs(Acs::Vanilla {
-					shared: SharedAcs {
-						contain: shared.contain,
-						secondary: shared.secondary,
-						disrupt: shared.disrupt,
-						scraper: shared.scraper,
-					},
-					name: name.to_string(),
-					actual_number: actual_number.to_string(),
+		Ok(Some(acs_data)) => {
+			log::info!("Data fetched successfully for: {}", url);
+			match acs_data {
+				Acs::Vanilla {
+					shared,
+					name,
+					actual_number,
 					display_number,
 					clearance,
 					clearance_text,
 					risk,
-					url: url.to_string(),
+					url,
 					fragment,
-				}) {
-					Ok(new_entry) => Ok(new_entry),
-					Err(e) => Err(anyhow::anyhow!("Failed to create acs: {}", e)),
+				} => {
+					log::debug!("Attempting to create Acs::Vanilla for URL: {}", url);
+					let new_acs = Acs::Vanilla {
+						shared: SharedAcs {
+							contain: shared.contain,
+							secondary: shared.secondary,
+							disrupt: shared.disrupt,
+							scraper: shared.scraper,
+						},
+						name: name.to_string(),
+						actual_number: actual_number.to_string(),
+						display_number,
+						clearance,
+						clearance_text,
+						risk,
+						url: url.to_string(),
+						fragment,
+					};
+					match create_acs(new_acs) {
+						Ok(new_entry) => {
+							log::info!("Successfully created new Acs::Vanilla for URL: {}", url);
+							Ok(new_entry)
+						},
+						Err(e) => {
+							log::error!("Failed to create acs for URL: {}: {}", url, e);
+							Err(anyhow!("Failed to create acs: {}", e))
+						},
+					}
 				}
+				_ => {
+					log::error!("Data fetched from URL: {} is not of variant Vanilla", url);
+					Err(anyhow!("The provided Acs data is not of variant Vanilla."))
+				},
 			}
-			_ => Err(anyhow!("The provided Acs data is not of variant Vanilla.")),
 		},
-
-		Ok(None) => Err(anyhow!(
-			"f: fetch_and_update_entry | Failed to fetch ACS data for: {}",
-			url
-		)),
-		Err(e) => Err(anyhow!(
-			"f: fetch_and_update_entry | Error fetching ACS data for {}: {}",
-			url,
-			e
-		)),
+		Ok(None) => {
+			log::warn!("No data fetched for URL: {}", url);
+			Err(anyhow!(
+				"f: fetch_and_update_entry | Failed to fetch ACS data for: {}",
+				url
+			))
+		},
+		Err(e) => {
+			log::error!("Error fetching ACS data for URL: {}: {}", url, e);
+			Err(anyhow!(
+				"f: fetch_and_update_entry | Error fetching ACS data for {}: {}",
+				url,
+				e
+			))
+		},
 	}
 }
 

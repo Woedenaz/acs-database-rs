@@ -26960,7 +26960,7 @@
   {
     "actual_number": "SCP-4494",
     "display_number": "SCP-4494",
-    "name": "<span style=\"font-size:0%;\">The Specter Fights For Justice!</span><a href=\"https://scp-wiki.wdfiles.com/local--files/scp-series-5/specter_label\"><img src=\"https://scp-wiki.wdfiles.com/local--resized-images/scp-series-5/specter_label/medium.jpg\" class=\"image\" style=\"margin-bottom: -2px;\" alt=\"specter_label\"></a> Fights For Justice!",
+    "name": "<span style=\"font-size:0%;\">The Specter Fights For Justice!</span><a href=\"https://scp-wiki.wdfiles.com/local--files/scp-series-5/specter_label\"><img style=\"margin-bottom: -2px;\" class=\"image\" src=\"https://scp-wiki.wdfiles.com/local--resized-images/scp-series-5/specter_label/medium.jpg\" alt=\"specter_label\"></a> Fights For Justice!",
     "url": "https://scp-wiki.wikidot.com/scp-4494"
   },
   {
@@ -29192,7 +29192,7 @@
   {
     "actual_number": "SCP-4866",
     "display_number": "SCP-4866",
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" id=\"footnoteref-1\">1</a></sup>",
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" class=\"footnoteref\" id=\"footnoteref-1\" href=\"javascript:;\">1</a></sup>",
     "url": "https://scp-wiki.wikidot.com/scp-4866"
   },
   {
@@ -29354,7 +29354,7 @@
   {
     "actual_number": "SCP-4893",
     "display_number": "SCP-4893",
-    "name": "Agapanthus<sup class=\"footnoteref\"><a onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\" href=\"javascript:;\" class=\"footnoteref\" id=\"footnoteref-2\">2</a></sup>",
+    "name": "Agapanthus<sup class=\"footnoteref\"><a class=\"footnoteref\" id=\"footnoteref-2\" href=\"javascript:;\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-2')\">2</a></sup>",
     "url": "https://scp-wiki.wikidot.com/scp-4893"
   },
   {
@@ -43302,12 +43302,6 @@
     "url": "https://scp-wiki.wikidot.com/scp-7237"
   },
   {
-    "actual_number": "SCP-7238",
-    "display_number": "SCP-7238",
-    "name": "[ACCESS DENIED]",
-    "url": "https://scp-wiki.wikidot.com/scp-7238"
-  },
-  {
     "actual_number": "SCP-7239",
     "display_number": "SCP-7239",
     "name": "Papal Bull(sh*t)",
@@ -44572,6 +44566,12 @@
     "display_number": "SCP-7467",
     "name": "The Green and The Mighty",
     "url": "https://scp-wiki.wikidot.com/scp-7467"
+  },
+  {
+    "actual_number": "SCP-7468",
+    "display_number": "SCP-7468",
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-7468"
   },
   {
     "actual_number": "SCP-7470",
@@ -47290,5 +47290,1133 @@
     "display_number": "SCP-7999",
     "name": "Meet Me in the Stars",
     "url": "https://scp-wiki.wikidot.com/scp-7999"
+  },
+  {
+    "actual_number": "SCP-8000",
+    "display_number": "SCP-8000",
+    "name": "The Seal of Approval",
+    "url": "https://scp-wiki.wikidot.com/scp-8000"
+  },
+  {
+    "actual_number": "SCP-8001",
+    "display_number": "SCP-8001",
+    "name": "The Edge of the World",
+    "url": "https://scp-wiki.wikidot.com/scp-8001"
+  },
+  {
+    "actual_number": "SCP-8002",
+    "display_number": "SCP-8002",
+    "name": "Maslov's Fire",
+    "url": "https://scp-wiki.wikidot.com/scp-8002"
+  },
+  {
+    "actual_number": "SCP-8003",
+    "display_number": "SCP-8003",
+    "name": "THE GEARS OF TIME",
+    "url": "https://scp-wiki.wikidot.com/scp-8003"
+  },
+  {
+    "actual_number": "SCP-8004",
+    "display_number": "SCP-8004",
+    "name": "The Life and Death of Vincent Bohart",
+    "url": "https://scp-wiki.wikidot.com/scp-8004"
+  },
+  {
+    "actual_number": "SCP-8005",
+    "display_number": "SCP-8005",
+    "name": "The Fool",
+    "url": "https://scp-wiki.wikidot.com/scp-8005"
+  },
+  {
+    "actual_number": "SCP-8006",
+    "display_number": "SCP-8006",
+    "name": "Debris on the Tracks",
+    "url": "https://scp-wiki.wikidot.com/scp-8006"
+  },
+  {
+    "actual_number": "SCP-8007",
+    "display_number": "SCP-8007",
+    "name": "<span style=\"font-weight: bold; color: #ff670f;\">THE PYROCLASM PROTOCOL</span>",
+    "url": "https://scp-wiki.wikidot.com/scp-8007"
+  },
+  {
+    "actual_number": "SCP-8008",
+    "display_number": "SCP-8008",
+    "name": "<span style=\"font: small-caps 1.2em sans-serif; text-shadow: 1px 1px 2px pink\"><span style=\"color: red\">T</span><span style=\"color: lime\">i</span><span style=\"color: blue\">m</span>e <span style=\"color: magenta\">Pervert</span></span>",
+    "url": "https://scp-wiki.wikidot.com/scp-8008"
+  },
+  {
+    "actual_number": "SCP-8009",
+    "display_number": "SCP-8009",
+    "name": "Her Red Right Hand Protects Us",
+    "url": "https://scp-wiki.wikidot.com/scp-8009"
+  },
+  {
+    "actual_number": "SCP-8010",
+    "display_number": "SCP-8010",
+    "name": "Mom and Dad",
+    "url": "https://scp-wiki.wikidot.com/scp-8010"
+  },
+  {
+    "actual_number": "SCP-8011",
+    "display_number": "SCP-8011",
+    "name": "In Flesh, Tasted",
+    "url": "https://scp-wiki.wikidot.com/scp-8011"
+  },
+  {
+    "actual_number": "SCP-8012",
+    "display_number": "SCP-8012",
+    "name": "The Hero's Journey (Ft. Wigglebert the Great)",
+    "url": "https://scp-wiki.wikidot.com/scp-8012"
+  },
+  {
+    "actual_number": "SCP-8013",
+    "display_number": "SCP-8013",
+    "name": "The Dragon is not a Metaphor for Capitalism",
+    "url": "https://scp-wiki.wikidot.com/scp-8013"
+  },
+  {
+    "actual_number": "SCP-8014",
+    "display_number": "SCP-8014",
+    "name": "Roma Addenda Est",
+    "url": "https://scp-wiki.wikidot.com/scp-8014"
+  },
+  {
+    "actual_number": "SCP-8015",
+    "display_number": "SCP-8015",
+    "name": "A Fighting Chance",
+    "url": "https://scp-wiki.wikidot.com/scp-8015"
+  },
+  {
+    "actual_number": "SCP-8016",
+    "display_number": "SCP-8016",
+    "name": "Gods You Be",
+    "url": "https://scp-wiki.wikidot.com/scp-8016"
+  },
+  {
+    "actual_number": "SCP-8017",
+    "display_number": "SCP-8017",
+    "name": "Sentience",
+    "url": "https://scp-wiki.wikidot.com/scp-8017"
+  },
+  {
+    "actual_number": "SCP-8018",
+    "display_number": "SCP-8018",
+    "name": "While You Were Dreaming I Was Turning The Sky",
+    "url": "https://scp-wiki.wikidot.com/scp-8018"
+  },
+  {
+    "actual_number": "SCP-8019",
+    "display_number": "SCP-8019",
+    "name": "Bear Danger",
+    "url": "https://scp-wiki.wikidot.com/scp-8019"
+  },
+  {
+    "actual_number": "SCP-8020",
+    "display_number": "SCP-8020",
+    "name": "FALSE IDOL",
+    "url": "https://scp-wiki.wikidot.com/scp-8020"
+  },
+  {
+    "actual_number": "SCP-8021",
+    "display_number": "SCP-8021",
+    "name": "Life in a Snapshot",
+    "url": "https://scp-wiki.wikidot.com/scp-8021"
+  },
+  {
+    "actual_number": "SCP-8022",
+    "display_number": "SCP-8022",
+    "name": "Build Your <strong>Dreams</strong>, One <strong>Brick</strong> at a Time.",
+    "url": "https://scp-wiki.wikidot.com/scp-8022"
+  },
+  {
+    "actual_number": "SCP-8023",
+    "display_number": "SCP-8023",
+    "name": "Secrets in the Dark and City of the Accursed",
+    "url": "https://scp-wiki.wikidot.com/scp-8023"
+  },
+  {
+    "actual_number": "SCP-8024",
+    "display_number": "SCP-8024",
+    "name": "Typhon",
+    "url": "https://scp-wiki.wikidot.com/scp-8024"
+  },
+  {
+    "actual_number": "SCP-8025",
+    "display_number": "SCP-8025",
+    "name": "COSMIC COMMANDMENTS",
+    "url": "https://scp-wiki.wikidot.com/scp-8025"
+  },
+  {
+    "actual_number": "SCP-8026",
+    "display_number": "SCP-8026",
+    "name": "And I'm No Dreamer",
+    "url": "https://scp-wiki.wikidot.com/scp-8026"
+  },
+  {
+    "actual_number": "SCP-8027",
+    "display_number": "SCP-8027",
+    "name": "The Lord of the ██████",
+    "url": "https://scp-wiki.wikidot.com/scp-8027"
+  },
+  {
+    "actual_number": "SCP-8028",
+    "display_number": "SCP-8028",
+    "name": "Into The Woods",
+    "url": "https://scp-wiki.wikidot.com/scp-8028"
+  },
+  {
+    "actual_number": "SCP-8030",
+    "display_number": "SCP-8030",
+    "name": "Our Holy Magic",
+    "url": "https://scp-wiki.wikidot.com/scp-8030"
+  },
+  {
+    "actual_number": "SCP-8031",
+    "display_number": "SCP-8031",
+    "name": "Teat",
+    "url": "https://scp-wiki.wikidot.com/scp-8031"
+  },
+  {
+    "actual_number": "SCP-8032",
+    "display_number": "SCP-8032",
+    "name": "Dunce",
+    "url": "https://scp-wiki.wikidot.com/scp-8032"
+  },
+  {
+    "actual_number": "SCP-8033",
+    "display_number": "SCP-8033",
+    "name": "Chronesthesia",
+    "url": "https://scp-wiki.wikidot.com/scp-8033"
+  },
+  {
+    "actual_number": "SCP-8034",
+    "display_number": "SCP-8034",
+    "name": "A Tongue in the Glovebox",
+    "url": "https://scp-wiki.wikidot.com/scp-8034"
+  },
+  {
+    "actual_number": "SCP-8035",
+    "display_number": "SCP-8035",
+    "name": "I Have Seen What The Darkness Does",
+    "url": "https://scp-wiki.wikidot.com/scp-8035"
+  },
+  {
+    "actual_number": "SCP-8036",
+    "display_number": "SCP-8036",
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-8036"
+  },
+  {
+    "actual_number": "SCP-8037",
+    "display_number": "SCP-8037",
+    "name": "Botanical Rhapsody",
+    "url": "https://scp-wiki.wikidot.com/scp-8037"
+  },
+  {
+    "actual_number": "SCP-8038",
+    "display_number": "SCP-8038",
+    "name": "Fear, He Walks",
+    "url": "https://scp-wiki.wikidot.com/scp-8038"
+  },
+  {
+    "actual_number": "SCP-8039",
+    "display_number": "SCP-8039",
+    "name": "Deluxe Containment Package",
+    "url": "https://scp-wiki.wikidot.com/scp-8039"
+  },
+  {
+    "actual_number": "SCP-8040",
+    "display_number": "SCP-8040",
+    "name": "Diviner's Mug",
+    "url": "https://scp-wiki.wikidot.com/scp-8040"
+  },
+  {
+    "actual_number": "SCP-8041",
+    "display_number": "SCP-8041",
+    "name": "Supreme Nothing",
+    "url": "https://scp-wiki.wikidot.com/scp-8041"
+  },
+  {
+    "actual_number": "SCP-8043",
+    "display_number": "SCP-8043",
+    "name": "On and On and On and On",
+    "url": "https://scp-wiki.wikidot.com/scp-8043"
+  },
+  {
+    "actual_number": "SCP-8045",
+    "display_number": "SCP-8045",
+    "name": "Fairly Frivolous Fairies",
+    "url": "https://scp-wiki.wikidot.com/scp-8045"
+  },
+  {
+    "actual_number": "SCP-8046",
+    "display_number": "SCP-8046",
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-8046"
+  },
+  {
+    "actual_number": "SCP-8050",
+    "display_number": "VNP-8050",
+    "name": "One to Rule Them All",
+    "url": "https://scp-wiki.wikidot.com/scp-8050"
+  },
+  {
+    "actual_number": "SCP-8051",
+    "display_number": "SCP-8051",
+    "name": "House of Cotton",
+    "url": "https://scp-wiki.wikidot.com/scp-8051"
+  },
+  {
+    "actual_number": "SCP-8055",
+    "display_number": "SCP-8055",
+    "name": "I had a bad dream",
+    "url": "https://scp-wiki.wikidot.com/scp-8055"
+  },
+  {
+    "actual_number": "SCP-8056",
+    "display_number": "SCP-8056",
+    "name": "Something Truly Horrible",
+    "url": "https://scp-wiki.wikidot.com/scp-8056"
+  },
+  {
+    "actual_number": "SCP-8059",
+    "display_number": "SCP-8059",
+    "name": "IBM Chronoscope",
+    "url": "https://scp-wiki.wikidot.com/scp-8059"
+  },
+  {
+    "actual_number": "SCP-8060",
+    "display_number": "SCP-8060",
+    "name": "Toontown",
+    "url": "https://scp-wiki.wikidot.com/scp-8060"
+  },
+  {
+    "actual_number": "SCP-8069",
+    "display_number": "SCP-8069",
+    "name": "Pig Clock",
+    "url": "https://scp-wiki.wikidot.com/scp-8069"
+  },
+  {
+    "actual_number": "SCP-8070",
+    "display_number": "SCP-8070",
+    "name": "Stereoisomerism",
+    "url": "https://scp-wiki.wikidot.com/scp-8070"
+  },
+  {
+    "actual_number": "SCP-8074",
+    "display_number": "SCP-8074",
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-8074"
+  },
+  {
+    "actual_number": "SCP-8076",
+    "display_number": "SCP-8076",
+    "name": "Awan",
+    "url": "https://scp-wiki.wikidot.com/scp-8076"
+  },
+  {
+    "actual_number": "SCP-8078",
+    "display_number": "SCP-8078",
+    "name": "The Perilous People Pleaser",
+    "url": "https://scp-wiki.wikidot.com/scp-8078"
+  },
+  {
+    "actual_number": "SCP-8079",
+    "display_number": "SCP-8079",
+    "name": "Rejected Reality",
+    "url": "https://scp-wiki.wikidot.com/scp-8079"
+  },
+  {
+    "actual_number": "SCP-8080",
+    "display_number": "SCP-8080",
+    "name": "Eleanor Ellory Goes To Therapy",
+    "url": "https://scp-wiki.wikidot.com/scp-8080"
+  },
+  {
+    "actual_number": "SCP-8081",
+    "display_number": "SCP-8081",
+    "name": "The 80's Cycle",
+    "url": "https://scp-wiki.wikidot.com/scp-8081"
+  },
+  {
+    "actual_number": "SCP-8082",
+    "display_number": "SCP-8082",
+    "name": "The Wild Hunt",
+    "url": "https://scp-wiki.wikidot.com/scp-8082"
+  },
+  {
+    "actual_number": "SCP-8087",
+    "display_number": "SCP-8087",
+    "name": "The Legend of the Huckmucker",
+    "url": "https://scp-wiki.wikidot.com/scp-8087"
+  },
+  {
+    "actual_number": "SCP-8088",
+    "display_number": "SCP-8088",
+    "name": "Still Within Bounds",
+    "url": "https://scp-wiki.wikidot.com/scp-8088"
+  },
+  {
+    "actual_number": "SCP-8089",
+    "display_number": "SCP-8089",
+    "name": "No one in the world ever gets what they want, and that is Beautiful",
+    "url": "https://scp-wiki.wikidot.com/scp-8089"
+  },
+  {
+    "actual_number": "SCP-8090",
+    "display_number": "SCP-8090",
+    "name": "PROFANITY / PROVIDENCE / PURGATORY",
+    "url": "https://scp-wiki.wikidot.com/scp-8090"
+  },
+  {
+    "actual_number": "SCP-8098",
+    "display_number": "SCP-8098",
+    "name": "Normal Ammunition Is Boring, Why Not Spice It Up With Different Flavors?",
+    "url": "https://scp-wiki.wikidot.com/scp-8098"
+  },
+  {
+    "actual_number": "SCP-8099",
+    "display_number": "SCP-8099",
+    "name": "Fantasi",
+    "url": "https://scp-wiki.wikidot.com/scp-8099"
+  },
+  {
+    "actual_number": "SCP-8100",
+    "display_number": "SCP-8100",
+    "name": "TURTLE TIME",
+    "url": "https://scp-wiki.wikidot.com/scp-8100"
+  },
+  {
+    "actual_number": "SCP-8101",
+    "display_number": "SCP-8101",
+    "name": "The Dream Machine",
+    "url": "https://scp-wiki.wikidot.com/scp-8101"
+  },
+  {
+    "actual_number": "SCP-8105",
+    "display_number": "SCP-8105",
+    "name": "105.7 Easy FM",
+    "url": "https://scp-wiki.wikidot.com/scp-8105"
+  },
+  {
+    "actual_number": "SCP-8108",
+    "display_number": "SCP-8108",
+    "name": "Foundation Fantasy League",
+    "url": "https://scp-wiki.wikidot.com/scp-8108"
+  },
+  {
+    "actual_number": "SCP-8111",
+    "display_number": "SCP-8111",
+    "name": "Magic for Liars",
+    "url": "https://scp-wiki.wikidot.com/scp-8111"
+  },
+  {
+    "actual_number": "SCP-8118",
+    "display_number": "SCP-8118",
+    "name": "everything is fine",
+    "url": "https://scp-wiki.wikidot.com/scp-8118"
+  },
+  {
+    "actual_number": "SCP-8120",
+    "display_number": "SCP-8120",
+    "name": "Bloodbound",
+    "url": "https://scp-wiki.wikidot.com/scp-8120"
+  },
+  {
+    "actual_number": "SCP-8125",
+    "display_number": "SCP-8125",
+    "name": "Narrativic Fragments",
+    "url": "https://scp-wiki.wikidot.com/scp-8125"
+  },
+  {
+    "actual_number": "SCP-8130",
+    "display_number": "SCP-8130",
+    "name": "Down Here In The Deep Black Ocean",
+    "url": "https://scp-wiki.wikidot.com/scp-8130"
+  },
+  {
+    "actual_number": "SCP-8132",
+    "display_number": "SCP-8132",
+    "name": "ViKarious ToMe™",
+    "url": "https://scp-wiki.wikidot.com/scp-8132"
+  },
+  {
+    "actual_number": "SCP-8140",
+    "display_number": "SCP-8140",
+    "name": "<span style=\"color: red\"><strong>Burial Goods</strong></span>",
+    "url": "https://scp-wiki.wikidot.com/scp-8140"
+  },
+  {
+    "actual_number": "SCP-8142",
+    "display_number": "SCP-8142",
+    "name": "A Passing Chimera",
+    "url": "https://scp-wiki.wikidot.com/scp-8142"
+  },
+  {
+    "actual_number": "SCP-8145",
+    "display_number": "SCP-8145",
+    "name": "fistula.html",
+    "url": "https://scp-wiki.wikidot.com/scp-8145"
+  },
+  {
+    "actual_number": "SCP-8150",
+    "display_number": "SCP-8150",
+    "name": "Dust Mother",
+    "url": "https://scp-wiki.wikidot.com/scp-8150"
+  },
+  {
+    "actual_number": "SCP-8155",
+    "display_number": "SCP-8155",
+    "name": "<tt>Maternal Abatement</tt>",
+    "url": "https://scp-wiki.wikidot.com/scp-8155"
+  },
+  {
+    "actual_number": "SCP-8156",
+    "display_number": "SCP-8156",
+    "name": "We All Go Down to Deep Sea",
+    "url": "https://scp-wiki.wikidot.com/scp-8156"
+  },
+  {
+    "actual_number": "SCP-8166",
+    "display_number": "SCP-8166",
+    "name": "Eastward of Eden",
+    "url": "https://scp-wiki.wikidot.com/scp-8166"
+  },
+  {
+    "actual_number": "SCP-8169",
+    "display_number": "SCP-8169",
+    "name": "The forget me stick",
+    "url": "https://scp-wiki.wikidot.com/scp-8169"
+  },
+  {
+    "actual_number": "SCP-8173",
+    "display_number": "SCP-8173",
+    "name": "Ms. Harrier Is Not Anomalous",
+    "url": "https://scp-wiki.wikidot.com/scp-8173"
+  },
+  {
+    "actual_number": "SCP-8181",
+    "display_number": "SCP-8181",
+    "name": "The Real World",
+    "url": "https://scp-wiki.wikidot.com/scp-8181"
+  },
+  {
+    "actual_number": "SCP-8190",
+    "display_number": "SCP-8190",
+    "name": "DEPARTMENTALIZED",
+    "url": "https://scp-wiki.wikidot.com/scp-8190"
+  },
+  {
+    "actual_number": "SCP-8192",
+    "display_number": "SCP-8192",
+    "name": "Happily Ever After",
+    "url": "https://scp-wiki.wikidot.com/scp-8192"
+  },
+  {
+    "actual_number": "SCP-8195",
+    "display_number": "SCP-8195",
+    "name": "Alex Thorley Gets Away With It",
+    "url": "https://scp-wiki.wikidot.com/scp-8195"
+  },
+  {
+    "actual_number": "SCP-8199",
+    "display_number": "SCP-8199",
+    "name": "Dreamcrumbs",
+    "url": "https://scp-wiki.wikidot.com/scp-8199"
+  },
+  {
+    "actual_number": "SCP-8200",
+    "display_number": "SCP-8200",
+    "name": "The Phantom Sea",
+    "url": "https://scp-wiki.wikidot.com/scp-8200"
+  },
+  {
+    "actual_number": "SCP-8202",
+    "display_number": "SCP-8202",
+    "name": "Of Fire and Ice, War and Loss",
+    "url": "https://scp-wiki.wikidot.com/scp-8202"
+  },
+  {
+    "actual_number": "SCP-8220",
+    "display_number": "SCP-8220",
+    "name": "For Your Birthday",
+    "url": "https://scp-wiki.wikidot.com/scp-8220"
+  },
+  {
+    "actual_number": "SCP-8222",
+    "display_number": "SCP-8222",
+    "name": "SCP: Panorama",
+    "url": "https://scp-wiki.wikidot.com/scp-8222"
+  },
+  {
+    "actual_number": "SCP-8225",
+    "display_number": "SCP-8225",
+    "name": "The House of All Our Gods",
+    "url": "https://scp-wiki.wikidot.com/scp-8225"
+  },
+  {
+    "actual_number": "SCP-8228",
+    "display_number": "SCP-8228",
+    "name": "Here's To You, Mrs. Robinson",
+    "url": "https://scp-wiki.wikidot.com/scp-8228"
+  },
+  {
+    "actual_number": "SCP-8231",
+    "display_number": "SCP-8231",
+    "name": "",
+    "url": "https://scp-wiki.wikidot.com/scp-8231"
+  },
+  {
+    "actual_number": "SCP-8235",
+    "display_number": "SCP-8235",
+    "name": "Magic, Unchained",
+    "url": "https://scp-wiki.wikidot.com/scp-8235"
+  },
+  {
+    "actual_number": "SCP-8245",
+    "display_number": "SCP-8245",
+    "name": "Anywhere, Anytime, You and Me",
+    "url": "https://scp-wiki.wikidot.com/scp-8245"
+  },
+  {
+    "actual_number": "SCP-8247",
+    "display_number": "SCP-8247",
+    "name": "Well, she's harmless to me",
+    "url": "https://scp-wiki.wikidot.com/scp-8247"
+  },
+  {
+    "actual_number": "SCP-8249",
+    "display_number": "SCP-8249",
+    "name": "Of Agents, Archons, and Adam of the Transient",
+    "url": "https://scp-wiki.wikidot.com/scp-8249"
+  },
+  {
+    "actual_number": "SCP-8250",
+    "display_number": "SCP-8250",
+    "name": "Evolution and Darkness",
+    "url": "https://scp-wiki.wikidot.com/scp-8250"
+  },
+  {
+    "actual_number": "SCP-8280",
+    "display_number": "SCP-8280",
+    "name": "Slipping Through The Cracks",
+    "url": "https://scp-wiki.wikidot.com/scp-8280"
+  },
+  {
+    "actual_number": "SCP-8282",
+    "display_number": "SCP-8282",
+    "name": "You Are Now Entering",
+    "url": "https://scp-wiki.wikidot.com/scp-8282"
+  },
+  {
+    "actual_number": "SCP-8300",
+    "display_number": "SCP-8300",
+    "name": "The Farewell, The Frame",
+    "url": "https://scp-wiki.wikidot.com/scp-8300"
+  },
+  {
+    "actual_number": "SCP-8301",
+    "display_number": "SCP-8301",
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-8301"
+  },
+  {
+    "actual_number": "SCP-8308",
+    "display_number": "SCP-8308",
+    "name": "To Bite One's Thumb",
+    "url": "https://scp-wiki.wikidot.com/scp-8308"
+  },
+  {
+    "actual_number": "SCP-8317",
+    "display_number": "SCP-8317",
+    "name": "Nothing of Value",
+    "url": "https://scp-wiki.wikidot.com/scp-8317"
+  },
+  {
+    "actual_number": "SCP-8320",
+    "display_number": "SCP-8320",
+    "name": "Seven Hundred Million Wizards",
+    "url": "https://scp-wiki.wikidot.com/scp-8320"
+  },
+  {
+    "actual_number": "SCP-8327",
+    "display_number": "SCP-8327",
+    "name": "I Dream of the Sea",
+    "url": "https://scp-wiki.wikidot.com/scp-8327"
+  },
+  {
+    "actual_number": "SCP-8330",
+    "display_number": "SCP-8330",
+    "name": "One for the history books",
+    "url": "https://scp-wiki.wikidot.com/scp-8330"
+  },
+  {
+    "actual_number": "SCP-8333",
+    "display_number": "SCP-8333",
+    "name": "Wishweavers",
+    "url": "https://scp-wiki.wikidot.com/scp-8333"
+  },
+  {
+    "actual_number": "SCP-8343",
+    "display_number": "SCP-8343",
+    "name": "Slaying the Demiurge",
+    "url": "https://scp-wiki.wikidot.com/scp-8343"
+  },
+  {
+    "actual_number": "SCP-8350",
+    "display_number": "SCP-8350",
+    "name": "<span style=\"color: rgb(5,162,234)\"><strong>Public Affairs</strong></span>",
+    "url": "https://scp-wiki.wikidot.com/scp-8350"
+  },
+  {
+    "actual_number": "SCP-8359",
+    "display_number": "SCP-8359",
+    "name": "3AM",
+    "url": "https://scp-wiki.wikidot.com/scp-8359"
+  },
+  {
+    "actual_number": "SCP-8399",
+    "display_number": "SCP-8399",
+    "name": "INSURGENCE",
+    "url": "https://scp-wiki.wikidot.com/scp-8399"
+  },
+  {
+    "actual_number": "SCP-8400",
+    "display_number": "SCP-8400",
+    "name": "The Birch Knight and the Game of Three Chestnuts",
+    "url": "https://scp-wiki.wikidot.com/scp-8400"
+  },
+  {
+    "actual_number": "SCP-8404",
+    "display_number": "SCP-8404",
+    "name": "That One Time The Foundation Attempted To Use SIMULACRUM Technology To Contain A Keter-Class Entity In Another World",
+    "url": "https://scp-wiki.wikidot.com/scp-8404"
+  },
+  {
+    "actual_number": "SCP-8410",
+    "display_number": "SCP-8410",
+    "name": "When Dreams Come True",
+    "url": "https://scp-wiki.wikidot.com/scp-8410"
+  },
+  {
+    "actual_number": "SCP-8413",
+    "display_number": "SCP-8413",
+    "name": "Ashes to Ashes, Dust to Dust, 9 to 5",
+    "url": "https://scp-wiki.wikidot.com/scp-8413"
+  },
+  {
+    "actual_number": "SCP-8420",
+    "display_number": "SCP-8420",
+    "name": "THE WIZARD II (Also Known as Wizard Reborn 2, Swann Fever, Ballad of the Swann Lake, Electric Avenue, the Reckoning, Revenge of the Dumbass, Tokyo Drift, Porygon Boogaloo, This Time it's Personnel, Wizard Harder: Return of the Rise of the Revenge of the Planet of the Wizard, etc.)",
+    "url": "https://scp-wiki.wikidot.com/scp-8420"
+  },
+  {
+    "actual_number": "SCP-8424",
+    "display_number": "SCP-8424",
+    "name": "DO NOT LOOK DIRECTLY AT A SOLAR ECLIPSE",
+    "url": "https://scp-wiki.wikidot.com/scp-8424"
+  },
+  {
+    "actual_number": "SCP-8440",
+    "display_number": "SCP-8440",
+    "name": "Clear as White",
+    "url": "https://scp-wiki.wikidot.com/scp-8440"
+  },
+  {
+    "actual_number": "SCP-8444",
+    "display_number": "SCP-8444",
+    "name": "I'll Be There With You",
+    "url": "https://scp-wiki.wikidot.com/scp-8444"
+  },
+  {
+    "actual_number": "SCP-8448",
+    "display_number": "SCP-8448",
+    "name": "Trapped Like a Fly.",
+    "url": "https://scp-wiki.wikidot.com/scp-8448"
+  },
+  {
+    "actual_number": "SCP-8451",
+    "display_number": "SCP-8451",
+    "name": "To Break the Pots and Sink the Ships",
+    "url": "https://scp-wiki.wikidot.com/scp-8451"
+  },
+  {
+    "actual_number": "SCP-8457",
+    "display_number": "SCP-8457",
+    "name": "That time I, a Foundation Agent, was abducted into another world at war with mine.",
+    "url": "https://scp-wiki.wikidot.com/scp-8457"
+  },
+  {
+    "actual_number": "SCP-8484",
+    "display_number": "SCP-8484",
+    "name": "Acheron",
+    "url": "https://scp-wiki.wikidot.com/scp-8484"
+  },
+  {
+    "actual_number": "SCP-8499",
+    "display_number": "SCP-8499",
+    "name": "Tomb of the Shattered",
+    "url": "https://scp-wiki.wikidot.com/scp-8499"
+  },
+  {
+    "actual_number": "SCP-8500",
+    "display_number": "SCP-8500",
+    "name": "WTH_LUV_FRM_ADA.zip",
+    "url": "https://scp-wiki.wikidot.com/scp-8500"
+  },
+  {
+    "actual_number": "SCP-8501",
+    "display_number": "SCP-8501",
+    "name": "Truck-Kun",
+    "url": "https://scp-wiki.wikidot.com/scp-8501"
+  },
+  {
+    "actual_number": "SCP-8550",
+    "display_number": "SCP-8550",
+    "name": "Microbial Murder",
+    "url": "https://scp-wiki.wikidot.com/scp-8550"
+  },
+  {
+    "actual_number": "SCP-8555",
+    "display_number": "SCP-8555",
+    "name": "Kaleidoscope",
+    "url": "https://scp-wiki.wikidot.com/scp-8555"
+  },
+  {
+    "actual_number": "SCP-8579",
+    "display_number": "SCP-8579",
+    "name": "A Pattern That Screamed",
+    "url": "https://scp-wiki.wikidot.com/scp-8579"
+  },
+  {
+    "actual_number": "SCP-8590",
+    "display_number": "SCP-8590",
+    "name": "Dale",
+    "url": "https://scp-wiki.wikidot.com/scp-8590"
+  },
+  {
+    "actual_number": "SCP-8591",
+    "display_number": "SCP-8591",
+    "name": "Alex Thorley Doesn’t Get Away With It",
+    "url": "https://scp-wiki.wikidot.com/scp-8591"
+  },
+  {
+    "actual_number": "SCP-8599",
+    "display_number": "SCP-8599",
+    "name": "Your Fate is Sealed",
+    "url": "https://scp-wiki.wikidot.com/scp-8599"
+  },
+  {
+    "actual_number": "SCP-8600",
+    "display_number": "SCP-8600",
+    "name": "The Hall of the Empresses",
+    "url": "https://scp-wiki.wikidot.com/scp-8600"
+  },
+  {
+    "actual_number": "SCP-8623",
+    "display_number": "SCP-8623",
+    "name": "The Sun Never Sets",
+    "url": "https://scp-wiki.wikidot.com/scp-8623"
+  },
+  {
+    "actual_number": "SCP-8642",
+    "display_number": "SCP-8642",
+    "name": "D.E.A.D.E.N.D.",
+    "url": "https://scp-wiki.wikidot.com/scp-8642"
+  },
+  {
+    "actual_number": "SCP-8666",
+    "display_number": "SCP-8666",
+    "name": "Roig's Red Death",
+    "url": "https://scp-wiki.wikidot.com/scp-8666"
+  },
+  {
+    "actual_number": "SCP-8668",
+    "display_number": "SCP-8668",
+    "name": "Where The Stars Went",
+    "url": "https://scp-wiki.wikidot.com/scp-8668"
+  },
+  {
+    "actual_number": "SCP-8682",
+    "display_number": "SCP-8682",
+    "name": "Catastromancy",
+    "url": "https://scp-wiki.wikidot.com/scp-8682"
+  },
+  {
+    "actual_number": "SCP-8688",
+    "display_number": "SCP-8688",
+    "name": "Memory Leak",
+    "url": "https://scp-wiki.wikidot.com/scp-8688"
+  },
+  {
+    "actual_number": "SCP-8699",
+    "display_number": "SCP-8699",
+    "name": "Every Day I See You Still",
+    "url": "https://scp-wiki.wikidot.com/scp-8699"
+  },
+  {
+    "actual_number": "SCP-8700",
+    "display_number": "SCP-8700",
+    "name": "In the Court of the Dragon",
+    "url": "https://scp-wiki.wikidot.com/scp-8700"
+  },
+  {
+    "actual_number": "SCP-8701",
+    "display_number": "SCP-8701",
+    "name": "Jackie And Wilson",
+    "url": "https://scp-wiki.wikidot.com/scp-8701"
+  },
+  {
+    "actual_number": "SCP-8703",
+    "display_number": "SCP-8703",
+    "name": "The Caretaker",
+    "url": "https://scp-wiki.wikidot.com/scp-8703"
+  },
+  {
+    "actual_number": "SCP-8709",
+    "display_number": "SCP-8709",
+    "name": "Pleroma",
+    "url": "https://scp-wiki.wikidot.com/scp-8709"
+  },
+  {
+    "actual_number": "SCP-8722",
+    "display_number": "SCP-8722",
+    "name": "Death, Decay, and Ignorance",
+    "url": "https://scp-wiki.wikidot.com/scp-8722"
+  },
+  {
+    "actual_number": "SCP-8726",
+    "display_number": "SCP-8726",
+    "name": "Researcher James, Age 6, Eternally",
+    "url": "https://scp-wiki.wikidot.com/scp-8726"
+  },
+  {
+    "actual_number": "SCP-8747",
+    "display_number": "SCP-8747",
+    "name": "R E C T I F I C A T I O N",
+    "url": "https://scp-wiki.wikidot.com/scp-8747"
+  },
+  {
+    "actual_number": "SCP-8749",
+    "display_number": "SCP-8749",
+    "name": "Mezmerize",
+    "url": "https://scp-wiki.wikidot.com/scp-8749"
+  },
+  {
+    "actual_number": "SCP-8762",
+    "display_number": "SCP-8762",
+    "name": "Once Upon A Time…",
+    "url": "https://scp-wiki.wikidot.com/scp-8762"
+  },
+  {
+    "actual_number": "SCP-8765",
+    "display_number": "SCP-8765",
+    "name": "Desiderium",
+    "url": "https://scp-wiki.wikidot.com/scp-8765"
+  },
+  {
+    "actual_number": "SCP-8777",
+    "display_number": "SCP-8777",
+    "name": "Snipping the Light Fantastic",
+    "url": "https://scp-wiki.wikidot.com/scp-8777"
+  },
+  {
+    "actual_number": "SCP-8778",
+    "display_number": "SCP-8778",
+    "name": "The Writing on the Wall",
+    "url": "https://scp-wiki.wikidot.com/scp-8778"
+  },
+  {
+    "actual_number": "SCP-8787",
+    "display_number": "SCP-8787",
+    "name": "The Roast Not Taken",
+    "url": "https://scp-wiki.wikidot.com/scp-8787"
+  },
+  {
+    "actual_number": "SCP-8799",
+    "display_number": "SCP-8799",
+    "name": "A Book of Kings",
+    "url": "https://scp-wiki.wikidot.com/scp-8799"
+  },
+  {
+    "actual_number": "SCP-8800",
+    "display_number": "SCP-8800",
+    "name": "Reception",
+    "url": "https://scp-wiki.wikidot.com/scp-8800"
+  },
+  {
+    "actual_number": "SCP-8814",
+    "display_number": "SCP-8814",
+    "name": "The Racist's Hammer",
+    "url": "https://scp-wiki.wikidot.com/scp-8814"
+  },
+  {
+    "actual_number": "SCP-8817",
+    "display_number": "SCP-8817",
+    "name": "To You, The World",
+    "url": "https://scp-wiki.wikidot.com/scp-8817"
+  },
+  {
+    "actual_number": "SCP-8820",
+    "display_number": "SCP-8820",
+    "name": "To Kill a Bull Moose",
+    "url": "https://scp-wiki.wikidot.com/scp-8820"
+  },
+  {
+    "actual_number": "SCP-8831",
+    "display_number": "EXB-08831",
+    "name": "Halloween, Oklahoma",
+    "url": "https://scp-wiki.wikidot.com/scp-8831"
+  },
+  {
+    "actual_number": "SCP-8848",
+    "display_number": "SCP-8848",
+    "name": "Spacetime Conjugation Coils",
+    "url": "https://scp-wiki.wikidot.com/scp-8848"
+  },
+  {
+    "actual_number": "SCP-8877",
+    "display_number": "SCP-8877",
+    "name": "When a tree falls…",
+    "url": "https://scp-wiki.wikidot.com/scp-8877"
+  },
+  {
+    "actual_number": "SCP-8880",
+    "display_number": "SCP-8880",
+    "name": "Isaac Seder: Son, Warrior, Foe",
+    "url": "https://scp-wiki.wikidot.com/scp-8880"
+  },
+  {
+    "actual_number": "SCP-8881",
+    "display_number": "SCP-8881",
+    "name": "It Could Have Been so Different.",
+    "url": "https://scp-wiki.wikidot.com/scp-8881"
+  },
+  {
+    "actual_number": "SCP-8887",
+    "display_number": "SCP-8887",
+    "name": "I Wish I Could Stay In My Dreams",
+    "url": "https://scp-wiki.wikidot.com/scp-8887"
+  },
+  {
+    "actual_number": "SCP-8888",
+    "display_number": "SCP-8888",
+    "name": "Eight-Ball",
+    "url": "https://scp-wiki.wikidot.com/scp-8888"
+  },
+  {
+    "actual_number": "SCP-8889",
+    "display_number": "SCP-8889",
+    "name": "The Wondrous Wedding of William Wallace Wettle",
+    "url": "https://scp-wiki.wikidot.com/scp-8889"
+  },
+  {
+    "actual_number": "SCP-8899",
+    "display_number": "SCP-8899",
+    "name": "There is a Tide",
+    "url": "https://scp-wiki.wikidot.com/scp-8899"
+  },
+  {
+    "actual_number": "SCP-8900",
+    "display_number": "SCP-8900",
+    "name": "The Hecatomb",
+    "url": "https://scp-wiki.wikidot.com/scp-8900"
+  },
+  {
+    "actual_number": "SCP-8901",
+    "display_number": "SCP-8901",
+    "name": "Colours of Magic",
+    "url": "https://scp-wiki.wikidot.com/scp-8901"
+  },
+  {
+    "actual_number": "SCP-8910",
+    "display_number": "SCP-8910",
+    "name": "My Happy Place",
+    "url": "https://scp-wiki.wikidot.com/scp-8910"
+  },
+  {
+    "actual_number": "SCP-8914",
+    "display_number": "SCP-8914",
+    "name": "Our Four Elemental Dragons",
+    "url": "https://scp-wiki.wikidot.com/scp-8914"
+  },
+  {
+    "actual_number": "SCP-8944",
+    "display_number": "SCP-8944",
+    "name": "[ACCESS DENIED]",
+    "url": "https://scp-wiki.wikidot.com/scp-8944"
+  },
+  {
+    "actual_number": "SCP-8945",
+    "display_number": "SCP-8945",
+    "name": "One Thousand Temples",
+    "url": "https://scp-wiki.wikidot.com/scp-8945"
+  },
+  {
+    "actual_number": "SCP-8989",
+    "display_number": "SCP-8989",
+    "name": "Lost&amp;Found",
+    "url": "https://scp-wiki.wikidot.com/scp-8989"
+  },
+  {
+    "actual_number": "SCP-8990",
+    "display_number": "SCP-8990",
+    "name": "Poor Richard and the King",
+    "url": "https://scp-wiki.wikidot.com/scp-8990"
+  },
+  {
+    "actual_number": "SCP-8991",
+    "display_number": "SCP-8991",
+    "name": "Make It Count!",
+    "url": "https://scp-wiki.wikidot.com/scp-8991"
+  },
+  {
+    "actual_number": "SCP-8992",
+    "display_number": "SCP-8992",
+    "name": "Body of Evidence",
+    "url": "https://scp-wiki.wikidot.com/scp-8992"
+  },
+  {
+    "actual_number": "SCP-8993",
+    "display_number": "SCP-8993",
+    "name": "embody",
+    "url": "https://scp-wiki.wikidot.com/scp-8993"
+  },
+  {
+    "actual_number": "SCP-8994",
+    "display_number": "SCP-8994",
+    "name": "\"Spellsteal\"",
+    "url": "https://scp-wiki.wikidot.com/scp-8994"
+  },
+  {
+    "actual_number": "SCP-8995",
+    "display_number": "SCP-8995",
+    "name": "Surf's Up",
+    "url": "https://scp-wiki.wikidot.com/scp-8995"
+  },
+  {
+    "actual_number": "SCP-8996",
+    "display_number": "SCP-8996",
+    "name": "We Three Kings (Of What?)",
+    "url": "https://scp-wiki.wikidot.com/scp-8996"
+  },
+  {
+    "actual_number": "SCP-8997",
+    "display_number": "SCP-8997",
+    "name": "Infinite Impossibilities",
+    "url": "https://scp-wiki.wikidot.com/scp-8997"
+  },
+  {
+    "actual_number": "SCP-8998",
+    "display_number": "SCP-8998",
+    "name": "Her Owner",
+    "url": "https://scp-wiki.wikidot.com/scp-8998"
+  },
+  {
+    "actual_number": "SCP-8999",
+    "display_number": "SCP-8999",
+    "name": "Feeding the Trolls",
+    "url": "https://scp-wiki.wikidot.com/scp-8999"
   }
 ]

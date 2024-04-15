@@ -93,6 +93,7 @@ pub fn sort<T: SortableField>(entries: &mut [T], sort_field: &str) {
 }
 
 #[cfg(not(test))]
+#[allow(dead_code)]
 fn main() {
 	let args = Args::parse();
 

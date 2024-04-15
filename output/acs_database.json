@@ -40,7 +40,7 @@
     "url": "https://scp-wiki.wikidot.com/djkaktus-s-proposal-j",
     "fragment": false,
     "scraper": "ACS Bar"
-  },
+  },  
   {
     "name": "djkaktus's Proposal II",
     "actual_number": "SCP-001",
@@ -67,6 +67,20 @@
     "risk": "notice",
     "url": "https://scp-wiki.wikidot.com/billiths-proposal",
     "fragment": false,
+    "scraper": "ACS Bar"
+  },
+  {
+    "name": "Plague's Proposal",
+    "actual_number": "SCP-001",
+    "display_number": "",
+    "clearance": "LEVEL 5",
+    "clearance_text": "Top Secret",
+    "contain": "pending",
+    "secondary": "",
+    "disrupt": "",
+    "risk": "",
+    "url": "https://scp-wiki.wikidot.com/plague-s-proposal",
+    "fragment": true,
     "scraper": "ACS Bar"
   },
   {
@@ -3052,6 +3066,20 @@
     "scraper": "ACS Bar"
   },
   {
+    "name": "The Child, The Monster, and the Angel",
+    "actual_number": "SCP-4238",
+    "display_number": "SCP-4238",
+    "clearance": "",
+    "clearance_text": "",
+    "contain": "",
+    "secondary": "",
+    "disrupt": "",
+    "risk": "warning and below were disconnected.",
+    "url": "https://scp-wiki.wikidot.com/scp-4238",
+    "fragment": false,
+    "scraper": "Backup"
+  },
+  {
     "name": "Thalassomania, or The Dreams of the Firstborn",
     "actual_number": "SCP-4246",
     "display_number": "SCP-4246",
@@ -4354,7 +4382,7 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions<sup class=\"footnoteref\"><a href=\"javascript:;\" class=\"footnoteref\" onclick=\"WIKIDOT.page.utils.scrollToReference('footnote-1')\" id=\"footnoteref-1\">1</a></sup>",
+    "name": "𝘔𝘶𝘳𝘥𝘦𝘳𝘦𝘳™, a product of Optimark Synthetic Personnel Solutions",
     "actual_number": "SCP-4866",
     "display_number": "SCP-4866",
     "clearance": "LEVEL 2",
@@ -16008,7 +16036,7 @@
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "safe",
-    "secondary": "##red",
+    "secondary": "",
     "disrupt": "keneq",
     "risk": "warning",
     "url": "https://scp-wiki.wikidot.com/scp-7021",
@@ -22120,9 +22148,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8000",
+    "name": "The Seal of Approval",
     "actual_number": "SCP-8000",
-    "display_number": "",
+    "display_number": "SCP-8000",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "safe",
@@ -22130,13 +22158,13 @@
     "disrupt": "",
     "risk": "",
     "url": "https://scp-wiki.wikidot.com/scp-8000",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8001",
+    "name": "The Edge of the World",
     "actual_number": "SCP-8001",
-    "display_number": "",
+    "display_number": "SCP-8001",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "euclid",
@@ -22148,9 +22176,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8004",
+    "name": "The Life and Death of Vincent Bohart",
     "actual_number": "SCP-8004",
-    "display_number": "",
+    "display_number": "SCP-8004",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "euclid",
@@ -22162,9 +22190,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8006",
+    "name": "Debris on the Tracks",
     "actual_number": "SCP-8006",
-    "display_number": "",
+    "display_number": "SCP-8006",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "pending",
@@ -22176,9 +22204,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8007",
+    "name": "<span style=\"font-weight: bold; color: #ff670f;\">THE PYROCLASM PROTOCOL</span>",
     "actual_number": "SCP-8007",
-    "display_number": "",
+    "display_number": "SCP-8007",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "euclid",
@@ -22186,27 +22214,13 @@
     "disrupt": "vlam",
     "risk": "notice",
     "url": "https://scp-wiki.wikidot.com/scp-8007",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8007",
-    "actual_number": "SCP-8007",
-    "display_number": "",
-    "clearance": "LEVEL 5",
-    "clearance_text": "Top Secret",
-    "contain": "euclid",
-    "secondary": "thaumiel",
-    "disrupt": "keneq",
-    "risk": "warning",
-    "url": "https://scp-wiki.wikidot.com/scp-8007",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8008",
+    "name": "<span style=\"font: small-caps 1.2em sans-serif; text-shadow: 1px 1px 2px pink\"><span style=\"color: red\">T</span><span style=\"color: lime\">i</span><span style=\"color: blue\">m</span>e <span style=\"color: magenta\">Pervert</span></span>",
     "actual_number": "SCP-8008",
-    "display_number": "",
+    "display_number": "SCP-8008",
     "clearance": "LEVEL 6",
     "clearance_text": "Cosmic Top Secret",
     "contain": "safe",
@@ -22218,7 +22232,7 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8009",
+    "name": "Her Red Right Hand Protects Us",
     "actual_number": "SCP-8009",
     "display_number": "",
     "clearance": "LEVEL 4",
@@ -22232,7 +22246,7 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8009",
+    "name": "Her Red Right Hand Protects Us",
     "actual_number": "SCP-8009",
     "display_number": "",
     "clearance": "LEVEL 4",
@@ -22246,9 +22260,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8011",
+    "name": "In Flesh, Tasted",
     "actual_number": "SCP-8011",
-    "display_number": "",
+    "display_number": "SCP-8011",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "euclid",
@@ -22260,9 +22274,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8012",
+    "name": "The Hero's Journey (Ft. Wigglebert the Great)",
     "actual_number": "SCP-8012",
-    "display_number": "",
+    "display_number": "SCP-8012",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -22274,9 +22288,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8013",
+    "name": "The Dragon is not a Metaphor for Capitalism",
     "actual_number": "SCP-8013",
-    "display_number": "",
+    "display_number": "SCP-8013",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "keter",
@@ -22288,9 +22302,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8014",
+    "name": "Roma Addenda Est",
     "actual_number": "SCP-8014",
-    "display_number": "",
+    "display_number": "SCP-8014",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "keter",
@@ -22302,9 +22316,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8016",
+    "name": "Gods You Be",
     "actual_number": "SCP-8016",
-    "display_number": "",
+    "display_number": "SCP-8016",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "safe",
@@ -22316,7 +22330,21 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8018",
+    "name": "Sentience",
+    "actual_number": "SCP-8017",
+    "display_number": "SCP-8017",
+    "clearance": "LEVEL 3",
+    "clearance_text": "Confidential",
+    "contain": "euclid",
+    "secondary": "",
+    "disrupt": "amida",
+    "risk": "danger",
+    "url": "https://scp-wiki.wikidot.com/scp-8017",
+    "fragment": false,
+    "scraper": "ACS Bar"
+  },
+  {
+    "name": "While You Were Dreaming I Was Turning The Sky",
     "actual_number": "SCP-8018",
     "display_number": "",
     "clearance": "LEVEL 6",
@@ -22330,7 +22358,7 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8018",
+    "name": "While You Were Dreaming I Was Turning The Sky",
     "actual_number": "SCP-8018",
     "display_number": "",
     "clearance": "LEVEL 6",
@@ -22344,9 +22372,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8020",
+    "name": "FALSE IDOL",
     "actual_number": "SCP-8020",
-    "display_number": "",
+    "display_number": "SCP-8020",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "safe",
@@ -22354,13 +22382,13 @@
     "disrupt": "dark",
     "risk": "caution",
     "url": "https://scp-wiki.wikidot.com/scp-8020",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8022",
+    "name": "Build Your <strong>Dreams</strong>, One <strong>Brick</strong> at a Time.",
     "actual_number": "SCP-8022",
-    "display_number": "",
+    "display_number": "SCP-8022",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "safe",
@@ -22372,9 +22400,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8026",
+    "name": "And I'm No Dreamer",
     "actual_number": "SCP-8026",
-    "display_number": "",
+    "display_number": "SCP-8026",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "safe",
@@ -22386,9 +22414,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8028",
+    "name": "Into The Woods",
     "actual_number": "SCP-8028",
-    "display_number": "",
+    "display_number": "SCP-8028",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "esoteric",
@@ -22400,9 +22428,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8034",
+    "name": "A Tongue in the Glovebox",
     "actual_number": "SCP-8034",
-    "display_number": "",
+    "display_number": "SCP-8034",
     "clearance": "LEVEL 8",
     "clearance_text": "restricted",
     "contain": "euclid",
@@ -22414,9 +22442,9 @@
     "scraper": "Flops Header"
   },
   {
-    "name": "SCP-8035",
+    "name": "I Have Seen What The Darkness Does",
     "actual_number": "SCP-8035",
-    "display_number": "",
+    "display_number": "SCP-8035",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "esoteric",
@@ -22428,9 +22456,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8041",
+    "name": "Supreme Nothing",
     "actual_number": "SCP-8041",
-    "display_number": "",
+    "display_number": "SCP-8041",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "safe",
@@ -22442,9 +22470,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8045",
+    "name": "Fairly Frivolous Fairies",
     "actual_number": "SCP-8045",
-    "display_number": "",
+    "display_number": "SCP-8045",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -22456,9 +22484,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8050",
+    "name": "One to Rule Them All",
     "actual_number": "SCP-8050",
-    "display_number": "",
+    "display_number": "VNP-8050",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "esoteric",
@@ -22470,9 +22498,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8059",
+    "name": "IBM Chronoscope",
     "actual_number": "SCP-8059",
-    "display_number": "",
+    "display_number": "SCP-8059",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "esoteric",
@@ -22484,9 +22512,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8076",
+    "name": "Awan",
     "actual_number": "SCP-8076",
-    "display_number": "",
+    "display_number": "SCP-8076",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "euclid",
@@ -22498,9 +22526,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8079",
+    "name": "Rejected Reality",
     "actual_number": "SCP-8079",
-    "display_number": "",
+    "display_number": "SCP-8079",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "esoteric",
@@ -22512,9 +22540,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8080",
+    "name": "Eleanor Ellory Goes To Therapy",
     "actual_number": "SCP-8080",
-    "display_number": "",
+    "display_number": "SCP-8080",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "█████████",
@@ -22526,9 +22554,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8081",
+    "name": "The 80's Cycle",
     "actual_number": "SCP-8081",
-    "display_number": "",
+    "display_number": "SCP-8081",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -22540,9 +22568,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8082",
+    "name": "The Wild Hunt",
     "actual_number": "SCP-8082",
-    "display_number": "",
+    "display_number": "SCP-8082",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "esoteric",
@@ -22550,13 +22578,13 @@
     "disrupt": "amida",
     "risk": "critical",
     "url": "https://scp-wiki.wikidot.com/scp-8082",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8089",
+    "name": "No one in the world ever gets what they want, and that is Beautiful",
     "actual_number": "SCP-8089",
-    "display_number": "",
+    "display_number": "SCP-8089",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "esoteric",
@@ -22568,9 +22596,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8090",
+    "name": "PROFANITY / PROVIDENCE / PURGATORY",
     "actual_number": "SCP-8090",
-    "display_number": "",
+    "display_number": "SCP-8090",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "pending",
@@ -22578,55 +22606,13 @@
     "disrupt": "ekhi",
     "risk": "danger",
     "url": "https://scp-wiki.wikidot.com/scp-8090",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8090",
-    "actual_number": "SCP-8090",
-    "display_number": "",
-    "clearance": "LEVEL 5",
-    "clearance_text": "Top Secret",
-    "contain": "hiemal",
-    "secondary": "megiddo",
-    "disrupt": "amida",
-    "risk": "critical",
-    "url": "https://scp-wiki.wikidot.com/scp-8090",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8090",
-    "actual_number": "SCP-8090",
-    "display_number": "",
-    "clearance": "LEVEL 4",
-    "clearance_text": "Secret",
-    "contain": "pending",
-    "secondary": "",
-    "disrupt": "ekhi",
-    "risk": "danger",
-    "url": "https://scp-wiki.wikidot.com/scp-8090",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8090",
-    "actual_number": "SCP-8090",
-    "display_number": "",
-    "clearance": "LEVEL 5",
-    "clearance_text": "Top Secret",
-    "contain": "hiemal",
-    "secondary": "megiddo",
-    "disrupt": "amida",
-    "risk": "critical",
-    "url": "https://scp-wiki.wikidot.com/scp-8090",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8101",
+    "name": "The Dream Machine",
     "actual_number": "SCP-8101",
-    "display_number": "",
+    "display_number": "SCP-8101",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "safe",
@@ -22638,9 +22624,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8108",
+    "name": "Foundation Fantasy League",
     "actual_number": "SCP-8108",
-    "display_number": "",
+    "display_number": "SCP-8108",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "keter",
@@ -22648,13 +22634,13 @@
     "disrupt": "ekhi",
     "risk": "notice",
     "url": "https://scp-wiki.wikidot.com/scp-8108",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8120",
+    "name": "Bloodbound",
     "actual_number": "SCP-8120",
-    "display_number": "",
+    "display_number": "SCP-8120",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "safe",
@@ -22666,51 +22652,23 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8125",
+    "name": "Narrativic Fragments",
     "actual_number": "SCP-8125",
-    "display_number": "",
-    "clearance": "Level 2",
-    "clearance_text": "Restricted",
+    "display_number": "SCP-8125",
+    "clearance": "",
+    "clearance_text": "",
     "contain": "esoteric",
-    "secondary": "DUNWICH",
+    "secondary": "DUNWICH1",
     "disrupt": "UNKNOWN",
     "risk": "",
     "url": "https://scp-wiki.wikidot.com/scp-8125",
-    "fragment": true,
+    "fragment": false,
     "scraper": "AIM Header"
   },
   {
-    "name": "SCP-8125",
-    "actual_number": "SCP-8125",
-    "display_number": "",
-    "clearance": "LEVEL 3",
-    "clearance_text": "Confidential",
-    "contain": "esoteric",
-    "secondary": "GLEIPNIR",
-    "disrupt": "EKHI",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-8125",
-    "fragment": true,
-    "scraper": "AIM Header"
-  },
-  {
-    "name": "SCP-8125",
-    "actual_number": "SCP-8125",
-    "display_number": "",
-    "clearance": "LEVEL 3",
-    "clearance_text": "Confidential",
-    "contain": "esoteric",
-    "secondary": "GLEIPNIR",
-    "disrupt": "EKHI",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-8125",
-    "fragment": true,
-    "scraper": "AIM Header"
-  },
-  {
-    "name": "SCP-8142",
+    "name": "A Passing Chimera",
     "actual_number": "SCP-8142",
-    "display_number": "",
+    "display_number": "SCP-8142",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "safe",
@@ -22722,9 +22680,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8150",
+    "name": "Dust Mother",
     "actual_number": "SCP-8150",
-    "display_number": "",
+    "display_number": "SCP-8150",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "esoteric",
@@ -22736,9 +22694,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8156",
+    "name": "We All Go Down to Deep Sea",
     "actual_number": "SCP-8156",
-    "display_number": "",
+    "display_number": "SCP-8156",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "keter",
@@ -22750,9 +22708,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8166",
+    "name": "Eastward of Eden",
     "actual_number": "SCP-8166",
-    "display_number": "",
+    "display_number": "SCP-8166",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "pending",
@@ -22764,23 +22722,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8166",
-    "actual_number": "SCP-8166",
-    "display_number": "",
-    "clearance": "LEVEL 4",
-    "clearance_text": "Secret",
-    "contain": "pending",
-    "secondary": "",
-    "disrupt": "vlam",
-    "risk": "caution",
-    "url": "https://scp-wiki.wikidot.com/scp-8166",
-    "fragment": false,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8173",
+    "name": "Ms. Harrier Is Not Anomalous",
     "actual_number": "SCP-8173",
-    "display_number": "",
+    "display_number": "SCP-8173",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -22788,27 +22732,13 @@
     "disrupt": "dark",
     "risk": "notice",
     "url": "https://scp-wiki.wikidot.com/scp-8173",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8173",
-    "actual_number": "SCP-8173",
-    "display_number": "",
-    "clearance": "LEVEL 2",
-    "clearance_text": "Restricted",
-    "contain": "safe",
-    "secondary": "",
-    "disrupt": "dark",
-    "risk": "notice",
-    "url": "https://scp-wiki.wikidot.com/scp-8173",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8181",
+    "name": "The Real World",
     "actual_number": "SCP-8181",
-    "display_number": "",
+    "display_number": "SCP-8181",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "safe",
@@ -22816,13 +22746,27 @@
     "disrupt": "keneq",
     "risk": "notice",
     "url": "https://scp-wiki.wikidot.com/scp-8181",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8200",
+    "name": "DEPARTMENTALIZED",
+    "actual_number": "SCP-8190",
+    "display_number": "SCP-8190",
+    "clearance": "#",
+    "clearance_text": "SEALED",
+    "contain": "simulacra",
+    "secondary": "radix",
+    "disrupt": "DENIED",
+    "risk": "DENIED",
+    "url": "https://scp-wiki.wikidot.com/scp-8190",
+    "fragment": false,
+    "scraper": "ACS Bar"
+  },
+  {
+    "name": "The Phantom Sea",
     "actual_number": "SCP-8200",
-    "display_number": "",
+    "display_number": "SCP-8200",
     "clearance": "LEVEL 8",
     "clearance_text": "extrasolar",
     "contain": "keter",
@@ -22834,9 +22778,9 @@
     "scraper": "Flops Header"
   },
   {
-    "name": "SCP-8202",
+    "name": "Of Fire and Ice, War and Loss",
     "actual_number": "SCP-8202",
-    "display_number": "",
+    "display_number": "SCP-8202",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "euclid",
@@ -22848,9 +22792,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8222",
+    "name": "SCP: Panorama",
     "actual_number": "SCP-8222",
-    "display_number": "",
+    "display_number": "SCP-8222",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "safe",
@@ -22862,9 +22806,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8225",
+    "name": "The House of All Our Gods",
     "actual_number": "SCP-8225",
-    "display_number": "",
+    "display_number": "SCP-8225",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "esoteric",
@@ -22876,9 +22820,9 @@
     "scraper": "AIM Header"
   },
   {
-    "name": "SCP-8228",
+    "name": "Here's To You, Mrs. Robinson",
     "actual_number": "SCP-8228",
-    "display_number": "",
+    "display_number": "SCP-8228",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "safe",
@@ -22890,23 +22834,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8245",
+    "name": "Anywhere, Anytime, You and Me",
     "actual_number": "SCP-8245",
-    "display_number": "",
-    "clearance": "LEVEL 1",
-    "clearance_text": "Unrestricted",
-    "contain": "boundless",
-    "secondary": "",
-    "disrupt": "universal",
-    "risk": "worth-it",
-    "url": "https://scp-wiki.wikidot.com/scp-8245",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8245",
-    "actual_number": "SCP-8245",
-    "display_number": "",
+    "display_number": "SCP-8245",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "keter",
@@ -22914,13 +22844,13 @@
     "disrupt": "ekhi",
     "risk": "danger",
     "url": "https://scp-wiki.wikidot.com/scp-8245",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8282",
+    "name": "You Are Now Entering",
     "actual_number": "SCP-8282",
-    "display_number": "",
+    "display_number": "SCP-8282",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "esoteric",
@@ -22932,23 +22862,23 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8301",
-    "actual_number": "SCP-8301",
-    "display_number": "",
-    "clearance": "LEVEL 3",
-    "clearance_text": "Confidential",
-    "contain": "euclid",
-    "secondary": "",
-    "disrupt": "vlam",
-    "risk": "warning",
-    "url": "https://scp-wiki.wikidot.com/scp-8301",
+    "name": "The Farewell, The Frame",
+    "actual_number": "SCP-8300",
+    "display_number": "SCP-8300",
+    "clearance": "LEVEL 0",
+    "clearance_text": "OPEN",
+    "contain": "safe",
+    "secondary": "archon",
+    "disrupt": "dark",
+    "risk": "notice",
+    "url": "https://scp-wiki.wikidot.com/scp-8300",
     "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8320",
+    "name": "Seven Hundred Million Wizards",
     "actual_number": "SCP-8320",
-    "display_number": "",
+    "display_number": "SCP-8320",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "keter",
@@ -22960,9 +22890,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8343",
+    "name": "Slaying the Demiurge",
     "actual_number": "SCP-8343",
-    "display_number": "",
+    "display_number": "SCP-8343",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "neutralized",
@@ -22974,9 +22904,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8350",
+    "name": "<span style=\"color: rgb(5,162,234)\"><strong>Public Affairs</strong></span>",
     "actual_number": "SCP-8350",
-    "display_number": "",
+    "display_number": "SCP-8350",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "integrated",
@@ -22988,9 +22918,23 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8400",
+    "name": "INSURGENCE",
+    "actual_number": "SCP-8399",
+    "display_number": "SCP-8399",
+    "clearance": "LEVEL 5",
+    "clearance_text": "Top-Secret",
+    "contain": "active",
+    "secondary": "",
+    "disrupt": "",
+    "risk": "",
+    "url": "https://scp-wiki.wikidot.com/scp-8399",
+    "fragment": false,
+    "scraper": "ACS Bar"
+  },
+  {
+    "name": "The Birch Knight and the Game of Three Chestnuts",
     "actual_number": "SCP-8400",
-    "display_number": "",
+    "display_number": "SCP-8400",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "keter",
@@ -23002,9 +22946,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8404",
+    "name": "That One Time The Foundation Attempted To Use SIMULACRUM Technology To Contain A Keter-Class Entity In Another World",
     "actual_number": "SCP-8404",
-    "display_number": "",
+    "display_number": "SCP-8404",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "keter",
@@ -23016,9 +22960,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8410",
+    "name": "When Dreams Come True",
     "actual_number": "SCP-8410",
-    "display_number": "",
+    "display_number": "SCP-8410",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "safe",
@@ -23030,9 +22974,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8420",
+    "name": "THE WIZARD II (Also Known as Wizard Reborn 2, Swann Fever, Ballad of the Swann Lake, Electric Avenue, the Reckoning, Revenge of the Dumbass, Tokyo Drift, Porygon Boogaloo, This Time it's Personnel, Wizard Harder: Return of the Rise of the Revenge of the Planet of the Wizard, etc.)",
     "actual_number": "SCP-8420",
-    "display_number": "",
+    "display_number": "SCP-8420",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "keter",
@@ -23040,27 +22984,13 @@
     "disrupt": "CYBER-AMIDA",
     "risk": "critical",
     "url": "https://scp-wiki.wikidot.com/scp-8420",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8420",
-    "actual_number": "SCP-8420",
-    "display_number": "",
-    "clearance": "LEVEL 2",
-    "clearance_text": "Restricted",
-    "contain": "Decommissioned",
-    "secondary": "",
-    "disrupt": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-8420",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8440",
+    "name": "Clear as White",
     "actual_number": "SCP-8440",
-    "display_number": "",
+    "display_number": "SCP-8440",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "esoteric",
@@ -23072,9 +23002,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8444",
+    "name": "I'll Be There With You",
     "actual_number": "SCP-8444",
-    "display_number": "",
+    "display_number": "SCP-8444",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "safe",
@@ -23086,23 +23016,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8484",
+    "name": "Acheron",
     "actual_number": "SCP-8484",
-    "display_number": "",
-    "clearance": "LEVEL 1",
-    "clearance_text": "Unrestricted",
-    "contain": "pending",
-    "secondary": "",
-    "disrupt": "",
-    "risk": "",
-    "url": "https://scp-wiki.wikidot.com/scp-8484",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8484",
-    "actual_number": "SCP-8484",
-    "display_number": "",
+    "display_number": "SCP-8484",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "uncontained",
@@ -23110,13 +23026,13 @@
     "disrupt": "vlam",
     "risk": "danger",
     "url": "https://scp-wiki.wikidot.com/scp-8484",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8499",
+    "name": "Tomb of the Shattered",
     "actual_number": "SCP-8499",
-    "display_number": "",
+    "display_number": "SCP-8499",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "esoteric",
@@ -23128,9 +23044,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8501",
+    "name": "Truck-Kun",
     "actual_number": "SCP-8501",
-    "display_number": "",
+    "display_number": "SCP-8501",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "keter",
@@ -23142,9 +23058,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8550",
+    "name": "Microbial Murder",
     "actual_number": "SCP-8550",
-    "display_number": "",
+    "display_number": "SCP-8550",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "KETER",
@@ -23156,9 +23072,9 @@
     "scraper": "AIM Header"
   },
   {
-    "name": "SCP-8579",
+    "name": "A Pattern That Screamed",
     "actual_number": "SCP-8579",
-    "display_number": "",
+    "display_number": "SCP-8579",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "［MISSING_DATA］",
@@ -23170,9 +23086,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8590",
+    "name": "Dale",
     "actual_number": "SCP-8590",
-    "display_number": "",
+    "display_number": "SCP-8590",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "keter",
@@ -23184,9 +23100,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8599",
+    "name": "Your Fate is Sealed",
     "actual_number": "SCP-8599",
-    "display_number": "",
+    "display_number": "SCP-8599",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "euclid",
@@ -23198,9 +23114,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8600",
+    "name": "The Hall of the Empresses",
     "actual_number": "SCP-8600",
-    "display_number": "",
+    "display_number": "SCP-8600",
     "clearance": "LEVEL 6",
     "clearance_text": "Cosmic Top Secret",
     "contain": "safe",
@@ -23212,9 +23128,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8666",
+    "name": "Roig's Red Death",
     "actual_number": "SCP-8666",
-    "display_number": "",
+    "display_number": "SCP-8666",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "safe",
@@ -23226,9 +23142,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8668",
+    "name": "Where The Stars Went",
     "actual_number": "SCP-8668",
-    "display_number": "",
+    "display_number": "SCP-8668",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -23240,9 +23156,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8709",
+    "name": "Pleroma",
     "actual_number": "SCP-8709",
-    "display_number": "",
+    "display_number": "SCP-8709",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "esoteric",
@@ -23254,9 +23170,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8722",
+    "name": "Death, Decay, and Ignorance",
     "actual_number": "SCP-8722",
-    "display_number": "",
+    "display_number": "SCP-8722",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "neutralized",
@@ -23268,9 +23184,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8747",
+    "name": "R E C T I F I C A T I O N",
     "actual_number": "SCP-8747",
-    "display_number": "",
+    "display_number": "SCP-8747",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "keter",
@@ -23282,9 +23198,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8749",
+    "name": "Mezmerize",
     "actual_number": "SCP-8749",
-    "display_number": "",
+    "display_number": "SCP-8749",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "concluded",
@@ -23296,9 +23212,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8762",
+    "name": "Once Upon A Time…",
     "actual_number": "SCP-8762",
-    "display_number": "",
+    "display_number": "SCP-8762",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "safe",
@@ -23310,9 +23226,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8777",
+    "name": "Snipping the Light Fantastic",
     "actual_number": "SCP-8777",
-    "display_number": "",
+    "display_number": "SCP-8777",
     "clearance": "LEVEL 4",
     "clearance_text": "Secret",
     "contain": "keter",
@@ -23320,55 +23236,13 @@
     "disrupt": "ekhi",
     "risk": "notice",
     "url": "https://scp-wiki.wikidot.com/scp-8777",
-    "fragment": true,
+    "fragment": false,
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8777",
-    "actual_number": "SCP-8777",
-    "display_number": "",
-    "clearance": "LEVEL 5",
-    "clearance_text": "Top Secret",
-    "contain": "keter",
-    "secondary": "",
-    "disrupt": "amida",
-    "risk": "notice",
-    "url": "https://scp-wiki.wikidot.com/scp-8777",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8777",
-    "actual_number": "SCP-8777",
-    "display_number": "",
-    "clearance": "LEVEL 5",
-    "clearance_text": "Top Secret",
-    "contain": "safe",
-    "secondary": "",
-    "disrupt": "amida",
-    "risk": "critical",
-    "url": "https://scp-wiki.wikidot.com/scp-8777",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8777",
-    "actual_number": "SCP-8777",
-    "display_number": "",
-    "clearance": "LEVEL 4",
-    "clearance_text": "Secret",
-    "contain": "esoteric",
-    "secondary": "archon",
-    "disrupt": "dark",
-    "risk": "notice",
-    "url": "https://scp-wiki.wikidot.com/scp-8777",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8787",
+    "name": "The Roast Not Taken",
     "actual_number": "SCP-8787",
-    "display_number": "",
+    "display_number": "SCP-8787",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -23380,9 +23254,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8800",
+    "name": "Reception",
     "actual_number": "SCP-8800",
-    "display_number": "",
+    "display_number": "SCP-8800",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "neutralized",
@@ -23394,9 +23268,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8820",
+    "name": "To Kill a Bull Moose",
     "actual_number": "SCP-8820",
-    "display_number": "",
+    "display_number": "SCP-8820",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "drygioni",
@@ -23408,9 +23282,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8877",
+    "name": "When a tree falls…",
     "actual_number": "SCP-8877",
-    "display_number": "",
+    "display_number": "SCP-8877",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "euclid",
@@ -23422,9 +23296,23 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8889",
+    "name": "Eight-Ball",
+    "actual_number": "SCP-8888",
+    "display_number": "SCP-8888",
+    "clearance": "",
+    "clearance_text": "",
+    "contain": "",
+    "secondary": "",
+    "disrupt": "ekhi",
+    "risk": "",
+    "url": "https://scp-wiki.wikidot.com/scp-8888",
+    "fragment": false,
+    "scraper": "Backup"
+  },
+  {
+    "name": "The Wondrous Wedding of William Wallace Wettle",
     "actual_number": "SCP-8889",
-    "display_number": "",
+    "display_number": "SCP-8889",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "safe",
@@ -23436,9 +23324,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8910",
+    "name": "My Happy Place",
     "actual_number": "SCP-8910",
-    "display_number": "",
+    "display_number": "SCP-8910",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "keter",
@@ -23450,9 +23338,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8945",
+    "name": "One Thousand Temples",
     "actual_number": "SCP-8945",
-    "display_number": "",
+    "display_number": "SCP-8945",
     "clearance": "LEVEL 2",
     "clearance_text": "Restricted",
     "contain": "KETER",
@@ -23464,9 +23352,9 @@
     "scraper": "AIM Header"
   },
   {
-    "name": "SCP-8990",
+    "name": "Poor Richard and the King",
     "actual_number": "SCP-8990",
-    "display_number": "",
+    "display_number": "SCP-8990",
     "clearance": "LEVEL 5",
     "clearance_text": "Top Secret",
     "contain": "KETER",
@@ -23478,7 +23366,35 @@
     "scraper": "AIM Header"
   },
   {
-    "name": "SCP-8992",
+    "name": "Make It Count!",
+    "actual_number": "SCP-8991",
+    "display_number": "SCP-8991",
+    "clearance": "LEVEL 2",
+    "clearance_text": "Restricted",
+    "contain": "neutralized",
+    "secondary": "",
+    "disrupt": "keneq",
+    "risk": "notice",
+    "url": "https://scp-wiki.wikidot.com/scp-8991",
+    "fragment": false,
+    "scraper": "ACS Hybrid Bar"
+  },
+  {
+    "name": "Body of Evidence",
+    "actual_number": "SCP-8992",
+    "display_number": "",
+    "clearance": "LEVEL 2",
+    "clearance_text": "Restricted",
+    "contain": "esoteric",
+    "secondary": "uncontained",
+    "disrupt": "ekhi",
+    "risk": "warning",
+    "url": "https://scp-wiki.wikidot.com/scp-8992",
+    "fragment": true,
+    "scraper": "ACS Bar"
+  },
+  {
+    "name": "Body of Evidence",
     "actual_number": "SCP-8992",
     "display_number": "",
     "clearance": "LEVEL 2",
@@ -23492,23 +23408,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8992",
-    "actual_number": "SCP-8992",
-    "display_number": "",
-    "clearance": "LEVEL 2",
-    "clearance_text": "Restricted",
-    "contain": "esoteric",
-    "secondary": "uncontained",
-    "disrupt": "ekhi",
-    "risk": "warning",
-    "url": "https://scp-wiki.wikidot.com/scp-8992",
-    "fragment": true,
-    "scraper": "ACS Bar"
-  },
-  {
-    "name": "SCP-8996",
+    "name": "We Three Kings (Of What?)",
     "actual_number": "SCP-8996",
-    "display_number": "",
+    "display_number": "SCP-8996",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "esoteric",
@@ -23520,9 +23422,9 @@
     "scraper": "AIM Header"
   },
   {
-    "name": "SCP-8997",
+    "name": "Infinite Impossibilities",
     "actual_number": "SCP-8997",
-    "display_number": "",
+    "display_number": "SCP-8997",
     "clearance": "LEVEL 1",
     "clearance_text": "Unrestricted",
     "contain": "safe",
@@ -23534,9 +23436,9 @@
     "scraper": "ACS Bar"
   },
   {
-    "name": "SCP-8999",
+    "name": "Feeding the Trolls",
     "actual_number": "SCP-8999",
-    "display_number": "",
+    "display_number": "SCP-8999",
     "clearance": "LEVEL 3",
     "clearance_text": "Confidential",
     "contain": "euclid",
@@ -23605,10 +23507,10 @@
   },
   {
     "name": "<span style=\"color: blue\">SCP-INTEGER</span>",
-    "actual_number": "SCP-5242",
-    "display_number": "SCP-INTEGER",
-    "clearance": "Level №",
-    "clearance_text": "Access",
+    "actual_number": "<span style=\"color: blue\">SCP-INTEGER</span>",
+    "display_number": "FILE",
+    "clearance": "Level∶№",
+    "clearance_text": "",
     "contain": "challenge",
     "secondary": "",
     "disrupt": "influence",
